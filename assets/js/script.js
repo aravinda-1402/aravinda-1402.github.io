@@ -12,10 +12,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const moonIcon = darkModeToggle.querySelector('.fa-moon');
     const sunIcon = darkModeToggle.querySelector('.fa-sun');
     
-    // Check for saved dark mode preference
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    const savedDarkMode = localStorage.getItem('darkMode');
-    
     // Function to update icons
     const updateIcons = (isDark) => {
         moonIcon.classList.toggle('hidden', isDark);
@@ -29,15 +25,10 @@ document.addEventListener('DOMContentLoaded', () => {
         updateIcons(isDark);
     };
     
-    // Initialize dark mode based on saved preference or system preference
-    if (savedDarkMode !== null) {
-        document.documentElement.classList.toggle('dark', savedDarkMode === 'true');
-        updateIcons(savedDarkMode === 'true');
-    } else if (prefersDark) {
-        document.documentElement.classList.add('dark');
-        updateIcons(true);
-        localStorage.setItem('darkMode', 'true');
-    }
+    // Initialize dark mode based on saved preference
+    const savedDarkMode = localStorage.getItem('darkMode') === 'true';
+    document.documentElement.classList.toggle('dark', savedDarkMode);
+    updateIcons(savedDarkMode);
     
     // Add click event listener
     darkModeToggle.addEventListener('click', toggleDarkMode);

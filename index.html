@@ -12,7 +12,26 @@
         tailwind.config = {
             darkMode: 'class',
             theme: {
-                extend: {}
+                extend: {
+                    container: {
+                        center: true,
+                        padding: {
+                            DEFAULT: '1.5rem',
+                            sm: '2rem',
+                            md: '2.5rem',
+                            lg: '4rem',
+                            xl: '5rem',
+                            '2xl': '6rem',
+                        },
+                        screens: {
+                            sm: '640px',
+                            md: '768px',
+                            lg: '1024px',
+                            xl: '1280px',
+                            '2xl': '1536px',
+                        },
+                    },
+                }
             }
         }
     </script>
@@ -26,19 +45,20 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <script>
-        // Check for saved dark mode preference, default to light if not set
-        if (localStorage.getItem('darkMode') === 'true') {
-            document.documentElement.classList.add('dark');
-        } else {
+        // Always start in light mode unless explicitly set to dark mode before
+        if (localStorage.getItem('darkMode') !== 'true') {
             document.documentElement.classList.remove('dark');
+            localStorage.setItem('darkMode', 'false');
+        } else {
+            document.documentElement.classList.add('dark');
         }
     </script>
 </head>
 <body class="bg-white dark:bg-gray-900 transition-colors duration-200">
     <!-- Navigation -->
     <nav class="fixed w-full bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm shadow-sm z-50">
-        <div class="container mx-auto px-6 py-4">
-            <div class="flex items-center justify-between">
+        <div class="container mx-auto">
+            <div class="flex items-center justify-between py-4">
                 <a href="#" class="text-2xl font-bold text-gray-800 dark:text-white">AJ</a>
                 <div class="flex items-center space-x-8">
                     <button id="darkModeToggle" class="p-2 text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200">
@@ -69,7 +89,7 @@
         <!-- Background Gradient Effect -->
         <div class="absolute inset-0 bg-gradient-to-r from-blue-50/30 to-indigo-50/30 dark:from-blue-900/20 dark:to-indigo-900/20"></div>
         
-        <div class="container mx-auto px-6 relative">
+        <div class="container mx-auto relative">
             <div class="flex flex-col md:flex-row items-center justify-between">
                 <div class="md:w-1/2" data-aos="fade-right">
                     <h1 class="text-4xl md:text-6xl font-bold text-gray-800 dark:text-white mb-4">
@@ -117,7 +137,7 @@
 
     <!-- About Section -->
     <section id="about" class="py-20 bg-gray-50 dark:bg-gray-800">
-        <div class="container mx-auto px-6">
+        <div class="container mx-auto">
             <h2 class="text-3xl font-bold text-center mb-16 text-gray-800 dark:text-white" data-aos="fade-up">About Me</h2>
             <div class="flex flex-col lg:flex-row gap-0 max-w-8xl mx-auto">
                 <!-- Left Column (50%) -->
@@ -323,7 +343,7 @@
 
     <!-- Professional Certifications -->
     <section class="py-12 bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20">
-        <div class="container mx-auto px-6">
+        <div class="container mx-auto">
             <h2 class="text-2xl font-bold text-center mb-8 text-gray-800 dark:text-white" data-aos="fade-up">Professional Certifications</h2>
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                 <!-- NC State Data Science Certification -->
@@ -419,7 +439,7 @@
 
     <!-- Education Section -->
     <section id="education" class="py-20 bg-white dark:bg-gray-900">
-        <div class="container mx-auto px-6">
+        <div class="container mx-auto">
             <h2 class="text-3xl font-bold text-center mb-16 text-gray-800 dark:text-white" data-aos="fade-up">Education</h2>
             <div class="space-y-8">
                 <!-- NC State -->
@@ -605,7 +625,7 @@
 
     <!-- Experience Section -->
     <section id="experience" class="py-20 bg-gray-50 dark:bg-gray-800">
-        <div class="container mx-auto px-6">
+        <div class="container mx-auto">
             <h2 class="text-3xl font-bold text-center mb-16 text-gray-800 dark:text-white" data-aos="fade-up">Work Experience</h2>
             <div class="space-y-8">
                 <!-- SmartProtect -->
@@ -1134,7 +1154,7 @@
 
     <!-- Featured Projects Section -->
     <section id="all-projects" class="py-20 bg-white dark:bg-gray-900">
-        <div class="container mx-auto px-6">
+        <div class="container mx-auto">
             <h2 class="text-3xl font-bold text-center mb-16 text-gray-800 dark:text-white" data-aos="fade-up">Projects</h2>
             
             <!-- Filter Bar -->
@@ -1471,7 +1491,7 @@
 
     <!-- Research Papers Section -->
     <section id="research-papers" class="py-20 bg-gray-50 dark:bg-gray-800">
-        <div class="container mx-auto px-6">
+        <div class="container mx-auto">
             <h2 class="text-3xl font-bold text-center mb-16 text-gray-800 dark:text-white" data-aos="fade-up">Research Papers</h2>
             
             <!-- Filter Bar -->
@@ -1879,7 +1899,7 @@
 
     <!-- Contact Section -->
     <section id="contact" class="py-20 bg-white dark:bg-gray-900">
-        <div class="container mx-auto px-6">
+        <div class="container mx-auto">
             <h2 class="text-3xl font-bold text-center mb-16 text-gray-800 dark:text-white" data-aos="fade-up">Let's Connect</h2>
             
             <div class="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
@@ -1946,7 +1966,7 @@
 
     <!-- Footer -->
     <footer class="bg-gray-900 dark:bg-black text-white py-8">
-        <div class="container mx-auto px-6 text-center">
+        <div class="container mx-auto text-center">
             <p>© 2024 Aravinda Raman Jatavallabha. All rights reserved.</p>
         </div>
     </footer>
