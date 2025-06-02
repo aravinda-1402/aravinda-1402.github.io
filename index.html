@@ -1,0 +1,2093 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aravinda Raman Jatavallabha - Portfolio</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {}
+            }
+        }
+    </script>
+    
+    <!-- AOS Animation Library -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script>
+        // Check for saved dark mode preference, default to light if not set
+        if (localStorage.getItem('darkMode') === 'true') {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+    </script>
+</head>
+<body class="bg-white dark:bg-gray-900 transition-colors duration-200">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm shadow-sm z-50">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <a href="#" class="text-2xl font-bold text-gray-800 dark:text-white">AJ</a>
+                <div class="flex items-center space-x-8">
+                    <button id="darkModeToggle" class="p-2 text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200">
+                        <i class="fas fa-moon text-xl"></i>
+                        <i class="fas fa-sun text-xl hidden"></i>
+                    </button>
+                    <div class="hidden md:flex space-x-8">
+                        <a href="#about" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition">About</a>
+                        <a href="#education" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition">Education</a>
+                        <a href="#experience" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition">Experience</a>
+                        <a href="#all-projects" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition">Projects</a>
+                        <a href="#research-papers" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition">Research Papers</a>
+                        <a href="#contact" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition">Contact</a>
+                    </div>
+                    <div class="hidden md:flex items-center space-x-4">
+
+                        <a href="assets/docs/Aravinda_Jatavallabha_Resume - AIML.pdf" class="px-6 py-2 bg-blue-600 dark:bg-blue-500 text-white rounded-full hover:bg-blue-700 dark:hover:bg-blue-600 transition">
+                        Resume
+                    </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="pt-32 pb-20 bg-white dark:bg-gray-900 relative overflow-hidden">
+        <!-- Background Gradient Effect -->
+        <div class="absolute inset-0 bg-gradient-to-r from-blue-50/30 to-indigo-50/30 dark:from-blue-900/20 dark:to-indigo-900/20"></div>
+        
+        <div class="container mx-auto px-6 relative">
+            <div class="flex flex-col md:flex-row items-center justify-between">
+                <div class="md:w-1/2" data-aos="fade-right">
+                    <h1 class="text-4xl md:text-6xl font-bold text-gray-800 dark:text-white mb-4">
+                        Aravinda Raman Jatavallabha
+                    </h1>
+                    <h2 class="text-2xl md:text-3xl text-gray-600 dark:text-gray-300 mb-6">
+                        Machine Learning Engineer & Data Scientist
+                    </h2>
+                    <p class="text-lg text-gray-600 dark:text-gray-400 mb-8 leading-relaxed text-justify">
+                        Currently a Machine Learning Engineer at SmartProtect, building scalable AI solutions for public safety, legal automation, and demand forecasting. <span class="font-semibold text-blue-500 dark:text-blue-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Actively seeking full-time opportunities as an AI/ML Engineer, Data Scientist, Data Analyst, or Data Engineer starting June 2025.</span>
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="assets/docs/Aravinda_Jatavallabha_Resume - AIML.pdf" class="px-8 py-3 bg-blue-600 dark:bg-blue-500 text-white rounded-full hover:bg-blue-700 dark:hover:bg-blue-600 transition flex items-center">
+                            <i class="fas fa-download mr-2"></i> Download Resume
+                        </a>
+                        <a href="#contact" class="px-8 py-3 border-2 border-blue-600 dark:border-blue-500 text-blue-600 dark:text-blue-400 rounded-full hover:bg-blue-600 dark:hover:bg-blue-500 hover:text-white transition">
+                            Contact Me
+                        </a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 mt-12 md:mt-0 relative" data-aos="fade-left">
+                    <div class="relative w-72 h-72 mx-auto">
+                        <!-- Decorative Elements -->
+                        <div class="absolute -inset-4 bg-gradient-to-r from-blue-600/20 to-indigo-600/20 rounded-full blur-2xl opacity-50 animate-pulse"></div>
+                        <div class="absolute -inset-4 bg-gradient-to-r from-blue-600/10 to-indigo-600/10 rounded-full rotate-45"></div>
+                        
+                        <!-- Image Container -->
+                        <div class="relative w-full h-full rounded-full overflow-hidden border-4 border-white dark:border-gray-800 shadow-2xl">
+                            <img src="assets/images/AJ_latest_Cropped.JPEG" alt="Aravinda Raman Jatavallabha" 
+                                 class="w-full h-full object-cover object-center transform hover:scale-105 transition-transform duration-500">
+                        </div>
+                        
+                        <!-- Floating Badges -->
+                        <div class="absolute -right-4 top-10 bg-white dark:bg-gray-800 rounded-full p-3 shadow-lg">
+                            <i class="fas fa-brain text-blue-600 dark:text-blue-400 text-xl"></i>
+                        </div>
+                        <div class="absolute -left-4 bottom-10 bg-white dark:bg-gray-800 rounded-full p-3 shadow-lg">
+                            <i class="fas fa-code text-indigo-600 dark:text-indigo-400 text-xl"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gray-50 dark:bg-gray-800">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-16 text-gray-800 dark:text-white" data-aos="fade-up">About Me</h2>
+            <div class="flex flex-col lg:flex-row gap-0 max-w-8xl mx-auto">
+                <!-- Left Column (50%) -->
+                <div class="lg:w-1/2 lg:pr-12" data-aos="fade-right">
+                    <!-- About Text -->
+                    <div class="space-y-6">
+                        <p class="text-gray-600 dark:text-gray-300 leading-relaxed text-justify">
+                            AI/ML and Data Science Engineer with a strong track record of building scalable intelligent systems that drive real-world results. I completed my Master's in Computer Science (Data Science Track) from NC State with a 4.0 GPA and am actively seeking full-time roles in Data Science, Machine Learning, AI Engineering, or Analytics. I'm ready to start immediately and aiming to secure a position by June 2025.
+                        </p>
+                        <p class="text-gray-600 dark:text-gray-300 leading-relaxed text-justify">
+                            My experience spans the full ML pipeline, from developing LSTM-based forecasting systems and optimizing ETL workflows using AWS and Snowflake to integrating LLMs for NLP applications and deploying models with FastAPI and SageMaker. I've led impactful projects across public safety, legal automation, and customer intelligence, combining Python, SQL, and cloud technologies to deliver results at scale.
+                        </p>
+                        <p class="text-gray-600 dark:text-gray-300 leading-relaxed text-justify">
+                            Alongside applied work, I've contributed to peer-reviewed research in areas like graph neural networks, language modeling, and fairness in AI, with multiple publications across conferences and journals.
+                        </p>
+                        <p class="text-gray-600 dark:text-gray-300 leading-relaxed text-justify">
+                        I'm looking to bring this blend of hands-on engineering and deep analytical thinking to a high-impact team. Let's connect.
+                    </p>
+                    </div>
+
+                    <!-- Where I've Delivered Impact -->
+                    <div class="mt-12">
+                        <h3 class="text-2xl font-bold text-gray-800 dark:text-white mb-8">Where I've Delivered Impact</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
+                            <!-- Healthcare Card -->
+                            <div class="bg-white dark:bg-gray-800/50 rounded-lg p-4 shadow-sm hover:shadow-md transition-all duration-300">
+                                <div class="flex items-center mb-3">
+                                    <i class="fas fa-hospital text-xl text-blue-500 dark:text-blue-400 mr-3"></i>
+                                    <h4 class="text-lg font-bold text-gray-800 dark:text-white">Healthcare</h4>
+                                </div>
+                                <p class="text-gray-600 dark:text-gray-300 text-sm">Built CNN models for X-ray and diabetes prediction.</p>
+                            </div>
+
+                            <!-- Legal Tech Card -->
+                            <div class="bg-white dark:bg-gray-800/50 rounded-lg p-4 shadow-sm hover:shadow-md transition-all duration-300">
+                                <div class="flex items-center mb-3">
+                                    <i class="fas fa-balance-scale text-xl text-blue-500 dark:text-blue-400 mr-3"></i>
+                                    <h4 class="text-lg font-bold text-gray-800 dark:text-white">Legal Tech</h4>
+                                </div>
+                                <p class="text-gray-600 dark:text-gray-300 text-sm">Built GPT-powered legal assistants with RAG & vector DBs.</p>
+                            </div>
+
+                            <!-- Public Safety Card -->
+                            <div class="bg-white dark:bg-gray-800/50 rounded-lg p-4 shadow-sm hover:shadow-md transition-all duration-300">
+                                <div class="flex items-center mb-3">
+                                    <i class="fas fa-shield-alt text-xl text-blue-500 dark:text-blue-400 mr-3"></i>
+                                    <h4 class="text-lg font-bold text-gray-800 dark:text-white">Public Safety</h4>
+                                </div>
+                                <p class="text-gray-600 dark:text-gray-300 text-sm">Forecasted 911 call volume and optimized staffing using ML.</p>
+                            </div>
+
+                            <!-- Retail & Marketing Card -->
+                            <div class="bg-white dark:bg-gray-800/50 rounded-lg p-4 shadow-sm hover:shadow-md transition-all duration-300">
+                                <div class="flex items-center mb-3">
+                                    <i class="fas fa-shopping-cart text-xl text-blue-500 dark:text-blue-400 mr-3"></i>
+                                    <h4 class="text-lg font-bold text-gray-800 dark:text-white">Retail & Marketing</h4>
+                                </div>
+                                <p class="text-gray-600 dark:text-gray-300 text-sm">Boosted campaign ROI via LSTM & ETL optimization.</p>
+                            </div>
+
+                            <!-- Autonomous Systems Card -->
+                            <div class="bg-white dark:bg-gray-800/50 rounded-lg p-4 shadow-sm hover:shadow-md transition-all duration-300">
+                                <div class="flex items-center mb-3">
+                                    <i class="fas fa-car text-xl text-blue-500 dark:text-blue-400 mr-3"></i>
+                                    <h4 class="text-lg font-bold text-gray-800 dark:text-white">Autonomous Systems</h4>
+                                </div>
+                                <p class="text-gray-600 dark:text-gray-300 text-sm">Built lane detection and GNN-based driver behavior forecasting.</p>
+                            </div>
+
+                            <!-- IoT & Networks Card -->
+                            <div class="bg-white dark:bg-gray-800/50 rounded-lg p-4 shadow-sm hover:shadow-md transition-all duration-300">
+                                <div class="flex items-center mb-3">
+                                    <i class="fas fa-network-wired text-xl text-blue-500 dark:text-blue-400 mr-3"></i>
+                                    <h4 class="text-lg font-bold text-gray-800 dark:text-white">IoT & Networks</h4>
+                                </div>
+                                <p class="text-gray-600 dark:text-gray-300 text-sm">Built LSTM models for IoT network health prediction at scale.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="flex flex-col sm:flex-row gap-4 mt-12">
+                        <a href="#all-projects" class="inline-flex items-center justify-center px-6 py-3 bg-blue-600 dark:bg-blue-500 text-white rounded-full hover:bg-blue-700 dark:hover:bg-blue-600 transition-colors">
+                            <i class="fas fa-project-diagram mr-2"></i>
+                            View Projects
+                        </a>
+                        <a href="#research-papers" class="inline-flex items-center justify-center px-6 py-3 bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-white rounded-full hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors">
+                            <i class="fas fa-file-alt mr-2"></i>
+                            View Research Papers
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right Column (Technical Skills) (50%) -->
+                <div class="lg:w-1/2 lg:pl-12 lg:border-l border-gray-200 dark:border-gray-700 lg:-mt-[2.2rem]" data-aos="fade-left">
+                    <div class="bg-white dark:bg-gray-800/50 rounded-xl p-8 shadow-sm h-full">
+                        <h3 class="text-2xl font-bold text-gray-800 dark:text-white mb-10">Technical Skills</h3>
+                        <div class="space-y-10">
+                            <!-- Programming & Scripting -->
+                            <div>
+                                <h4 class="font-semibold text-gray-700 dark:text-gray-200 mb-3">Programming & Scripting</h4>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-white rounded-full">Python</span>
+                            <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-white rounded-full">SQL</span>
+                                    
+                                    
+                            <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-white rounded-full">C++</span>
+                                    <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-white rounded-full">Bash</span>
+                                    <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-white rounded-full">HTML/CSS</span>
+                                    <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-white rounded-full">JavaScript</span>
+                            <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-white rounded-full">Flask</span>
+                                    <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-white rounded-full">FastAPI</span>
+                                    <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-white rounded-full">REST API</span>
+                                    <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-white rounded-full">Git</span>
+                        </div>
+                    </div>
+
+                            <!-- Data Handling & Visualization -->
+                            <div>
+                                <h4 class="font-semibold text-gray-700 dark:text-gray-200 mb-3">Data Handling & Visualization</h4>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-white rounded-full">Pandas</span>
+                            <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-white rounded-full">NumPy</span>
+                                    <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-white rounded-full">SciPy</span>
+                            <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-white rounded-full">OpenCV</span>
+                                    <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-white rounded-full">Matplotlib</span>
+                            <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-white rounded-full">Seaborn</span>
+                                    <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-white rounded-full">Plotly</span>
+                                    <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-white rounded-full">Power BI</span>
+                                    <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-white rounded-full">Tableau</span>
+                                    <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-white rounded-full">Excel</span>
+                                </div>
+                            </div>
+
+                            <!-- Machine Learning & Deep Learning -->
+                            <div>
+                                <h4 class="font-semibold text-gray-700 dark:text-gray-200 mb-3">Machine Learning & Deep Learning</h4>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-white rounded-full">Supervised & Unsupervised Learning</span>
+                                    <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-white rounded-full">Scikit-learn</span>
+                            <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-white rounded-full">PyTorch</span>
+                            <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-white rounded-full">TensorFlow</span>
+                                    <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-white rounded-full">Keras</span>
+                            <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-white rounded-full">NLTK</span>
+                            <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-white rounded-full">SpaCy</span>
+                                    <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-white rounded-full">PyG</span>
+                        </div>
+                                <div class="mt-2 text-gray-600 dark:text-gray-300 text-sm">
+                                    <span class="font-semibold">Models:</span> CNNs, RNNs, LSTMs, GNNs, Recommender Systems, Anomaly Detection, Ranking Models, Time Series Forecasting
+                        </div>
+                    </div>
+
+                            <!-- Generative AI & LLMs -->
+                            <div>
+                                <h4 class="font-semibold text-gray-700 dark:text-gray-200 mb-3">Generative AI & LLMs</h4>
+                        <div class="flex flex-wrap gap-2">
+                                    <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-white rounded-full">LLMs</span>
+                            <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-white rounded-full">LangChain</span>
+                            <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-white rounded-full">RAG</span>
+                            <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-white rounded-full">Prompt Engineering</span>
+                            <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-white rounded-full">OpenAI API</span>
+                            <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-white rounded-full">Hugging Face</span>
+                                    <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-white rounded-full">LLaMA</span>
+                            <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-white rounded-full">Pinecone</span>
+                        </div>
+                    </div>
+
+                            <!-- Cloud, MLOps & Big Data -->
+                            <div>
+                                <h4 class="font-semibold text-gray-700 dark:text-gray-200 mb-3">Cloud, MLOps & Big Data</h4>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-white rounded-full">AWS (S3, ECR, SageMaker)</span>
+                                    <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-white rounded-full">Azure</span>
+                                    
+                                    <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-white rounded-full">Apache Spark</span>
+                                    <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-white rounded-full">Hadoop</span>
+                                    <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-white rounded-full">Snowflake</span>
+                                    <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-white rounded-full">Apache Airflow</span>
+                                    
+                                    <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-white rounded-full">Docker</span>
+                                </div>
+                            </div>
+
+                            <!-- Statistics & Experimentation -->
+                            <div>
+                                <h4 class="font-semibold text-gray-700 dark:text-gray-200 mb-3">Statistics & Experimentation</h4>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-white rounded-full">Statistical Modeling</span>
+                                    <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-white rounded-full">Hypothesis Testing</span>
+                                    <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-white rounded-full">A/B Testing</span>
+                                    <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-white rounded-full">Regression</span>
+                                    <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-white rounded-full">Classification</span>
+                                    <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-white rounded-full">Clustering</span>
+                                    <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-white rounded-full">Time Series Analysis</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Professional Certifications -->
+    <section class="py-12 bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20">
+        <div class="container mx-auto px-6">
+            <h2 class="text-2xl font-bold text-center mb-8 text-gray-800 dark:text-white" data-aos="fade-up">Professional Certifications</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- NC State Data Science Certification -->
+                <div class="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all transform hover:scale-105" 
+                     data-aos="fade-up" data-aos-duration="1000">
+                    <div class="flex items-center justify-center mb-4 h-24">
+                        <img src="assets/images/ncstate img.png" 
+                             alt="NC State University" 
+                             class="w-24 h-24 object-contain dark:brightness-110 transform transition-transform hover:scale-110">
+                    </div>
+                    <h3 class="text-xl font-semibold text-center text-gray-800 dark:text-white mb-2">Data Science Specialization</h3>
+                    <p class="text-center text-gray-600 dark:text-gray-300">NC State University</p>
+                    <div class="mt-4 flex flex-col items-center space-y-3">
+                        <span class="px-4 py-2 bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 rounded-full text-sm transform transition-all hover:scale-105">
+                            <i class="fas fa-certificate mr-2"></i>Verified Achievement
+                        </span>
+                        <a href="https://drive.google.com/file/d/1-o0rSSCy6qN3lY99xNvIWSQEKPD0ELD7/view?usp=sharing" 
+                           target="_blank" 
+                           class="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 transform transition-all hover:translate-x-1">
+                            <i class="fas fa-external-link-alt mr-1"></i>View Certificate
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Stanford Certification -->
+                <div class="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all transform hover:scale-105" 
+                     data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
+                    <div class="flex items-center justify-center mb-4 h-24">
+                        <img src="assets/images/stanford image.png" 
+                             alt="Stanford University" 
+                             class="w-24 h-24 object-contain dark:brightness-110 transform transition-transform hover:scale-110">
+                    </div>
+                    <h3 class="text-xl font-semibold text-center text-gray-800 dark:text-white mb-2">Machine Learning Specialization</h3>
+                    <p class="text-center text-gray-600 dark:text-gray-300">Stanford University</p>
+                    <div class="mt-4 flex flex-col items-center space-y-3">
+                        <span class="px-4 py-2 bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 rounded-full text-sm transform transition-all hover:scale-105">
+                            <i class="fas fa-certificate mr-2"></i>Verified Achievement
+                        </span>
+                        <a href="https://www.coursera.org/account/accomplishments/verify/9AB6K4JPZSQ9" 
+                           target="_blank" 
+                           class="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 transform transition-all hover:translate-x-1">
+                            <i class="fas fa-external-link-alt mr-1"></i>View Certificate
+                        </a>
+                    </div>
+                </div>
+
+                <!-- DeepLearning.AI Certification -->
+                <div class="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all transform hover:scale-105" 
+                     data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
+                    <div class="flex items-center justify-center mb-4 h-24">
+                        <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-university-assets.s3.amazonaws.com/b4/5cb90bb92f420b99bf323a0356f451/Icon.png" 
+                             alt="DeepLearning.AI" 
+                             class="w-24 h-24 object-contain dark:brightness-110 transform transition-transform hover:scale-110">
+                    </div>
+                    <h3 class="text-xl font-semibold text-center text-gray-800 dark:text-white mb-2">Deep Learning Specialization</h3>
+                    <p class="text-center text-gray-600 dark:text-gray-300">DeepLearning.AI</p>
+                    <div class="mt-4 flex flex-col items-center space-y-3">
+                        <span class="px-4 py-2 bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 rounded-full text-sm transform transition-all hover:scale-105">
+                            <i class="fas fa-certificate mr-2"></i>Verified Achievement
+                        </span>
+                        <a href="https://www.coursera.org/account/accomplishments/specialization/DFFQB96C6FJ2" 
+                           target="_blank" 
+                           class="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 transform transition-all hover:translate-x-1">
+                            <i class="fas fa-external-link-alt mr-1"></i>View Certificate
+                        </a>
+                    </div>
+                </div>
+
+                <!-- IIIT Hyderabad Certification -->
+                <div class="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all transform hover:scale-105" 
+                     data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000">
+                    <div class="flex items-center justify-center mb-4 h-24">
+                        <img src="https://upload.wikimedia.org/wikipedia/en/thumb/e/e1/International_Institute_of_Information_Technology%2C_Hyderabad_logo.png/220px-International_Institute_of_Information_Technology%2C_Hyderabad_logo.png" 
+                             alt="IIIT Hyderabad" 
+                             class="w-24 h-24 object-contain dark:brightness-110 transform transition-transform hover:scale-110">
+                    </div>
+                    <h3 class="text-xl font-semibold text-center text-gray-800 dark:text-white mb-2">AI Summer School</h3>
+                    <p class="text-center text-gray-600 dark:text-gray-300">IIIT Hyderabad</p>
+                    <div class="mt-4 flex flex-col items-center space-y-3">
+                        <span class="px-4 py-2 bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 rounded-full text-sm transform transition-all hover:scale-105">
+                            <i class="fas fa-certificate mr-2"></i>Verified Achievement
+                        </span>
+                        <a href="https://drive.google.com/file/d/1jPhjHO8WfoukW9IKUp8yKpRyoLKbnjFB/view" 
+                           target="_blank" 
+                           class="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 transform transition-all hover:translate-x-1">
+                            <i class="fas fa-external-link-alt mr-1"></i>View Certificate
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="py-20 bg-white dark:bg-gray-900">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-16 text-gray-800 dark:text-white" data-aos="fade-up">Education</h2>
+            <div class="space-y-8">
+                <!-- NC State -->
+                <div class="bg-white dark:bg-gray-800 rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300" data-aos="fade-up">
+                    <div class="flex flex-col md:flex-row justify-between items-start mb-6">
+                        <div class="flex-1">
+                            <div class="flex items-center mb-4" data-aos="fade-right" data-aos-duration="1000">
+                                <img src="assets/images/ncstate img.png" alt="NC State University Logo" class="w-24 h-24 object-contain mr-4 dark:brightness-110 transform transition-transform hover:scale-110">
+                                <div>
+                                    <h3 class="text-xl font-bold text-gray-800 dark:text-white">Master of Computer Science</h3>
+                                    <p class="text-blue-600 dark:text-blue-400">Data Science Track</p>
+                                </div>
+                            </div>
+                            <div class="flex flex-col space-y-2" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
+                                <div class="flex items-center justify-between">
+                                    <p class="text-gray-600 dark:text-gray-200">North Carolina State University, Raleigh, NC</p>
+                                    <a href="https://drive.google.com/file/d/1uPDeOb_QWkxuiRlXxEfEIW2JagjP5olQ/view?usp=drive_link" 
+                                       target="_blank" 
+                                       class="px-4 py-2 text-base bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-white rounded-lg hover:bg-blue-50 dark:hover:bg-blue-900/30 hover:text-blue-600 dark:hover:text-blue-400 transition-all flex items-center font-medium shadow-sm hover:shadow-md transform hover:scale-105 hover:-translate-y-1">
+                                        <i class="fas fa-award mr-2 text-blue-500 dark:text-blue-400 text-lg transition-transform group-hover:rotate-12"></i>
+                                        View Credential
+                                    </a>
+                                </div>
+                                <p class="text-gray-500 dark:text-gray-300">Aug 2023 - May 2025</p>
+                                <div class="flex items-center">
+                                    <span class="inline-flex items-center bg-gradient-to-r from-green-50 to-emerald-50 dark:from-green-900/20 dark:to-emerald-900/20 px-3 py-1 rounded-full transform transition-all hover:scale-105 hover:shadow-md group">
+                                        <i class="fas fa-star text-green-500 dark:text-green-400 mr-2 group-hover:rotate-12 transition-transform"></i>
+                                        <span class="text-green-600 dark:text-green-400 font-medium whitespace-nowrap">4.0/4.0 GPA</span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Academic Focus Areas -->
+                    <div class="mb-6" data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000">
+                        <h4 class="text-lg font-semibold text-gray-700 dark:text-gray-200 mb-4">Academic Focus Areas</h4>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                            <div class="bg-blue-50 dark:bg-blue-900/20 rounded-lg p-4 transform transition-all hover:scale-105 hover:shadow-lg">
+                                <p class="text-blue-600 dark:text-blue-300 font-semibold mb-2">AI & Machine Learning</p>
+                                <p class="text-sm text-gray-600 dark:text-gray-300">Deep Learning, Neural Networks, NLP</p>
+                            </div>
+                            <div class="bg-purple-50 dark:bg-purple-900/20 rounded-lg p-4 transform transition-all hover:scale-105 hover:shadow-lg">
+                                <p class="text-purple-600 dark:text-purple-300 font-semibold mb-2">Data Science</p>
+                                <p class="text-sm text-gray-600 dark:text-gray-300">Analytics, Mining, Visualization</p>
+                            </div>
+                            <div class="bg-indigo-50 dark:bg-indigo-900/20 rounded-lg p-4 transform transition-all hover:scale-105 hover:shadow-lg">
+                                <p class="text-indigo-600 dark:text-indigo-300 font-semibold mb-2">Systems & Architecture</p>
+                                <p class="text-sm text-gray-600 dark:text-gray-300">Databases, Algorithms, Software Engineering</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Relevant Coursework -->
+                    <div data-aos="fade-up" data-aos-delay="400" data-aos-duration="1000">
+                        <h4 class="text-lg font-semibold text-gray-700 dark:text-gray-200 mb-4">Relevant Coursework</h4>
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+                            <div class="flex items-center space-x-2 transform transition-all hover:translate-x-2">
+                                <i class="fas fa-brain text-blue-600 dark:text-blue-400"></i>
+                                <span class="text-gray-600 dark:text-gray-300">Neural Networks and Deep Learning</span>
+                            </div>
+                            <div class="flex items-center space-x-2 transform transition-all hover:translate-x-2">
+                                <i class="fas fa-database text-blue-600 dark:text-blue-400"></i>
+                                <span class="text-gray-600 dark:text-gray-300">Foundations of Data Science</span>
+                            </div>
+                            <div class="flex items-center space-x-2 transform transition-all hover:translate-x-2">
+                                <i class="fas fa-robot text-blue-600 dark:text-blue-400"></i>
+                                <span class="text-gray-600 dark:text-gray-300">Automated Learning and Data Analysis</span>
+                            </div>
+                            <div class="flex items-center space-x-2 transform transition-all hover:translate-x-2">
+                                <i class="fas fa-server text-blue-600 dark:text-blue-400"></i>
+                                <span class="text-gray-600 dark:text-gray-300">Database Management Systems</span>
+                            </div>
+                            <div class="flex items-center space-x-2 transform transition-all hover:translate-x-2">
+                                <i class="fas fa-project-diagram text-blue-600 dark:text-blue-400"></i>
+                                <span class="text-gray-600 dark:text-gray-300">Machine Learning with Graphs</span>
+                            </div>
+                            <div class="flex items-center space-x-2 transform transition-all hover:translate-x-2">
+                                <i class="fas fa-comments text-blue-600 dark:text-blue-400"></i>
+                                <span class="text-gray-600 dark:text-gray-300">Natural Language Processing</span>
+                            </div>
+                            <div class="flex items-center space-x-2 transform transition-all hover:translate-x-2">
+                                <i class="fas fa-microchip text-blue-600 dark:text-blue-400"></i>
+                                <span class="text-gray-600 dark:text-gray-300">Generative AI</span>
+                            </div>
+                            <div class="flex items-center space-x-2 transform transition-all hover:translate-x-2">
+                                <i class="fas fa-shield-alt text-blue-600 dark:text-blue-400"></i>
+                                <span class="text-gray-600 dark:text-gray-300">Privacy in Artificial Intelligence</span>
+                            </div>
+                            <div class="flex items-center space-x-2 transform transition-all hover:translate-x-2">
+                                <i class="fas fa-code text-blue-600 dark:text-blue-400"></i>
+                                <span class="text-gray-600 dark:text-gray-300">Design and Analysis of Algorithms</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Manipal -->
+                <div class="bg-white dark:bg-gray-800 rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex flex-col md:flex-row justify-between items-start mb-6">
+                        <div class="flex-1">
+                            <div class="flex items-center mb-4" data-aos="fade-right" data-aos-duration="1000">
+                                <img src="assets/images/MANIPAL-INSTITUTE-OF-TECHNOLOGY img.png" alt="Manipal Institute of Technology Logo" class="w-24 h-24 object-contain mr-4 dark:brightness-110 transform transition-transform hover:scale-110">
+                                <div>
+                                    <h3 class="text-xl font-bold text-gray-800 dark:text-white">Bachelor of Technology</h3>
+                                    <p class="text-blue-600 dark:text-blue-400">Information Technology</p>
+                                </div>
+                            </div>
+                            <div class="flex flex-col space-y-2" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
+                                <div class="flex items-center justify-between">
+                                    <p class="text-gray-600 dark:text-gray-200">Manipal Institute of Technology, Manipal, India</p>
+                                    <a href="https://drive.google.com/file/d/1egeuz65fwpKCLLV0Bi9-n2kIEI_nJkYz/view?usp=sharing" 
+                                       target="_blank" 
+                                       class="px-4 py-2 text-base bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-white rounded-lg hover:bg-blue-50 dark:hover:bg-blue-900/30 hover:text-blue-600 dark:hover:text-blue-400 transition-all flex items-center font-medium shadow-sm hover:shadow-md transform hover:scale-105 hover:-translate-y-1">
+                                        <i class="fas fa-award mr-2 text-blue-500 dark:text-blue-400 text-lg transition-transform group-hover:rotate-12"></i>
+                                        View Credential
+                                    </a>
+                                </div>
+                                <p class="text-gray-500 dark:text-gray-300">Jun 2019 - Jul 2023</p>
+                                <div class="flex items-center">
+                                    <span class="inline-flex items-center bg-gradient-to-r from-green-50 to-emerald-50 dark:from-green-900/20 dark:to-emerald-900/20 px-3 py-1 rounded-full transform transition-all hover:scale-105 hover:shadow-md group">
+                                        <i class="fas fa-star text-green-500 dark:text-green-400 mr-2 group-hover:rotate-12 transition-transform"></i>
+                                        <span class="text-green-600 dark:text-green-400 font-medium whitespace-nowrap">8.64/10.0 GPA</span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Manipal Academic Focus Areas -->
+                    <div class="mb-6" data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000">
+                        <h4 class="text-lg font-semibold text-gray-700 dark:text-gray-200 mb-4">Academic Focus Areas</h4>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                            <div class="bg-blue-50 dark:bg-blue-900/20 rounded-lg p-4 transform transition-all hover:scale-105 hover:shadow-lg">
+                                <p class="text-blue-600 dark:text-blue-300 font-semibold mb-2">Big Data Analytics</p>
+                                <p class="text-sm text-gray-600 dark:text-gray-300">Minor Specialization</p>
+                            </div>
+                            <div class="bg-purple-50 dark:bg-purple-900/20 rounded-lg p-4 transform transition-all hover:scale-105 hover:shadow-lg">
+                                <p class="text-purple-600 dark:text-purple-300 font-semibold mb-2">Software Engineering</p>
+                                <p class="text-sm text-gray-600 dark:text-gray-300">Core Focus</p>
+                            </div>
+                            <div class="bg-indigo-50 dark:bg-indigo-900/20 rounded-lg p-4 transform transition-all hover:scale-105 hover:shadow-lg">
+                                <p class="text-indigo-600 dark:text-indigo-300 font-semibold mb-2">AI & ML</p>
+                                <p class="text-sm text-gray-600 dark:text-gray-300">Technical Electives</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Manipal Relevant Coursework -->
+                    <div data-aos="fade-up" data-aos-delay="400" data-aos-duration="1000">
+                        <h4 class="text-lg font-semibold text-gray-700 dark:text-gray-200 mb-4">Relevant Coursework</h4>
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+                            <div class="flex items-center space-x-2 transform transition-all hover:translate-x-2">
+                                <i class="fas fa-database text-blue-600 dark:text-blue-400"></i>
+                                <span class="text-gray-600 dark:text-gray-300">Data Mining</span>
+                            </div>
+                            <div class="flex items-center space-x-2 transform transition-all hover:translate-x-2">
+                                <i class="fas fa-brain text-blue-600 dark:text-blue-400"></i>
+                                <span class="text-gray-600 dark:text-gray-300">Machine Learning</span>
+                            </div>
+                            <div class="flex items-center space-x-2 transform transition-all hover:translate-x-2">
+                                <i class="fas fa-eye text-blue-600 dark:text-blue-400"></i>
+                                <span class="text-gray-600 dark:text-gray-300">Pattern Recognition</span>
+                            </div>
+                            <div class="flex items-center space-x-2 transform transition-all hover:translate-x-2">
+                                <i class="fas fa-code-branch text-blue-600 dark:text-blue-400"></i>
+                                <span class="text-gray-600 dark:text-gray-300">Algorithms</span>
+                            </div>
+                            <div class="flex items-center space-x-2 transform transition-all hover:translate-x-2">
+                                <i class="fas fa-chart-bar text-blue-600 dark:text-blue-400"></i>
+                                <span class="text-gray-600 dark:text-gray-300">Big Data Analytics</span>
+                            </div>
+                            <div class="flex items-center space-x-2 transform transition-all hover:translate-x-2">
+                                <i class="fas fa-project-diagram text-blue-600 dark:text-blue-400"></i>
+                                <span class="text-gray-600 dark:text-gray-300">Data Structures</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 bg-gray-50 dark:bg-gray-800">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-16 text-gray-800 dark:text-white" data-aos="fade-up">Work Experience</h2>
+            <div class="space-y-8">
+                <!-- SmartProtect -->
+                <div class="bg-white dark:bg-gray-800 rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-300" data-aos="fade-up" data-aos-duration="1000">
+                    <div class="flex flex-col md:flex-row justify-between mb-6">
+                        <div>
+                            <div class="flex items-center mb-4" data-aos="fade-right" data-aos-duration="1000">
+                                <img src="assets/images/smartprotect.png" alt="SmartProtect Logo" class="w-24 h-24 object-contain mr-4 dark:brightness-110 transform transition-transform hover:scale-110">
+                                <div>
+                                    <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-2">Data Scientist - ML, Analytics & Full-Stack Systems </h3>
+                                    <p class="text-blue-600 dark:text-blue-400">SmartProtect Public Safety Solutions</p>
+                                    <p class="text-gray-500 dark:text-gray-400">May 2024 - Present · Part-time</p>
+                                    <p class="text-gray-600 dark:text-gray-300 text-sm">Wilmington, Delaware, United States · Remote</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Impact Metrics -->
+                    <div class="mb-6" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
+                        <h4 class="text-lg font-semibold text-gray-700 dark:text-gray-200 mb-4">Performance Metrics</h4>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                            <div class="bg-blue-50 dark:bg-blue-900/20 rounded-lg p-4 transform transition-all hover:scale-105 hover:shadow-lg">
+                                <p class="text-blue-600 dark:text-blue-300 font-semibold mb-2">Forecast Accuracy</p>
+                                <p class="text-3xl font-bold text-blue-700 dark:text-blue-200">+20%</p>
+                                <p class="text-sm text-gray-600 dark:text-gray-300">Model Performance</p>
+                            </div>
+                            <div class="bg-green-50 dark:bg-green-900/20 rounded-lg p-4 transform transition-all hover:scale-105 hover:shadow-lg">
+                                <p class="text-green-600 dark:text-green-300 font-semibold mb-2">Operational Efficiency</p>
+                                <p class="text-3xl font-bold text-green-700 dark:text-green-200">18%</p>
+                                <p class="text-sm text-gray-600 dark:text-gray-300">Overtime Reduction</p>
+                            </div>
+                            <div class="bg-purple-50 dark:bg-purple-900/20 rounded-lg p-4 transform transition-all hover:scale-105 hover:shadow-lg">
+                                <p class="text-purple-600 dark:text-purple-300 font-semibold mb-2">Processing Speed</p>
+                                <p class="text-3xl font-bold text-purple-700 dark:text-purple-200">35%</p>
+                                <p class="text-sm text-gray-600 dark:text-gray-300">Faster Retraining</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Core Achievements -->
+                    <div class="space-y-4" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
+                        <div class="text-gray-600 dark:text-gray-300">
+                            <!-- ML & Forecasting -->
+                            <div class="mb-6">
+                                <h5 class="text-lg font-semibold text-gray-700 dark:text-gray-200 mb-4">ML & Forecasting</h5>
+                                <ul class="space-y-3">
+                                    <li class="flex items-start transform transition-all hover:translate-x-2">
+                                        <i class="fas fa-brain text-blue-600 dark:text-blue-400 mt-1 mr-2"></i>
+                                        <span>Improved hourly and daily call volume forecasting accuracy by 20% through A/B/n-tested ARIMA, Prophet, LSTM, and Logistic Regression models deployed on AWS SageMaker.</span>
+                                    </li>
+                                    <li class="flex items-start transform transition-all hover:translate-x-2">
+                                        <i class="fas fa-database text-blue-600 dark:text-blue-400 mt-1 mr-2"></i>
+                                        <span>Built scalable ETL pipelines using Apache Airflow, Flask APIs, and Snowflake to automate ingestion and transformation of 1.2M+ dispatch records across regions.</span>
+                                    </li>
+                                    <li class="flex items-start transform transition-all hover:translate-x-2">
+                                        <i class="fas fa-robot text-blue-600 dark:text-blue-400 mt-1 mr-2"></i>
+                                        <span>Deployed real-time drift detection and monitoring with AWS Lambda and S3 versioning, embedding auto-retraining triggers and reducing ML update latency by 35%.</span>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <!-- Expandable Details -->
+                            <div class="collapse-content hidden">
+                                <!-- Optimization & Analytics -->
+                                <div class="mb-6">
+                                    <h5 class="text-lg font-semibold text-gray-700 dark:text-gray-200 mb-4">Optimization & Analytics</h5>
+                                    <ul class="space-y-3">
+                                        <li class="flex items-start transform transition-all hover:translate-x-2">
+                                            <i class="fas fa-chart-line text-blue-600 dark:text-blue-400 mt-1 mr-2"></i>
+                                            <span>Engineered predictive staffing algorithms using historical and forecasted volume, reducing overtime by 18% and boosting workforce utilization by 22%.</span>
+                                        </li>
+                                        <li class="flex items-start transform transition-all hover:translate-x-2">
+                                            <i class="fas fa-database text-blue-600 dark:text-blue-400 mt-1 mr-2"></i>
+                                            <span>Designed high-accuracy SQL data models (99.8%) across call logs, shift plans, and dispatcher KPIs, enabling clean joins and robust analytics for reporting and dashboards.</span>
+                                        </li>
+                                        <li class="flex items-start transform transition-all hover:translate-x-2">
+                                            <i class="fas fa-chart-bar text-blue-600 dark:text-blue-400 mt-1 mr-2"></i>
+                                            <span>Built interactive Power BI and Tableau dashboards connected to Snowflake, visualizing SLA breaches, dispatcher load, and hourly patterns—cutting ops decision lag by 15%.</span>
+                                        </li>
+                                        <li class="flex items-start transform transition-all hover:translate-x-2">
+                                            <i class="fas fa-chart-pie text-blue-600 dark:text-blue-400 mt-1 mr-2"></i>
+                                            <span>Conducted A/B testing and statistical analysis on staffing plans and schedules, surfacing data-backed improvements to shift strategies adopted by leadership.</span>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <!-- Technical Innovation -->
+                                <div class="mb-6">
+                                    <h5 class="text-lg font-semibold text-gray-700 dark:text-gray-200 mb-4">Technical Innovation</h5>
+                                    <ul class="space-y-3">
+                                        <li class="flex items-start transform transition-all hover:translate-x-2">
+                                            <i class="fas fa-code text-blue-600 dark:text-blue-400 mt-1 mr-2"></i>
+                                            <span>Developed a full-stack internal dashboard (Spring Boot + Angular) with RBAC to recommend shifts, surface anomalies, and visualize forecast trends—reducing SLA breach report time by 30%.</span>
+                                        </li>
+                                        <li class="flex items-start transform transition-all hover:translate-x-2">
+                                            <i class="fas fa-microchip text-blue-600 dark:text-blue-400 mt-1 mr-2"></i>
+                                            <span>Integrated Azure OpenAI and LLaMA LLMs via LangChain to parse real-time dispatcher transcripts and detect anomalies, improving triage visibility and response insight.</span>
+                                        </li>
+                                        <li class="flex items-start transform transition-all hover:translate-x-2">
+                                            <i class="fas fa-handshake text-blue-600 dark:text-blue-400 mt-1 mr-2"></i>
+                                            <span>Secured 5+ service agreements by optimizing ETL latency and client-facing dashboards, increasing satisfaction and operational reliability by 25%.</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <button class="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 mt-6 flex items-center toggle-content group">
+                                <i class="fas fa-plus-circle mr-2 group-hover:transform group-hover:scale-110 transition-transform"></i>
+                                <span class="font-medium">View Detailed Achievements</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- NC State Teaching -->
+                <div class="bg-white dark:bg-gray-800 rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-300" data-aos="fade-up" data-aos-duration="1000">
+                    <div class="flex flex-col md:flex-row justify-between mb-6">
+                        <div>
+                            <div class="flex items-center mb-4" data-aos="fade-right" data-aos-duration="1000">
+                                <img src="assets/images/ncstate img.png" alt="NC State University Logo" class="w-24 h-24 object-contain mr-4 transform transition-transform hover:scale-110">
+                                <div>
+                                    <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-2">Graduate Teaching Assistant</h3>
+                                    <p class="text-blue-600 dark:text-blue-400">North Carolina State University</p>
+                                    <p class="text-gray-500 dark:text-gray-400">Aug 2024 - May 2025 · Part-time</p>
+                                    <p class="text-gray-600 dark:text-gray-300 text-sm">Raleigh, North Carolina, United States</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Teaching Impact -->
+                    <div class="mb-6" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
+                        <h4 class="text-lg font-semibold text-gray-700 dark:text-gray-200 mb-4">Teaching Impact</h4>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="bg-red-50 dark:bg-red-900/20 rounded-lg p-4 transform transition-all hover:scale-105 hover:shadow-lg">
+                                <p class="text-red-600 dark:text-red-300 font-semibold mb-2">Course Coverage</p>
+                                <p class="text-3xl font-bold text-red-700 dark:text-red-200">2</p>
+                                <p class="text-sm text-gray-600 dark:text-gray-300">Advanced ML Courses</p>
+                            </div>
+                            <div class="bg-orange-50 dark:bg-orange-900/20 rounded-lg p-4 transform transition-all hover:scale-105 hover:shadow-lg">
+                                <p class="text-orange-600 dark:text-orange-300 font-semibold mb-2">Teaching Duration</p>
+                                <p class="text-3xl font-bold text-orange-700 dark:text-orange-200">10</p>
+                                <p class="text-sm text-gray-600 dark:text-gray-300">Months of Instruction</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Course Details -->
+                    <div class="space-y-6" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
+                        <!-- CSC 522 -->
+                        <div class="mb-8">
+                            <div class="flex items-center mb-4">
+                                <i class="fas fa-graduation-cap text-red-600 dark:text-red-400 text-xl mr-3"></i>
+                                <h5 class="text-lg font-semibold text-gray-700 dark:text-gray-200">CSC 522: Automated Learning and Data Analysis</h5>
+                            </div>
+                            <p class="text-gray-500 dark:text-gray-400 mb-3 text-sm">Jan 2025 - May 2025 · Under Prof. Thomas Price</p>
+                            <ul class="space-y-3 text-gray-600 dark:text-gray-300">
+                                <li class="flex items-start transform transition-all hover:translate-x-2">
+                                    <i class="fas fa-code text-red-600 dark:text-red-400 mt-1 mr-2"></i>
+                                    <span>Reviewed and evaluated student assignments and projects focused on data mining, supervised and unsupervised learning, predictive modeling, and Python-based machine learning workflows.</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Expandable Details -->
+                        <div class="collapse-content hidden">
+                            <!-- Additional CSC 522 Details -->
+                            <div class="mb-8">
+                                <ul class="space-y-3 text-gray-600 dark:text-gray-300">
+                                    <li class="flex items-start transform transition-all hover:translate-x-2">
+                                        <i class="fas fa-brain text-red-600 dark:text-red-400 mt-1 mr-2"></i>
+                                        <span>Provided constructive feedback on machine learning pipelines, regression models, classification techniques, and clustering algorithms (e.g., K-Means, DBSCAN) to help students strengthen their applied data science skills.</span>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <!-- CSC 591/791 -->
+                            <div class="mb-8">
+                                <div class="flex items-center mb-4">
+                                    <i class="fas fa-graduation-cap text-red-600 dark:text-red-400 text-xl mr-3"></i>
+                                    <h5 class="text-lg font-semibold text-gray-700 dark:text-gray-200">CSC 591/791: Real-Time AI and Machine Learning Systems</h5>
+                                </div>
+                                <p class="text-gray-500 dark:text-gray-400 mb-3 text-sm">Aug 2024 - Dec 2024 · Under Prof. Xipeng Shen</p>
+                                <ul class="space-y-3 text-gray-600 dark:text-gray-300">
+                                    <li class="flex items-start transform transition-all hover:translate-x-2">
+                                    <li class="flex items-start">
+                                        <i class="fas fa-microchip text-red-600 dark:text-red-400 mt-1 mr-2"></i>
+                                        <span>Assisted in grading student assignments, projects, and exams focused on real-time AI systems, optimization techniques (e.g., TensorRT, ONNX Runtime), and performance trade-offs in machine learning model deployment.</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-lightbulb text-red-600 dark:text-red-400 mt-1 mr-2"></i>
+                                        <span>Supported student learning by clarifying complex concepts such as latency optimization, model compression, and efficient inference techniques, and providing guidance on coursework and project deliverables.</span>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <!-- Common Responsibilities -->
+                            <div>
+                                <h5 class="text-lg font-semibold text-gray-700 dark:text-gray-200 mb-4">Teaching Excellence</h5>
+                                <ul class="space-y-3 text-gray-600 dark:text-gray-300">
+                                    <li class="flex items-start">
+                                        <i class="fas fa-chalkboard-teacher text-red-600 dark:text-red-400 mt-1 mr-2"></i>
+                                        <span>Collaborated with faculty to ensure academic standards and smooth course operations, maintaining quality across assignments and course materials.</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-tasks text-red-600 dark:text-red-400 mt-1 mr-2"></i>
+                                        <span>Managed course materials, addressed student queries, and developed comprehensive grading rubrics to ensure consistent evaluation standards.</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <button class="text-red-600 dark:text-red-400 hover:text-red-700 dark:hover:text-red-300 mt-6 flex items-center toggle-content group">
+                            <i class="fas fa-plus-circle mr-2 group-hover:transform group-hover:scale-110 transition-transform"></i>
+                            <span class="font-medium">View More Details</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- DRDO -->
+                <div class="bg-white dark:bg-gray-800 rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-300" data-aos="fade-up" data-aos-duration="1000">
+                    <div class="flex flex-col md:flex-row justify-between mb-6">
+                        <div>
+                            <div class="flex items-center mb-4" data-aos="fade-right" data-aos-duration="1000">
+                                <img src="assets/images/DRDO.png" alt="DRDO Logo" class="w-24 h-24 object-contain mr-4 transform transition-transform hover:scale-110">
+                                <div>
+                                    <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-2">Machine Learning Engineer</h3>
+                                    <p class="text-blue-600 dark:text-blue-400">Centre for Artificial Intelligence & Robotics, DRDO</p>
+                                    <p class="text-gray-500 dark:text-gray-400">Jan 2023 - Jun 2023 · Research Internship</p>
+                                    <p class="text-gray-600 dark:text-gray-300 text-sm">Bengaluru, Karnataka, India · On-site</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Research Highlights -->
+                    <div class="mb-6" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
+                        <h4 class="text-lg font-semibold text-gray-700 dark:text-gray-200 mb-4">Research Highlights</h4>
+                        <div class="space-y-4">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <!-- Key Metrics -->
+                                <div class="bg-purple-50 dark:bg-purple-900/20 rounded-lg p-4 transform transition-all hover:scale-105 hover:shadow-lg">
+                                    <p class="text-purple-600 dark:text-purple-300 font-semibold mb-2">Model Performance</p>
+                                    <p class="text-3xl font-bold text-purple-700 dark:text-purple-200">3.19</p>
+                                    <p class="text-sm text-gray-600 dark:text-gray-300">Language Model Perplexity (SOTA)</p>
+                                </div>
+                                <div class="bg-blue-50 dark:bg-blue-900/20 rounded-lg p-4 transform transition-all hover:scale-105 hover:shadow-lg">
+                                    <p class="text-blue-600 dark:text-blue-300 font-semibold mb-2">Processing Efficiency</p>
+                                    <p class="text-3xl font-bold text-blue-700 dark:text-blue-200">40%</p>
+                                    <p class="text-sm text-gray-600 dark:text-gray-300">Reduction in retraining latency</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Core Research -->
+                    <div class="space-y-4" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
+                        <div class="text-gray-600 dark:text-gray-300">
+                            <h4 class="text-lg font-semibold text-gray-700 dark:text-gray-200 mb-4">Core Research Contributions</h4>
+                            <ul class="space-y-3 mb-4">
+                                <li class="flex items-start transform transition-all hover:translate-x-2">
+                                    <i class="fas fa-flask text-purple-600 dark:text-purple-400 mt-1 mr-2"></i>
+                                    <span>Designed and implemented a Temporal Graph Neural Network (TGNN) architecture using PyTorch Geometric (PyG) to model dynamic user interactions over time for semantic-aware behavioral forecasting. This improved prediction accuracy by 2% compared to state-of-the-art baselines.</span>
+                                </li>
+                                <li class="flex items-start transform transition-all hover:translate-x-2">
+                                    <i class="fas fa-flask text-purple-600 dark:text-purple-400 mt-1 mr-2"></i>
+                                    <span>Developed a streaming NLP pipeline leveraging BERT for learning contextualized word embeddings in an incremental fashion. This addressed semantic drift by dynamically updating token representations without retraining from scratch.</span>
+                                </li>
+                            </ul>
+
+                            <!-- Expandable Details -->
+                            <div class="collapse-content hidden">
+                                <div class="space-y-6">
+                                    <!-- Technical Innovations -->
+                                    <div>
+                                        <h5 class="text-md font-semibold text-gray-700 dark:text-gray-200 mb-3">Technical Innovations</h5>
+                                        <ul class="space-y-3">
+                                            <li class="flex items-start transform transition-all hover:translate-x-2">
+                                                <i class="fas fa-flask text-purple-600 dark:text-purple-400 mt-1 mr-2"></i>
+                                                <span>Pioneered the iBERT + Temporal GNN hybrid model, integrating graph temporal reasoning with evolving language representations. This synergy allowed real-time semantic understanding of conversations and reduced model retraining latency by 40%.</span>
+                                            </li>
+                                            <li class="flex items-start transform transition-all hover:translate-x-2">
+                                                <i class="fas fa-flask text-purple-600 dark:text-purple-400 mt-1 mr-2"></i>
+                                                <span>Achieved a language model perplexity of 3.19, surpassing the prior SOTA benchmark of 3.40 on masked language prediction tasks across evolving news article streams.</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                    <!-- Research Impact -->
+                                    <div>
+                                        <h5 class="text-md font-semibold text-gray-700 dark:text-gray-200 mb-3">Research Impact</h5>
+                                        <ul class="space-y-3">
+                                            <li class="flex items-start transform transition-all hover:translate-x-2">
+                                                <i class="fas fa-flask text-purple-600 dark:text-purple-400 mt-1 mr-2"></i>
+                                                <span>Validated model robustness through synthetic and real-time evaluation on Reddit, arXiv, and news datasets, enabling generalizability in streaming environments.</span>
+                                            </li>
+                                            <li class="flex items-start transform transition-all hover:translate-x-2">
+                                                <i class="fas fa-award text-purple-600 dark:text-purple-400 mt-1 mr-2"></i>
+                                                <span>Contributed to the authorship of the accepted paper "Learning Dynamic Representations in Large Language Models for Evolving Data Streams", presented at the International Conference on Pattern Recognition (ICPR 2024) (Springer).</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <button class="text-purple-600 dark:text-purple-400 hover:text-purple-700 dark:hover:text-purple-300 mt-6 flex items-center toggle-content group">
+                                <i class="fas fa-plus-circle mr-2 group-hover:transform group-hover:scale-110 transition-transform"></i>
+                                <span class="font-medium">View Research Details</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Merkle -->
+                <div class="bg-white dark:bg-gray-800 rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-300" data-aos="fade-up" data-aos-duration="1000">
+                    <div class="flex flex-col md:flex-row justify-between mb-6">
+                        <div>
+                            <div class="flex items-center mb-4" data-aos="fade-right" data-aos-duration="1000">
+                                <img src="assets/images/merkle_logo.png" alt="Merkle Logo" class="w-24 h-24 object-contain mr-4 dark:brightness-110 transform transition-transform hover:scale-110">
+                                <div>
+                                    <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-2">Data Science Intern - ML & Analytics</h3>
+                                    <p class="text-blue-600 dark:text-blue-400">Merkle</p>
+                                    <p class="text-gray-500 dark:text-gray-400">May 2022 - Jul 2022 · Internship</p>
+                                    <p class="text-gray-600 dark:text-gray-300 text-sm">Bengaluru, Karnataka, India · Hybrid</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Key Metrics -->
+                    <div class="mb-6" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
+                        <h4 class="text-lg font-semibold text-gray-700 dark:text-gray-200 mb-4">Impact Metrics</h4>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                            <div class="bg-green-50 dark:bg-green-900/20 rounded-lg p-4 transform transition-all hover:scale-105 hover:shadow-lg">
+                                <p class="text-green-600 dark:text-green-300 font-semibold mb-2">Campaign Profitability</p>
+                                <p class="text-3xl font-bold text-green-700 dark:text-green-200">+10%</p>
+                                <p class="text-sm text-gray-600 dark:text-gray-300">Revenue Optimization</p>
+                            </div>
+                            <div class="bg-blue-50 dark:bg-blue-900/20 rounded-lg p-4 transform transition-all hover:scale-105 hover:shadow-lg">
+                                <p class="text-blue-600 dark:text-blue-300 font-semibold mb-2">Query Performance</p>
+                                <p class="text-3xl font-bold text-blue-700 dark:text-blue-200">40%</p>
+                                <p class="text-sm text-gray-600 dark:text-gray-300">Latency Reduction</p>
+                            </div>
+                            <div class="bg-purple-50 dark:bg-purple-900/20 rounded-lg p-4 transform transition-all hover:scale-105 hover:shadow-lg">
+                                <p class="text-purple-600 dark:text-purple-300 font-semibold mb-2">Data Scale</p>
+                                <p class="text-3xl font-bold text-purple-700 dark:text-purple-200">16M+</p>
+                                <p class="text-sm text-gray-600 dark:text-gray-300">Records Processed</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Core Achievements -->
+                    <div class="space-y-4">
+                        <div class="text-gray-600 dark:text-gray-300">
+                            <h4 class="text-lg font-semibold text-gray-700 dark:text-gray-200 mb-4">Key Achievements</h4>
+                            <ul class="space-y-3 mb-4">
+                                <li class="flex items-start">
+                                    <i class="fas fa-chart-line text-green-600 dark:text-green-400 mt-1 mr-2"></i>
+                                    <span>Led a team of 4 to develop and deploy predictive models including XGBoost, LightGBM, and LSTM on 10M+ retail records, resulting in a 10% uplift in campaign profitability for Home Depot through advanced revenue optimization techniques.</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-database text-green-600 dark:text-green-400 mt-1 mr-2"></i>
+                                    <span>Engineered scalable ETL workflows using PySpark, SQL, and Snowflake, optimizing 16M+ rows of transactional data with partitioning, caching, and indexing strategies that improved query latency by 40%.</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-brain text-green-600 dark:text-green-400 mt-1 mr-2"></i>
+                                    <span>Integrated LLM-based vector embeddings to cluster product descriptions, enabling personalized product targeting and enhancing recommendation precision across retail segments.</span>
+                                </li>
+                            </ul>
+
+                            <!-- Expandable Details -->
+                            <div class="collapse-content hidden">
+                                <div class="space-y-6">
+                                    <!-- Data Engineering -->
+                                    <div>
+                                        <h5 class="text-md font-semibold text-gray-700 dark:text-gray-200 mb-3">Data Engineering & Analytics</h5>
+                                        <ul class="space-y-3">
+                                            <li class="flex items-start">
+                                                <i class="fas fa-cogs text-green-600 dark:text-green-400 mt-1 mr-2"></i>
+                                                <span>Automated batch data pipelines for ingestion, transformation, and validation using PySpark and SQL, reducing manual effort in pricing analytics workflows and increasing system reliability.</span>
+                                            </li>
+                                            <li class="flex items-start">
+                                                <i class="fas fa-chart-bar text-green-600 dark:text-green-400 mt-1 mr-2"></i>
+                                                <span>Designed Power BI and Tableau dashboards for visualizing pricing trends, product segmentation, and real-time sales KPIs, streamlining executive decision-making for 5+ marketing leads.</span>
+                                            </li>
+                                            <li class="flex items-start">
+                                                <i class="fas fa-database text-green-600 dark:text-green-400 mt-1 mr-2"></i>
+                                                <span>Created robust SQL views and stored procedures to support recurring BI reports, reducing reporting turnaround time by over 30%.</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                    <!-- Cross-functional Impact -->
+                                    <div>
+                                        <h5 class="text-md font-semibold text-gray-700 dark:text-gray-200 mb-3">Business Impact & Recognition</h5>
+                                        <ul class="space-y-3">
+                                            <li class="flex items-start">
+                                                <i class="fas fa-users text-green-600 dark:text-green-400 mt-1 mr-2"></i>
+                                                <span>Collaborated with product engineers and analysts to integrate model outputs into internal APIs and UIs, accelerating time-to-action in pricing strategy and A/B testing feedback loops.</span>
+                                            </li>
+                                            <li class="flex items-start">
+                                                <i class="fas fa-chart-pie text-green-600 dark:text-green-400 mt-1 mr-2"></i>
+                                                <span>Conducted statistical analysis and A/B testing to evaluate campaign performance, uncovering key revenue drivers and optimization opportunities.</span>
+                                            </li>
+                                            <li class="flex items-start">
+                                                <i class="fas fa-award text-green-600 dark:text-green-400 mt-1 mr-2"></i>
+                                                <span>Recognized with the 'Stellar Team Award' for delivering the top-performing project in the internship cohort, celebrated for innovation, measurable impact, and cross-functional execution.</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <button class="text-green-600 dark:text-green-400 hover:text-green-700 dark:hover:text-green-300 mt-6 flex items-center toggle-content group">
+                                <i class="fas fa-plus-circle mr-2 group-hover:transform group-hover:scale-110 transition-transform"></i>
+                                <span class="font-medium">View Detailed Impact</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Manipal Institute of Technology -->
+                <div class="bg-white dark:bg-gray-800 rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-300" data-aos="fade-up" data-aos-duration="1000">
+                    <div class="flex flex-col md:flex-row justify-between mb-6">
+                        <div>
+                            <div class="flex items-center mb-4" data-aos="fade-right" data-aos-duration="1000">
+                                <img src="assets/images/MANIPAL-INSTITUTE-OF-TECHNOLOGY img.png" alt="Manipal Institute of Technology Logo" class="w-24 h-24 object-contain mr-4 dark:brightness-110 transform transition-transform hover:scale-110">
+                                <div>
+                                    <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-2">Machine Learning Engineer</h3>
+                                    <p class="text-blue-600 dark:text-blue-400">Manipal Institute of Technology</p>
+                                    <p class="text-gray-500 dark:text-gray-400">Mar 2021 - Jun 2022 · Part-time</p>
+                                    <p class="text-gray-600 dark:text-gray-300 text-sm">Udupi, Karnataka, India · On-site</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Key Metrics -->
+                    <div class="mb-6" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
+                        <h4 class="text-lg font-semibold text-gray-700 dark:text-gray-200 mb-4">Technical Impact</h4>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="bg-indigo-50 dark:bg-indigo-900/20 rounded-lg p-4 transform transition-all hover:scale-105 hover:shadow-lg">
+                                <p class="text-indigo-600 dark:text-indigo-300 font-semibold mb-2">Model Accuracy</p>
+                                <p class="text-3xl font-bold text-indigo-700 dark:text-indigo-200">99.4%</p>
+                                <p class="text-sm text-gray-600 dark:text-gray-300">IoT Network Prediction</p>
+                            </div>
+                            <div class="bg-indigo-50 dark:bg-indigo-900/20 rounded-lg p-4 transform transition-all hover:scale-105 hover:shadow-lg">
+                                <p class="text-indigo-600 dark:text-indigo-300 font-semibold mb-2">Automation Impact</p>
+                                <p class="text-3xl font-bold text-indigo-700 dark:text-indigo-200">60%</p>
+                                <p class="text-sm text-gray-600 dark:text-gray-300">Reduction in Manual Tasks</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Core Projects -->
+                    <div class="space-y-4">
+                        <div class="text-gray-600 dark:text-gray-300">
+                            <h4 class="text-lg font-semibold text-gray-700 dark:text-gray-200 mb-4">Key Projects</h4>
+                            
+                            <!-- Medical Imaging Project -->
+                            <div class="mb-6">
+                                <h5 class="text-md font-semibold text-indigo-600 dark:text-indigo-400 mb-3">Medical Imaging Analysis</h5>
+                                <ul class="space-y-3">
+                                    <li class="flex items-start">
+                                        <i class="fas fa-microscope text-indigo-600 dark:text-indigo-400 mt-1 mr-2"></i>
+                                        <span>Developed a Bone Age Assessment system using medical imaging data of pediatric patients (ages 1–288 months), customizing and benchmarking VGG-16, MobileNet, InceptionV3, and XceptionNet architectures for bone maturity prediction.</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-chart-bar text-indigo-600 dark:text-indigo-400 mt-1 mr-2"></i>
+                                        <span>Conducted comparative analysis using mean average error (MAE) metrics, improving interpretability and model selection for clinical applications.</span>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <!-- Expandable Details -->
+                            <div class="collapse-content hidden">
+                                <!-- IoT Network Project -->
+                                <div class="mb-6">
+                                    <h5 class="text-md font-semibold text-indigo-600 dark:text-indigo-400 mb-3">IoT Network Analysis</h5>
+                                    <ul class="space-y-3">
+                                        <li class="flex items-start">
+                                            <i class="fas fa-network-wired text-indigo-600 dark:text-indigo-400 mt-1 mr-2"></i>
+                                            <span>Designed and deployed LSTM and Bi-LSTM models for channel link quality prediction in IoT network traces, achieving 99.4% accuracy—a 2.1% improvement over existing benchmarks.</span>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <!-- Technical Implementation -->
+                                <div class="mb-6">
+                                    <h5 class="text-md font-semibold text-indigo-600 dark:text-indigo-400 mb-3">Technical Infrastructure</h5>
+                                    <ul class="space-y-3">
+                                        <li class="flex items-start">
+                                            <i class="fas fa-cogs text-indigo-600 dark:text-indigo-400 mt-1 mr-2"></i>
+                                            <span>Streamlined the end-to-end ML pipeline by automating ETL, model training, and REST API deployment using Apache Airflow, AWS SageMaker, ECR, and Flask, reducing manual intervention by 60%.</span>
+                                        </li>
+                                        <li class="flex items-start">
+                                            <i class="fas fa-cloud text-indigo-600 dark:text-indigo-400 mt-1 mr-2"></i>
+                                            <span>Leveraged AWS S3 for efficient data ingestion and versioning, and used Keras, TensorFlow, and Matplotlib for modeling and visualization of network trace dynamics.</span>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <!-- Cross-functional Collaboration -->
+                                <div>
+                                    <h5 class="text-md font-semibold text-indigo-600 dark:text-indigo-400 mb-3">Project Impact</h5>
+                                    <ul class="space-y-3">
+                                        <li class="flex items-start">
+                                            <i class="fas fa-users text-indigo-600 dark:text-indigo-400 mt-1 mr-2"></i>
+                                            <span>Collaborated with faculty on technical implementations, contributing to interdisciplinary innovations at the intersection of healthcare, networking, and AI.</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <button class="text-indigo-600 dark:text-indigo-400 hover:text-indigo-700 dark:hover:text-indigo-300 mt-6 flex items-center toggle-content group">
+                                <i class="fas fa-plus-circle mr-2 group-hover:transform group-hover:scale-110 transition-transform"></i>
+                                <span class="font-medium">View Technical Details</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+   
+    </section>
+
+    <!-- Featured Projects Section -->
+    <section id="all-projects" class="py-20 bg-white dark:bg-gray-900">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-16 text-gray-800 dark:text-white" data-aos="fade-up">Projects</h2>
+            
+            <!-- Filter Bar -->
+            <div class="relative mb-8 overflow-hidden" data-aos="fade-up">
+                <div class="flex flex-wrap justify-center items-center gap-4 pb-4 sticky top-0 bg-white dark:bg-gray-900 z-10 filter-bar">
+                    <button class="filter-btn active whitespace-nowrap px-4 py-2 rounded-full bg-blue-600 text-white hover:bg-blue-700 transition-all" data-filter="all">
+                        Show All
+                    </button>
+                    <button class="filter-btn whitespace-nowrap px-4 py-2 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 transition-all" data-filter="ml">
+                        Machine Learning
+                    </button>
+                    <button class="filter-btn whitespace-nowrap px-4 py-2 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 transition-all" data-filter="nlp">
+                        NLP & LLMs
+                    </button>
+                    <button class="filter-btn whitespace-nowrap px-4 py-2 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 transition-all" data-filter="cv">
+                        Computer Vision
+                    </button>
+                    <button class="filter-btn whitespace-nowrap px-4 py-2 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 transition-all" data-filter="fullstack">
+                        Full-Stack
+                    </button>
+                    <button class="filter-btn whitespace-nowrap px-4 py-2 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 transition-all" data-filter="mlops">
+                        MLOps
+                    </button>
+                    <button class="filter-btn whitespace-nowrap px-4 py-2 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 transition-all" data-filter="analytics">
+                        Analytics
+                    </button>
+                    <button class="filter-btn whitespace-nowrap px-4 py-2 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 transition-all" data-filter="genai">
+                        Generative AI
+                    </button>
+                </div>
+                <!-- Gradient fade for horizontal scroll -->
+                <div class="absolute right-0 top-0 h-full w-24 bg-gradient-to-l from-white dark:from-gray-900 to-transparent pointer-events-none"></div>
+            </div>
+
+            <style>
+                .filter-bar {
+                    -ms-overflow-style: none;
+                    scrollbar-width: none;
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: center;
+                    gap: 1rem;
+                    padding: 1rem;
+                }
+                
+                .filter-bar::-webkit-scrollbar {
+                    display: none;
+                }
+
+                @media (max-width: 768px) {
+                    .filter-bar {
+                        justify-content: flex-start;
+                        flex-wrap: nowrap;
+                        overflow-x: auto;
+                        padding-bottom: 1rem;
+                        margin-bottom: 1rem;
+                        border-bottom: 1px solid rgba(156, 163, 175, 0.1);
+                    }
+                }
+            </style>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Wolf Parking Management System -->
+                <div class="project-card bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105" 
+                     data-aos="fade-up"
+                     data-tags="fullstack,analytics">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-3">Wolf Parking Management System</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">
+                            A campus-wide parking management system that tracks lot availability, zoning rules, permit assignments, and citations. It allows administrators to efficiently manage parking resources, issue fines, and generate reports to support data-driven decisions for better traffic control and user experience.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 rounded-full text-sm">Java</span>
+                            <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 rounded-full text-sm">SQL</span>
+                            <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 rounded-full text-sm">MariaDB</span>
+                            <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 rounded-full text-sm">Database Design</span>
+                        </div>
+                        <a href="https://github.com/aravinda-1402/Wolf-Parking-Database-Management-System" class="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 flex items-center">
+                            <i class="fab fa-github mr-2"></i> View on GitHub
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Cold Email Generator -->
+                <div class="project-card bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105" 
+                     data-aos="fade-up"
+                     data-tags="nlp,llm,mlops,fullstack,genai">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-3">Cold Email Generator</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">
+                            An automated cold outreach tool that combines LangChain's ChatGroq + LLaMA3 with ChromaDB to extract job descriptions, match user skills, and generate personalized emails using RAG. Includes an interactive Streamlit UI for seamless job-to-email generation.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 rounded-full text-sm">LangChain</span>
+                            <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 rounded-full text-sm">LLaMA3</span>
+                            <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 rounded-full text-sm">ChromaDB</span>
+                            <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 rounded-full text-sm">RAG</span>
+                            <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 rounded-full text-sm">Streamlit</span>
+                        </div>
+                        <a href="https://github.com/aravinda-1402/Cold_Email_Generator" class="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 flex items-center">
+                            <i class="fab fa-github mr-2"></i> View on GitHub
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Legal Query Assistant -->
+                <div class="project-card bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105" 
+                     data-aos="fade-up"
+                     data-tags="nlp,llm,mlops,fullstack,genai">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-3">Legal Query AI Assistant</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">
+                            A chatbot powered by LLMs (OpenAI GPT / LLaMA) and RAG, designed to retrieve, summarize, and answer complex legal queries from document repositories with high accuracy and fast vector-based search.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 rounded-full text-sm">GPT</span>
+                            <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 rounded-full text-sm">LangChain</span>
+                            <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 rounded-full text-sm">RAG</span>
+                            <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 rounded-full text-sm">Vector Search</span>
+                        </div>
+                        <a href="https://github.com/aravinda-1402/Legal-Query-AI-Assistant" class="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 flex items-center">
+                            <i class="fab fa-github mr-2"></i> View on GitHub
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Customer Churn Prediction -->
+                <div class="project-card bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105" 
+                     data-aos="fade-up"
+                     data-tags="ml,mlops,analytics,fullstack">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-3">Customer Churn Prediction</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">
+                            Built a full ML pipeline for predicting customer churn using Apache Airflow, AWS (S3, SageMaker, ECR), and Dockerized Flask APIs, enabling scalable deployment and real-time churn inference.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 rounded-full text-sm">AWS</span>
+                            <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 rounded-full text-sm">Airflow</span>
+                            <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 rounded-full text-sm">Docker</span>
+                            <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 rounded-full text-sm">Flask</span>
+                        </div>
+                        <a href="https://github.com/aravinda-1402/Customer-Churn-Prediction" class="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 flex items-center">
+                            <i class="fab fa-github mr-2"></i> View on GitHub
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Lane Detection -->
+                <div class="project-card bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105" 
+                     data-aos="fade-up"
+                     data-tags="cv,ml">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-3">Lane Detection for Autonomous Vehicles</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">
+                            Implemented a hybrid SegNet + LSTM deep learning model to detect lane lines, compute lane curvature, and measure vehicle offset using OpenCV-based image processing.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 rounded-full text-sm">SegNet</span>
+                            <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 rounded-full text-sm">LSTM</span>
+                            <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 rounded-full text-sm">OpenCV</span>
+                            <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 rounded-full text-sm">Computer Vision</span>
+                        </div>
+                        <a href="https://github.com/aravinda-1402/Lane-Detection-for-Autonomous-Vehicles" class="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 flex items-center">
+                            <i class="fab fa-github mr-2"></i> View on GitHub
+                        </a>
+                    </div>
+                </div>
+
+                <!-- COVID Detection -->
+                <div class="project-card bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105" 
+                     data-aos="fade-up"
+                     data-tags="cv,ml">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-3">COVID-19 Detection using Chest X-rays</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">
+                            Developed a CNN-based classifier to detect pneumonia (COVID-19) from chest X-ray images, achieving 95.28% training accuracy and 89.52% validation accuracy using preprocessed radiology data.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 rounded-full text-sm">CNN</span>
+                            <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 rounded-full text-sm">TensorFlow</span>
+                            <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 rounded-full text-sm">Medical Imaging</span>
+                        </div>
+                        <a href="https://github.com/aravinda-1402/Covid-Detection-model-using-Chest-X-ray" class="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 flex items-center">
+                            <i class="fab fa-github mr-2"></i> View on GitHub
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Store Demand Forecasting -->
+                <div class="project-card bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105" 
+                     data-aos="fade-up"
+                     data-tags="ml,mlops,analytics,fullstack">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-3">Store Demand Forecasting using Time-Series and Neural Networks</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">
+                            Built a robust hybrid forecasting model combining CNN and BiLSTM architectures to predict daily item-level sales across 10 stores. Leveraged the Kaggle Store-Item Demand Forecasting dataset (2013–2017) and benchmarked against models like XGBoost, ANN, and ARIMA. The hybrid model achieved the lowest MSE, improving forecasting precision and enabling optimized retail inventory decisions.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 rounded-full text-sm">CNN</span>
+                            <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 rounded-full text-sm">BiLSTM</span>
+                            <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 rounded-full text-sm">Time Series</span>
+                            <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 rounded-full text-sm">XGBoost</span>
+                        </div>
+                        <a href="https://github.com/aravinda-1402/Store-Demand-Forecasting-using-Time-Series-and-Neural-Networks" class="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 flex items-center">
+                            <i class="fab fa-github mr-2"></i> View on GitHub
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Image-to-Image Translation -->
+                <div class="project-card bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105" 
+                     data-aos="fade-up"
+                     data-tags="cv,ml">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-3">Image-to-Image Translation using CycleGAN</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">
+                            Implemented CycleGAN to translate images between domains without paired datasets—such as Monet paintings to real photographs and human faces to zombies. Trained on publicly available datasets and deployed the model for real-time translation, showcasing the power of unsupervised generative learning in computer vision tasks.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 rounded-full text-sm">CycleGAN</span>
+                            <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 rounded-full text-sm">Computer Vision</span>
+                            <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 rounded-full text-sm">Deep Learning</span>
+                        </div>
+                        <a href="https://github.com/aravinda-1402/CycleGAN-for-Image-Translation" class="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 flex items-center">
+                            <i class="fab fa-github mr-2"></i> View on GitHub
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Brain Tumor Segmentation -->
+                <div class="project-card bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105" 
+                     data-aos="fade-up"
+                     data-tags="cv,ml">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-3">Brain Tumor Segmentation using MRI Scans</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">
+                            Used U-Net architecture to perform semantic segmentation on brain MRI images, detecting and outlining tumor regions. The project utilized the LGG MRI Segmentation dataset from Kaggle and focused on pixel-level mask prediction using FLAIR MRI sequences. Achieved high segmentation accuracy and visual interpretability for potential medical diagnostics.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 rounded-full text-sm">U-Net</span>
+                            <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 rounded-full text-sm">Medical Imaging</span>
+                            <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 rounded-full text-sm">Segmentation</span>
+                        </div>
+                        <a href="https://github.com/aravinda-1402/Brain-MRI-Classification-Segmentation" class="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 flex items-center">
+                            <i class="fab fa-github mr-2"></i> View on GitHub
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Movie Recommendation System -->
+                <div class="project-card bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105" 
+                     data-aos="fade-up"
+                     data-tags="nlp,analytics,ml">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-3">Movie Recommendation System using Collaborative Filtering</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">
+                            Designed a hybrid recommender system that combines cosine similarity with sentiment analysis to suggest movies tailored to user preferences. Scraped metadata from TMDB and IMDB, offering dynamic updates, cast bios, trailers, and review sentiment. Upgraded from a static recommendation system to an interactive, emotionally aware movie discovery experience.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 rounded-full text-sm">Collaborative Filtering</span>
+                            <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 rounded-full text-sm">NLP</span>
+                            <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 rounded-full text-sm">Sentiment Analysis</span>
+                        </div>
+                        <a href="https://github.com/aravinda-1402/Movie-Recommendation-System" class="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 flex items-center">
+                            <i class="fab fa-github mr-2"></i> View on GitHub
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            
+        </div>
+    </section>
+
+    <script>
+
+
+        // Project filtering functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const projectCards = document.querySelectorAll('.project-card');
+
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Remove active class from all buttons
+                    filterButtons.forEach(btn => btn.classList.remove('active', 'bg-blue-600', 'text-white'));
+                    filterButtons.forEach(btn => btn.classList.add('bg-gray-200', 'dark:bg-gray-700', 'text-gray-700', 'dark:text-gray-300'));
+                    
+                    // Add active class to clicked button
+                    button.classList.add('active', 'bg-blue-600', 'text-white');
+                    button.classList.remove('bg-gray-200', 'dark:bg-gray-700', 'text-gray-700', 'dark:text-gray-300');
+                    
+                    const filter = button.getAttribute('data-filter');
+                    
+                    projectCards.forEach(card => {
+                        // Get tags for the card
+                        const tags = card.getAttribute('data-tags').split(',');
+                        
+                        // Show all cards if "all" filter is selected
+                        if (filter === 'all') {
+                            card.style.display = '';
+                            card.classList.remove('fade-out');
+                            card.classList.add('fade-in');
+                        } else {
+                            // Show card if it has the selected tag, hide otherwise
+                            if (tags.includes(filter)) {
+                                card.style.display = '';
+                                card.classList.remove('fade-out');
+                                card.classList.add('fade-in');
+                            } else {
+                                card.classList.add('fade-out');
+                                card.classList.remove('fade-in');
+                                setTimeout(() => {
+                                    card.style.display = 'none';
+                                }, 300);
+                            }
+                        }
+                    });
+
+                    // Show additional projects if they were hidden
+                    const additionalProjects = document.getElementById('additional-projects');
+                    if (additionalProjects.classList.contains('hidden')) {
+                        additionalProjects.classList.remove('hidden');
+                        document.getElementById('viewAllButtonText').textContent = 'Show Less';
+                        document.getElementById('viewAllArrow').style.transform = 'rotate(90deg)';
+                    }
+                });
+            });
+        });
+    </script>
+
+    <!-- Research Papers Section -->
+    <section id="research-papers" class="py-20 bg-gray-50 dark:bg-gray-800">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-16 text-gray-800 dark:text-white" data-aos="fade-up">Research Papers</h2>
+            
+            <!-- Filter Bar -->
+            <div class="relative mb-8 overflow-hidden" data-aos="fade-up">
+                <div class="flex flex-wrap justify-center items-center gap-4 pb-4 sticky top-0 bg-gray-50 dark:bg-gray-800 z-10 filter-bar-papers">
+                    <button class="filter-paper-btn active whitespace-nowrap px-4 py-2 rounded-full bg-blue-600 text-white hover:bg-blue-700 transition-all" data-filter="all">
+                        Show All
+                    </button>
+                    <button class="filter-paper-btn whitespace-nowrap px-4 py-2 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 transition-all" data-filter="llms-nlp">
+                        LLMs & NLP
+                    </button>
+                    <button class="filter-paper-btn whitespace-nowrap px-4 py-2 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 transition-all" data-filter="ai-ethics">
+                        AI Ethics & Policy
+                    </button>
+                    <button class="filter-paper-btn whitespace-nowrap px-4 py-2 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 transition-all" data-filter="computer-vision">
+                        Computer Vision
+                    </button>
+                    <button class="filter-paper-btn whitespace-nowrap px-4 py-2 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 transition-all" data-filter="recommender-systems">
+                        Recommender Systems
+                    </button>
+                    <button class="filter-paper-btn whitespace-nowrap px-4 py-2 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 transition-all" data-filter="healthcare-ai">
+                        Healthcare AI
+                    </button>
+                    <button class="filter-paper-btn whitespace-nowrap px-4 py-2 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 transition-all" data-filter="graph-learning">
+                        Graph Learning
+                    </button>
+                    <button class="filter-paper-btn whitespace-nowrap px-4 py-2 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 transition-all" data-filter="time-series">
+                        Time Series & Forecasting
+                    </button>
+                    <button class="filter-paper-btn whitespace-nowrap px-4 py-2 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 transition-all" data-filter="privacy-fairness">
+                        Privacy & Fairness
+                    </button>
+                        </div>
+                <!-- Gradient fade for horizontal scroll -->
+                <div class="absolute right-0 top-0 h-full w-24 bg-gradient-to-l from-gray-50 dark:from-gray-800 to-transparent pointer-events-none"></div>
+                    </div>
+
+            <!-- Papers Grid -->
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Enhancing Privacy in LLMs -->
+                <div class="paper-card bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105" 
+                     data-aos="fade-up"
+                     data-tags="llms-nlp,privacy-fairness,healthcare-ai">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-3">Enhancing Privacy in Large Language Models: A Comparative Study on Input Retention and Sanitization Techniques</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">
+                            Novel approach to privacy-preserving language models in healthcare settings, combining differential privacy with federated learning for secure patient data handling.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 rounded-full text-sm">LLMs & NLP</span>
+                            <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 rounded-full text-sm">Privacy & Fairness</span>
+                        <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 rounded-full text-sm">Healthcare AI</span>
+                    </div>
+                        <div class="flex flex-col space-y-4">
+                            <button class="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 flex items-center read-abstract-btn" onclick="toggleAbstract(this)">
+                                <i class="fas fa-plus-circle mr-2 transition-transform duration-300"></i>
+                                <span>Read Abstract</span>
+                    </button>
+                            <div class="hidden abstract-content overflow-hidden transition-all duration-300">
+                                <p class="text-gray-600 dark:text-gray-300 text-sm bg-gray-50 dark:bg-gray-700/50 p-4 rounded-lg">
+                                    Large Language Models (LLMs) have shown remarkable capabilities in privacy-sensitive domains like healthcare and hiring. However, concerns around regurgitating Personally Identifiable Information (PII) and Protected Health Information (PHI) persist. This study evaluates GPT-3.5, GPT-4, and GPT-4 Turbo, examining their propensity to leak sensitive data and the effectiveness of prompt-induced sanitization techniques. Using synthetic datasets reflecting HIPAA and GDPR compliance requirements, the models were benchmarked across privacy leakage, anonymization accuracy, and contextual utility. Our results show that GPT-4 and GPT-4 Turbo significantly reduce sensitive data leakage while preserving output utility, providing actionable insights for deploying LLMs in regulated environments.
+                                </p>
+                    </div>
+                            <a href="https://drive.google.com/file/d/1YKIRY_XNosfDjVPmS23e_V74kEHvxJ3h/view?usp=drive_link" target="_blank" class="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 flex items-center">
+                                <i class="fas fa-external-link-alt mr-2"></i> View Paper
+                            </a>
+                </div>
+                        </div>
+                    </div>
+
+                <!-- Learning Dynamic Representations in LLMs -->
+                <div class="paper-card bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105" 
+                     data-aos="fade-up"
+                     data-tags="llms-nlp,graph-learning">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-3">Learning Dynamic Representations in Large Language Models for Evolving Data Streams</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">
+                            Investigation of dynamic representation learning in large language models using graph-based attention mechanisms for improved context understanding.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 rounded-full text-sm">LLMs & NLP</span>
+                            <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 rounded-full text-sm">Graph Learning</span>
+                    </div>
+                        <div class="flex flex-col space-y-4">
+                            <button class="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 flex items-center read-abstract-btn" onclick="toggleAbstract(this)">
+                                <i class="fas fa-plus-circle mr-2 transition-transform duration-300"></i>
+                                <span>Read Abstract</span>
+                    </button>
+                            <div class="hidden abstract-content overflow-hidden transition-all duration-300">
+                                <p class="text-gray-600 dark:text-gray-300 text-sm bg-gray-50 dark:bg-gray-700/50 p-4 rounded-lg">
+                                    This research introduces a novel approach to dynamic representation learning in large language models, focusing on the integration of graph-based attention mechanisms. We propose an innovative framework that enhances contextual understanding by modeling relationships between tokens as dynamic graph structures. Our method demonstrates significant improvements in various NLP tasks, particularly in scenarios requiring complex reasoning and long-range dependencies. The results show enhanced performance in maintaining context coherence and capturing semantic relationships across diverse domains.
+                                </p>
+                    </div>
+                            <a href="https://link.springer.com/chapter/10.1007/978-3-031-78169-8_16" target="_blank" class="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 flex items-center">
+                                <i class="fas fa-external-link-alt mr-2"></i> View Paper
+                            </a>
+                </div>
+                        </div>
+                    </div>
+
+                <!-- SDN-Based Multipath Offloading -->
+                <div class="paper-card bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105" 
+                     data-aos="fade-up"
+                     data-tags="time-series">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-3">SDN-Based Multipath Data Offloading Scheme Using Link Quality Prediction for LTE and WiFi Networks</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">
+                            Time series analysis and prediction framework for optimizing network traffic offloading in 5G networks using software-defined networking.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 rounded-full text-sm">Time Series & Forecasting</span>
+                            <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 rounded-full text-sm">5G Networks</span>
+                    </div>
+                        <div class="flex flex-col space-y-4">
+                            <button class="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 flex items-center read-abstract-btn" onclick="toggleAbstract(this)">
+                                <i class="fas fa-plus-circle mr-2 transition-transform duration-300"></i>
+                                <span>Read Abstract</span>
+                    </button>
+                            <div class="hidden abstract-content overflow-hidden transition-all duration-300">
+                                <p class="text-gray-600 dark:text-gray-300 text-sm bg-gray-50 dark:bg-gray-700/50 p-4 rounded-lg">
+                                    The continuous growth of mobile traffic and limited spectrum resources limits the capacity and data rate. This study explores the benefits of Software-Defined Networking (SDN) based multipath for data offloading schemes in LTE-WiFi integrated networks. We classify future link qualities using deep learning models such as LSTM and Bi-LSTM, achieving a 2.1% improvement over state-of-the-art methods. The implementation demonstrated a 6.29% improvement in average throughput compared to existing approaches.
+                                </p>
+                    </div>
+                            <a href="https://ieeexplore.ieee.org/abstract/document/10767139" target="_blank" class="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 flex items-center">
+                                <i class="fas fa-external-link-alt mr-2"></i> View Paper
+                            </a>
+                </div>
+                        </div>
+                    </div>
+
+                <!-- Improving Fairness in Visual Recognition -->
+                <div class="paper-card bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105" 
+                     data-aos="fade-up"
+                     data-tags="computer-vision,privacy-fairness">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-3">Improving Fairness in Visual Recognition through Feature Distillation and Adversarial Debiasing</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">
+                            Novel approach to mitigating bias in computer vision models through adversarial debiasing and balanced representation learning.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 rounded-full text-sm">Computer Vision</span>
+                            <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 rounded-full text-sm">Privacy & Fairness</span>
+                    </div>
+                        <div class="flex flex-col space-y-4">
+                            <button class="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 flex items-center read-abstract-btn" onclick="toggleAbstract(this)">
+                                <i class="fas fa-plus-circle mr-2 transition-transform duration-300"></i>
+                                <span>Read Abstract</span>
+                    </button>
+                            <div class="hidden abstract-content overflow-hidden transition-all duration-300">
+                                <p class="text-gray-600 dark:text-gray-300 text-sm bg-gray-50 dark:bg-gray-700/50 p-4 rounded-lg">
+                                    This paper introduces a feature distillation framework that aims to learn fairer representations without significantly sacrificing task performance. We propose a Maximum Mean Discrepancy (MMD)-based loss to distill information from an unfair teacher network while encouraging feature invariance across protected attributes such as race or gender. Our method demonstrates marked reduction in disparity measures while maintaining competitive accuracy on standard computer vision benchmarks.
+                                </p>
+                    </div>
+                            <a href="https://drive.google.com/file/d/1R5COOj2JY-Omxbo9tsHxiVuBQ6Jpqou2/view?usp=drive_link" target="_blank" class="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 flex items-center">
+                                <i class="fas fa-external-link-alt mr-2"></i> View Paper
+                            </a>
+                </div>
+                        </div>
+                    </div>
+
+                <!-- Multimodal Conversation Derailment Detection -->
+                <div class="paper-card bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105" 
+                     data-aos="fade-up"
+                     data-tags="computer-vision,llms-nlp">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-3">Multimodal Conversation Derailment Detection: An Integrated Framework for Early Risk Assessment</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">
+                            Integration of visual and textual cues for early detection of conversation derailment in multimodal AI systems.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 rounded-full text-sm">Computer Vision</span>
+                            <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 rounded-full text-sm">LLMs & NLP</span>
+                        <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 rounded-full text-sm">Multimodal AI</span>
+                    </div>
+                        <div class="flex flex-col space-y-4">
+                            <button class="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 flex items-center read-abstract-btn" onclick="toggleAbstract(this)">
+                                <i class="fas fa-plus-circle mr-2 transition-transform duration-300"></i>
+                                <span>Read Abstract</span>
+                    </button>
+                            <div class="hidden abstract-content overflow-hidden transition-all duration-300">
+                                <p class="text-gray-600 dark:text-gray-300 text-sm bg-gray-50 dark:bg-gray-700/50 p-4 rounded-lg">
+                                    This paper presents a hierarchical transformer-based framework that jointly models textual and visual modalities for detecting derailment in multimodal discussions. The proposed system integrates BERT-based text encoding with Faster R-CNN-derived visual features, achieving 71.0% accuracy and 78.3% AUC, outperforming text-only baselines by 6.1%. Our approach demonstrates the importance of multimodal cues in understanding conversation dynamics and early detection of potential derailments.
+                                </p>
+                    </div>
+                            <a href="https://drive.google.com/file/d/18lczqZVlpkBnT68dv-w-8IUNeHbGWiB4/view?usp=drive_link" target="_blank" class="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 flex items-center">
+                                <i class="fas fa-external-link-alt mr-2"></i> View Paper
+                            </a>
+                </div>
+                        </div>
+                    </div>
+
+                <!-- Graph Contrastive Learning -->
+                <div class="paper-card bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105" 
+                     data-aos="fade-up"
+                     data-tags="recommender-systems,graph-learning">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-3">Graph Contrastive Learning for Optimizing Sparse Data in Recommender Systems with LightGCL</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">
+                            Development of a lightweight graph contrastive learning framework for efficient recommendation systems.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 rounded-full text-sm">Recommender Systems</span>
+                            <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 rounded-full text-sm">Graph Learning</span>
+                    </div>
+                        <div class="flex flex-col space-y-4">
+                            <button class="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 flex items-center read-abstract-btn" onclick="toggleAbstract(this)">
+                                <i class="fas fa-plus-circle mr-2 transition-transform duration-300"></i>
+                                <span>Read Abstract</span>
+                    </button>
+                            <div class="hidden abstract-content overflow-hidden transition-all duration-300">
+                                <p class="text-gray-600 dark:text-gray-300 text-sm bg-gray-50 dark:bg-gray-700/50 p-4 rounded-lg">
+                                    We introduce LightGCL, a novel and streamlined graph contrastive learning model for recommendation systems. Unlike existing methods that rely on stochastic perturbations or heuristic approaches, LightGCL utilizes Singular Value Decomposition (SVD) to achieve robust augmentation, facilitating structural refinement and global collaborative relation modeling. Our experiments demonstrate substantial performance improvements over state-of-the-art methods, particularly in handling data sparsity and popularity bias challenges.
+                                </p>
+                    </div>
+                            <a href="https://drive.google.com/file/d/1ND3R-cwxMfOw16Wutt6KToq9feTAH5JE/view?usp=drive_link" target="_blank" class="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 flex items-center">
+                                <i class="fas fa-external-link-alt mr-2"></i> View Paper
+                            </a>
+                </div>
+                        </div>
+                    </div>
+
+                <!-- Tesla's Autopilot Ethics -->
+                <div class="paper-card bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105" 
+                     data-aos="fade-up"
+                     data-tags="ai-ethics">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-3">Tesla's Autopilot: Ethical Implications and Policy Considerations in Autonomous Vehicle Systems</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">
+                            Analysis of ethical considerations and policy implications in autonomous vehicle systems, focusing on Tesla's Autopilot implementation.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 rounded-full text-sm">AI Ethics & Policy</span>
+                            <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 rounded-full text-sm">Autonomous Systems</span>
+                    </div>
+                        <div class="flex flex-col space-y-4">
+                            <button class="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 flex items-center read-abstract-btn" onclick="toggleAbstract(this)">
+                                <i class="fas fa-plus-circle mr-2 transition-transform duration-300"></i>
+                                <span>Read Abstract</span>
+                    </button>
+                            <div class="hidden abstract-content overflow-hidden transition-all duration-300">
+                                <p class="text-gray-600 dark:text-gray-300 text-sm bg-gray-50 dark:bg-gray-700/50 p-4 rounded-lg">
+                                    This case study delves into the ethical ramifications of incidents involving Tesla's Autopilot, emphasizing Tesla Motors' moral responsibility. Using a seven-step ethical decision-making process, we examine user behavior, system constraints, and regulatory implications. The analysis offers insights into ethical considerations in evolving technological landscapes and proposes a framework for evaluating autonomous system deployments in safety-critical applications.
+                                </p>
+                    </div>
+                            <a href="https://arxiv.org/abs/2409.17380" target="_blank" class="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 flex items-center">
+                                <i class="fas fa-external-link-alt mr-2"></i> View Paper
+                            </a>
+                </div>
+                        </div>
+                    </div>
+
+                <!-- Flight Delay Prediction -->
+                <div class="paper-card bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105" 
+                     data-aos="fade-up"
+                     data-tags="time-series">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-3">Deciphering Air Travel Disruptions: A Machine Learning Approach to Flight Delay Prediction</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">
+                            Time series forecasting model for predicting flight delays using weather data and historical flight performance.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 rounded-full text-sm">Time Series & Forecasting</span>
+                        <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 rounded-full text-sm">Aviation</span>
+                    </div>
+                        <div class="flex flex-col space-y-4">
+                            <button class="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 flex items-center read-abstract-btn" onclick="toggleAbstract(this)">
+                                <i class="fas fa-plus-circle mr-2 transition-transform duration-300"></i>
+                                <span>Read Abstract</span>
+                    </button>
+                            <div class="hidden abstract-content overflow-hidden transition-all duration-300">
+                                <p class="text-gray-600 dark:text-gray-300 text-sm bg-gray-50 dark:bg-gray-700/50 p-4 rounded-lg">
+                                    This research investigates flight delay trends by examining factors such as departure time, airline, and weather conditions. We employ time-series models including LSTM, Hybrid LSTM, and Bi-LSTM, comparing them with baseline regression models. Our approach focuses on identifying influential features in delay prediction, potentially informing flight planning strategies. The study demonstrates the effectiveness of deep learning approaches in capturing complex temporal patterns in aviation operations.
+                                </p>
+                    </div>
+                            <a href="https://arxiv.org/abs/2408.02802" target="_blank" class="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 flex items-center">
+                                <i class="fas fa-external-link-alt mr-2"></i> View Paper
+                            </a>
+                </div>
+                        </div>
+                    </div>
+
+                <!-- Diabetes Prognosis -->
+                <div class="paper-card bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105" 
+                     data-aos="fade-up"
+                     data-tags="healthcare-ai">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-3">Diabetes Prognosis using Machine Learning: A Comparative Analysis of Classification Algorithms</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">
+                            Machine learning approach to diabetes prognosis using patient data and clinical markers for early detection.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 rounded-full text-sm">Healthcare AI</span>
+                            <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 rounded-full text-sm">Classification Models</span>
+                    </div>
+                        <div class="flex flex-col space-y-4">
+                            <button class="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 flex items-center read-abstract-btn" onclick="toggleAbstract(this)">
+                                <i class="fas fa-plus-circle mr-2 transition-transform duration-300"></i>
+                                <span>Read Abstract</span>
+                    </button>
+                            <div class="hidden abstract-content overflow-hidden transition-all duration-300">
+                                <p class="text-gray-600 dark:text-gray-300 text-sm bg-gray-50 dark:bg-gray-700/50 p-4 rounded-lg">
+                                    This study addresses the critical need for early diabetes detection using machine learning algorithms. We compare K-Nearest Neighbor, Random Forest, and Artificial Neural Network approaches, incorporating comprehensive preprocessing and feature engineering strategies. The Random Forest classifier achieved the highest accuracy of 87.89%, significantly outperforming traditional diagnostic methods and demonstrating the potential for ML-assisted medical decision-making.
+                                </p>
+                    </div>
+                            <a href="https://ieeexplore.ieee.org/abstract/document/9985487" target="_blank" class="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 flex items-center">
+                                <i class="fas fa-external-link-alt mr-2"></i> View Paper
+                            </a>
+                </div>
+                        </div>
+                    </div>
+
+                <!-- Pediatric Bone Age Estimation -->
+                <div class="paper-card bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105" 
+                     data-aos="fade-up"
+                     data-tags="computer-vision,healthcare-ai">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-3">Pediatric Bone Age Assessment using Deep Learning Models: A Comparative Study of CNN Architectures</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">
+                            Deep learning approach to automated bone age assessment using X-ray images for pediatric growth evaluation.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 rounded-full text-sm">Computer Vision</span>
+                        <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 rounded-full text-sm">Medical Imaging</span>
+                        <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 rounded-full text-sm">Deep Learning</span>
+                    </div>
+                        <div class="flex flex-col space-y-4">
+                            <button class="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 flex items-center read-abstract-btn" onclick="toggleAbstract(this)">
+                                <i class="fas fa-plus-circle mr-2 transition-transform duration-300"></i>
+                                <span>Read Abstract</span>
+                    </button>
+                            <div class="hidden abstract-content overflow-hidden transition-all duration-300">
+                                <p class="text-gray-600 dark:text-gray-300 text-sm bg-gray-50 dark:bg-gray-700/50 p-4 rounded-lg">
+                                    This research evaluates deep learning models for automated bone age assessment, comparing pre-trained architectures including VGG-16, InceptionV3, XceptionNet, and MobileNet. Our study focuses on pediatric X-ray images, developing a system that can accurately determine skeletal maturity without expert intervention. The results demonstrate the potential for AI-assisted growth evaluation in clinical settings, with particular emphasis on reducing assessment time while maintaining accuracy.
+                                </p>
+                    </div>
+                            <a href="https://arxiv.org/abs/2207.10169" target="_blank" class="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 flex items-center">
+                                <i class="fas fa-external-link-alt mr-2"></i> View Paper
+                            </a>
+                </div>
+            </div>
+        </div>
+            </div>
+        </div>
+
+        <style>
+            .filter-bar-papers {
+                -ms-overflow-style: none;
+                scrollbar-width: none;
+            }
+            
+            .filter-bar-papers::-webkit-scrollbar {
+                display: none;
+            }
+
+            .paper-card {
+                transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+            }
+
+            @media (max-width: 768px) {
+                .filter-bar-papers {
+                    padding-bottom: 1rem;
+                    margin-bottom: 1rem;
+                    border-bottom: 1px solid rgba(156, 163, 175, 0.1);
+                }
+            }
+        </style>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const filterButtons = document.querySelectorAll('.filter-paper-btn');
+                const papers = document.querySelectorAll('.paper-card');
+
+                filterButtons.forEach(button => {
+                    button.addEventListener('click', () => {
+                        // Remove active class from all buttons
+                        filterButtons.forEach(btn => btn.classList.remove('active', 'bg-blue-600', 'text-white'));
+                        filterButtons.forEach(btn => btn.classList.add('bg-gray-200', 'dark:bg-gray-700', 'text-gray-700', 'dark:text-gray-300'));
+                        
+                        // Add active class to clicked button
+                        button.classList.add('active', 'bg-blue-600', 'text-white');
+                        button.classList.remove('bg-gray-200', 'dark:bg-gray-700', 'text-gray-700', 'dark:text-gray-300');
+                        
+                        const filter = button.getAttribute('data-filter');
+                        
+                        papers.forEach(paper => {
+                            const tags = paper.getAttribute('data-tags').split(',');
+                            
+                            if (filter === 'all' || tags.includes(filter)) {
+                                paper.style.display = 'block';
+                                paper.classList.remove('fade-out');
+                                paper.classList.add('fade-in');
+                            } else {
+                                paper.classList.add('fade-out');
+                                paper.classList.remove('fade-in');
+                                setTimeout(() => {
+                                    paper.style.display = 'none';
+                                }, 300);
+                            }
+                        });
+                    });
+                });
+            });
+        </script>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white dark:bg-gray-900">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-16 text-gray-800 dark:text-white" data-aos="fade-up">Let's Connect</h2>
+            
+            <div class="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
+                <!-- Contact Information -->
+                <div class="space-y-8" data-aos="fade-right">
+                    <p class="text-gray-600 dark:text-gray-300 text-justify">
+                        Actively seeking full-time opportunities as an AI/ML Engineer, Data Scientist, Data Analyst, or Data Engineer. Whether you're building innovative systems or solving real-world problems with data, I'd love to be a part of it. Let's chat about how I can help your team move faster with intelligent, scalable solutions.
+                    </p>
+                    
+                    <div class="space-y-4">
+                        <a href="mailto:aravindaraman14@gmail.com" class="flex items-center text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300">
+                            <i class="fas fa-envelope text-xl mr-3 w-8"></i>
+                            <span>aravindaraman14@gmail.com</span>
+                        </a>
+                        <a href="tel:+19193270958" class="flex items-center text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300">
+                            <i class="fas fa-phone text-xl mr-3 w-8"></i>
+                            <span>+1 (919) 327-0958</span>
+                        </a>
+                        <a href="https://linkedin.com/in/aravinda-jatavallabha" target="_blank" class="flex items-center text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300">
+                            <i class="fab fa-linkedin text-xl mr-3 w-8"></i>
+                            <span>LinkedIn</span>
+                        </a>
+                        <a href="https://github.com/aravinda-1402" target="_blank" class="flex items-center text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300">
+                            <i class="fab fa-github text-xl mr-3 w-8"></i>
+                            <span>GitHub</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="bg-white dark:bg-gray-800 rounded-xl p-8 shadow-lg" data-aos="fade-left">
+                    <form action="https://formspree.io/f/mjkrvyej" method="POST" class="space-y-6" id="contact-form">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Full Name</label>
+                            <input type="text" id="name" name="name" required
+                                   class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent dark:bg-gray-700 dark:text-white"
+                                   placeholder="Your name">
+                        </div>
+                        
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Email Address</label>
+                            <input type="email" id="email" name="email" required
+                                   class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent dark:bg-gray-700 dark:text-white"
+                                   placeholder="your.email@example.com">
+                        </div>
+                        
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Message</label>
+                            <textarea id="message" name="message" rows="4" required
+                                      class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent dark:bg-gray-700 dark:text-white"
+                                      placeholder="Your message"></textarea>
+                        </div>
+                        
+                        <button type="submit" 
+                                class="w-full bg-blue-600 text-white py-3 px-6 rounded-lg hover:bg-blue-700 transition-colors duration-300 flex items-center justify-center space-x-2">
+                            <span>Send Message</span>
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 dark:bg-black text-white py-8">
+        <div class="container mx-auto px-6 text-center">
+            <p>© 2024 Aravinda Raman Jatavallabha. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="assets/js/script.js"></script>
+    <script>
+    function toggleAbstract(button) {
+        const abstract = button.nextElementSibling;
+        const icon = button.querySelector('i');
+        if (abstract.classList.contains('hidden')) {
+            abstract.classList.remove('hidden');
+            icon.classList.remove('fa-plus-circle');
+            icon.classList.add('fa-minus-circle');
+            button.innerHTML = button.innerHTML.replace('Read Abstract', 'Hide Abstract');
+        } else {
+            abstract.classList.add('hidden');
+            icon.classList.remove('fa-minus-circle');
+            icon.classList.add('fa-plus-circle');
+            button.innerHTML = button.innerHTML.replace('Hide Abstract', 'Read Abstract');
+        }
+    }
+
+    // Form validation and handling
+    document.getElementById('contact-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Get form elements
+        const nameInput = document.getElementById('name');
+        const emailInput = document.getElementById('email');
+        const messageInput = document.getElementById('message');
+        const submitButton = this.querySelector('button[type="submit"]');
+        
+        // Basic validation
+        if (!nameInput.value.trim()) {
+            showError(nameInput, 'Please enter your name');
+            return;
+        }
+        
+        if (!emailInput.value.trim()) {
+            showError(emailInput, 'Please enter your email');
+            return;
+        }
+        
+        if (!isValidEmail(emailInput.value)) {
+            showError(emailInput, 'Please enter a valid email address');
+            return;
+        }
+        
+        if (!messageInput.value.trim()) {
+            showError(messageInput, 'Please enter your message');
+            return;
+        }
+        
+        // Disable submit button and show loading state
+        submitButton.disabled = true;
+        submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+        
+        // Submit form using Formspree
+        const formData = new FormData(this);
+        fetch(this.action, {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'Accept': 'application/json'
+            }
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.ok) {
+                // Show success message
+                this.reset();
+                showSuccess('Message sent successfully! I will get back to you soon.');
+            } else {
+                throw new Error('Form submission failed');
+            }
+        })
+        .catch(error => {
+            showError(null, 'Sorry, there was an error sending your message. Please try again.');
+        })
+        .finally(() => {
+            // Re-enable submit button
+            submitButton.disabled = false;
+            submitButton.innerHTML = '<span>Send Message</span><i class="fas fa-paper-plane"></i>';
+        });
+    });
+
+    function isValidEmail(email) {
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    }
+
+    function showError(element, message) {
+        // Remove any existing error messages
+        const existingError = element?.parentElement.querySelector('.error-message');
+        if (existingError) {
+            existingError.remove();
+        }
+        
+        // Create and show new error message
+        const errorDiv = document.createElement('div');
+        errorDiv.className = 'error-message text-red-500 text-sm mt-1';
+        errorDiv.textContent = message;
+        
+        if (element) {
+            element.parentElement.appendChild(errorDiv);
+            element.classList.add('border-red-500');
+            
+            // Remove error styling after 5 seconds
+            setTimeout(() => {
+                errorDiv.remove();
+                element.classList.remove('border-red-500');
+            }, 5000);
+        } else {
+            // Show global error message
+            const form = document.getElementById('contact-form');
+            form.insertBefore(errorDiv, form.firstChild);
+            
+            setTimeout(() => {
+                errorDiv.remove();
+            }, 5000);
+        }
+    }
+
+    function showSuccess(message) {
+        const successDiv = document.createElement('div');
+        successDiv.className = 'success-message bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative mb-4';
+        successDiv.innerHTML = `
+            <span class="block sm:inline">${message}</span>
+            <span class="absolute top-0 bottom-0 right-0 px-4 py-3">
+                <i class="fas fa-check"></i>
+            </span>
+        `;
+        
+        const form = document.getElementById('contact-form');
+        form.insertBefore(successDiv, form.firstChild);
+        
+        setTimeout(() => {
+            successDiv.remove();
+        }, 5000);
+    }
+    </script>
+</body>
+</html> 

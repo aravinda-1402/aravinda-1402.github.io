@@ -1,0 +1,161 @@
+/* Dark mode transitions */
+* {
+    transition: background-color 0.3s ease-in-out,
+                color 0.3s ease-in-out,
+                border-color 0.3s ease-in-out,
+                box-shadow 0.3s ease-in-out;
+}
+
+/* Custom Scrollbar - Light Mode */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* Custom Scrollbar - Dark Mode */
+.dark ::-webkit-scrollbar-track {
+    background: #1a1a1a;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+    background: #4a4a4a;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+    background: #666;
+}
+
+/* Smooth Scroll Behavior */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Custom Animations */
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.animate-float {
+    animation: float 3s ease-in-out infinite;
+}
+
+/* Mobile Menu Styles */
+.mobile-menu {
+    transition: transform 0.3s ease-in-out;
+}
+
+.mobile-menu.active {
+    transform: translateX(0);
+}
+
+/* Custom Focus Styles */
+.dark a:focus,
+.dark button:focus {
+    outline-color: #60a5fa;
+}
+
+/* Gradient Text */
+.gradient-text {
+    background: linear-gradient(45deg, #3b82f6, #8b5cf6);
+}
+
+.dark .gradient-text {
+    background: linear-gradient(45deg, #60a5fa, #a78bfa);
+}
+
+/* Card Hover Effects */
+.project-card,
+.research-card,
+.experience-card {
+    transition: transform 0.3s ease-in-out,
+                box-shadow 0.3s ease-in-out;
+}
+
+.project-card:hover,
+.research-card:hover,
+.experience-card:hover {
+    transform: translateY(-5px);
+}
+
+.dark .project-card:hover,
+.dark .research-card:hover,
+.dark .experience-card:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Skills Badge Animation */
+.skill-badge {
+    transition: transform 0.2s ease-in-out,
+                background-color 0.3s ease-in-out,
+                color 0.3s ease-in-out;
+}
+
+.skill-badge:hover {
+    transform: scale(1.1);
+}
+
+/* Button Hover Effects */
+button,
+a {
+    transition: all 0.3s ease-in-out;
+}
+
+/* Loading Animation */
+.loading {
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #3b82f6;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+}
+
+.dark .loading {
+    border-color: #374151;
+    border-top-color: #60a5fa;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Print Styles */
+@media print {
+    .no-print {
+        display: none;
+    }
+}
+
+/* Responsive Font Sizes */
+@media (max-width: 640px) {
+    h1 {
+        font-size: 2rem;
+    }
+    h2 {
+        font-size: 1.5rem;
+    }
+    p {
+        font-size: 1rem;
+    }
+} 
