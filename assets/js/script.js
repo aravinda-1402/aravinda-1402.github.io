@@ -1,9 +1,12 @@
 // Initialize AOS
 AOS.init({
     duration: 800,
-    easing: 'ease-in-out',
+    easing: 'ease-out',
     once: true,
-    mirror: false
+    mirror: false,
+    offset: 50,
+    delay: 100,
+    anchorPlacement: 'top-bottom'
 });
 
 // Dark mode toggle

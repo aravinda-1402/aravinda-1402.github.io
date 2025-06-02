@@ -44,6 +44,47 @@
     
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        /* Experience item animations */
+        .experience-item {
+            position: relative;
+            padding: 10px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .experience-item:hover {
+            transform: translateX(15px);
+            background-color: rgba(59, 130, 246, 0.05);
+        }
+
+        .experience-item::before {
+            content: '';
+            position: absolute;
+            left: -10px;
+            top: 50%;
+            width: 3px;
+            height: 0;
+            background-color: #3B82F6;
+            transition: height 0.3s ease, transform 0.3s ease;
+            transform: translateY(-50%);
+        }
+
+        .experience-item:hover::before {
+            height: 70%;
+        }
+
+        /* Dark mode adjustments */
+        .dark .experience-item:hover {
+            background-color: rgba(59, 130, 246, 0.1);
+        }
+
+        /* Ensure smooth transitions */
+        .experience-item * {
+            transition: all 0.3s ease;
+        }
+    </style>
     <script>
         // Always start in light mode unless explicitly set to dark mode before
         if (localStorage.getItem('darkMode') !== 'true') {
@@ -673,15 +714,15 @@
                             <div class="mb-6">
                                 <h5 class="text-lg font-semibold text-gray-700 dark:text-gray-200 mb-4">ML & Forecasting</h5>
                                 <ul class="space-y-3">
-                                    <li class="flex items-start transform transition-all hover:translate-x-2">
+                                    <li class="flex items-start experience-item">
                                         <i class="fas fa-brain text-blue-600 dark:text-blue-400 mt-1 mr-2"></i>
                                         <span>Improved hourly and daily call volume forecasting accuracy by 20% through A/B/n-tested ARIMA, Prophet, LSTM, and Logistic Regression models deployed on AWS SageMaker.</span>
                                     </li>
-                                    <li class="flex items-start transform transition-all hover:translate-x-2">
+                                    <li class="flex items-start experience-item">
                                         <i class="fas fa-database text-blue-600 dark:text-blue-400 mt-1 mr-2"></i>
                                         <span>Built scalable ETL pipelines using Apache Airflow, Flask APIs, and Snowflake to automate ingestion and transformation of 1.2M+ dispatch records across regions.</span>
                                     </li>
-                                    <li class="flex items-start transform transition-all hover:translate-x-2">
+                                    <li class="flex items-start experience-item">
                                         <i class="fas fa-robot text-blue-600 dark:text-blue-400 mt-1 mr-2"></i>
                                         <span>Deployed real-time drift detection and monitoring with AWS Lambda and S3 versioning, embedding auto-retraining triggers and reducing ML update latency by 35%.</span>
                                     </li>
@@ -694,19 +735,19 @@
                                 <div class="mb-6">
                                     <h5 class="text-lg font-semibold text-gray-700 dark:text-gray-200 mb-4">Optimization & Analytics</h5>
                                     <ul class="space-y-3">
-                                        <li class="flex items-start transform transition-all hover:translate-x-2">
+                                        <li class="flex items-start experience-item">
                                             <i class="fas fa-chart-line text-blue-600 dark:text-blue-400 mt-1 mr-2"></i>
                                             <span>Engineered predictive staffing algorithms using historical and forecasted volume, reducing overtime by 18% and boosting workforce utilization by 22%.</span>
                                         </li>
-                                        <li class="flex items-start transform transition-all hover:translate-x-2">
+                                        <li class="flex items-start experience-item">
                                             <i class="fas fa-database text-blue-600 dark:text-blue-400 mt-1 mr-2"></i>
                                             <span>Designed high-accuracy SQL data models (99.8%) across call logs, shift plans, and dispatcher KPIs, enabling clean joins and robust analytics for reporting and dashboards.</span>
                                         </li>
-                                        <li class="flex items-start transform transition-all hover:translate-x-2">
+                                        <li class="flex items-start experience-item">
                                             <i class="fas fa-chart-bar text-blue-600 dark:text-blue-400 mt-1 mr-2"></i>
                                             <span>Built interactive Power BI and Tableau dashboards connected to Snowflake, visualizing SLA breaches, dispatcher load, and hourly patterns—cutting ops decision lag by 15%.</span>
                                         </li>
-                                        <li class="flex items-start transform transition-all hover:translate-x-2">
+                                        <li class="flex items-start experience-item">
                                             <i class="fas fa-chart-pie text-blue-600 dark:text-blue-400 mt-1 mr-2"></i>
                                             <span>Conducted A/B testing and statistical analysis on staffing plans and schedules, surfacing data-backed improvements to shift strategies adopted by leadership.</span>
                                         </li>
@@ -717,15 +758,15 @@
                                 <div class="mb-6">
                                     <h5 class="text-lg font-semibold text-gray-700 dark:text-gray-200 mb-4">Technical Innovation</h5>
                                     <ul class="space-y-3">
-                                        <li class="flex items-start transform transition-all hover:translate-x-2">
+                                        <li class="flex items-start experience-item">
                                             <i class="fas fa-code text-blue-600 dark:text-blue-400 mt-1 mr-2"></i>
                                             <span>Developed a full-stack internal dashboard (Spring Boot + Angular) with RBAC to recommend shifts, surface anomalies, and visualize forecast trends—reducing SLA breach report time by 30%.</span>
                                         </li>
-                                        <li class="flex items-start transform transition-all hover:translate-x-2">
+                                        <li class="flex items-start experience-item">
                                             <i class="fas fa-microchip text-blue-600 dark:text-blue-400 mt-1 mr-2"></i>
                                             <span>Integrated Azure OpenAI and LLaMA LLMs via LangChain to parse real-time dispatcher transcripts and detect anomalies, improving triage visibility and response insight.</span>
                                         </li>
-                                        <li class="flex items-start transform transition-all hover:translate-x-2">
+                                        <li class="flex items-start experience-item">
                                             <i class="fas fa-handshake text-blue-600 dark:text-blue-400 mt-1 mr-2"></i>
                                             <span>Secured 5+ service agreements by optimizing ETL latency and client-facing dashboards, increasing satisfaction and operational reliability by 25%.</span>
                                         </li>
@@ -742,10 +783,10 @@
                 </div>
 
                 <!-- NC State Teaching -->
-                <div class="bg-white dark:bg-gray-800 rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-300" data-aos="fade-up" data-aos-duration="1000">
+                <div class="bg-white dark:bg-gray-800 rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-300" data-aos="fade-up" data-aos-duration="800">
                     <div class="flex flex-col md:flex-row justify-between mb-6">
                         <div>
-                            <div class="flex items-center mb-4" data-aos="fade-right" data-aos-duration="1000">
+                            <div class="flex items-center mb-4" data-aos="fade-right" data-aos-duration="800" data-aos-delay="100">
                                 <img src="assets/images/ncstate img.png" alt="NC State University Logo" class="w-24 h-24 object-contain mr-4 transform transition-transform hover:scale-110">
                                 <div>
                                     <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-2">Graduate Teaching Assistant</h3>
@@ -758,7 +799,7 @@
                     </div>
 
                     <!-- Teaching Impact -->
-                    <div class="mb-6" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
+                    <div class="mb-6" data-aos="fade-up" data-aos-delay="200" data-aos-duration="800">
                         <h4 class="text-lg font-semibold text-gray-700 dark:text-gray-200 mb-4">Teaching Impact</h4>
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                             <div class="bg-red-50 dark:bg-red-900/20 rounded-lg p-4 transform transition-all hover:scale-105 hover:shadow-lg">
@@ -775,7 +816,7 @@
                     </div>
 
                     <!-- Course Details -->
-                    <div class="space-y-6" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
+                    <div class="space-y-6" data-aos="fade-up" data-aos-delay="300" data-aos-duration="800">
                         <!-- CSC 522 -->
                         <div class="mb-8">
                             <div class="flex items-center mb-4">
@@ -784,7 +825,7 @@
                             </div>
                             <p class="text-gray-500 dark:text-gray-400 mb-3 text-sm">Jan 2025 - May 2025 · Under Prof. Thomas Price</p>
                             <ul class="space-y-3 text-gray-600 dark:text-gray-300">
-                                <li class="flex items-start transform transition-all hover:translate-x-2">
+                                <li class="flex items-start experience-item">
                                     <i class="fas fa-code text-red-600 dark:text-red-400 mt-1 mr-2"></i>
                                     <span>Reviewed and evaluated student assignments and projects focused on data mining, supervised and unsupervised learning, predictive modeling, and Python-based machine learning workflows.</span>
                                 </li>
@@ -792,11 +833,11 @@
                         </div>
 
                         <!-- Expandable Details -->
-                        <div class="collapse-content hidden">
+                        <div class="hidden content-to-toggle">
                             <!-- Additional CSC 522 Details -->
                             <div class="mb-8">
                                 <ul class="space-y-3 text-gray-600 dark:text-gray-300">
-                                    <li class="flex items-start transform transition-all hover:translate-x-2">
+                                    <li class="flex items-start experience-item">
                                         <i class="fas fa-brain text-red-600 dark:text-red-400 mt-1 mr-2"></i>
                                         <span>Provided constructive feedback on machine learning pipelines, regression models, classification techniques, and clustering algorithms (e.g., K-Means, DBSCAN) to help students strengthen their applied data science skills.</span>
                                     </li>
@@ -811,27 +852,26 @@
                                 </div>
                                 <p class="text-gray-500 dark:text-gray-400 mb-3 text-sm">Aug 2024 - Dec 2024 · Under Prof. Xipeng Shen</p>
                                 <ul class="space-y-3 text-gray-600 dark:text-gray-300">
-                                    <li class="flex items-start transform transition-all hover:translate-x-2">
-                                    <li class="flex items-start">
+                                    <li class="flex items-start experience-item transform transition-all hover:translate-x-2">
                                         <i class="fas fa-microchip text-red-600 dark:text-red-400 mt-1 mr-2"></i>
                                         <span>Assisted in grading student assignments, projects, and exams focused on real-time AI systems, optimization techniques (e.g., TensorRT, ONNX Runtime), and performance trade-offs in machine learning model deployment.</span>
                                     </li>
-                                    <li class="flex items-start">
+                                    <li class="flex items-start experience-item transform transition-all hover:translate-x-2">
                                         <i class="fas fa-lightbulb text-red-600 dark:text-red-400 mt-1 mr-2"></i>
                                         <span>Supported student learning by clarifying complex concepts such as latency optimization, model compression, and efficient inference techniques, and providing guidance on coursework and project deliverables.</span>
                                     </li>
                                 </ul>
                             </div>
 
-                            <!-- Common Responsibilities -->
+                            <!-- Teaching Excellence -->
                             <div>
                                 <h5 class="text-lg font-semibold text-gray-700 dark:text-gray-200 mb-4">Teaching Excellence</h5>
                                 <ul class="space-y-3 text-gray-600 dark:text-gray-300">
-                                    <li class="flex items-start">
+                                    <li class="flex items-start experience-item">
                                         <i class="fas fa-chalkboard-teacher text-red-600 dark:text-red-400 mt-1 mr-2"></i>
                                         <span>Collaborated with faculty to ensure academic standards and smooth course operations, maintaining quality across assignments and course materials.</span>
                                     </li>
-                                    <li class="flex items-start">
+                                    <li class="flex items-start experience-item">
                                         <i class="fas fa-tasks text-red-600 dark:text-red-400 mt-1 mr-2"></i>
                                         <span>Managed course materials, addressed student queries, and developed comprehensive grading rubrics to ensure consistent evaluation standards.</span>
                                     </li>
@@ -854,7 +894,7 @@
                                 <img src="assets/images/DRDO.png" alt="DRDO Logo" class="w-24 h-24 object-contain mr-4 transform transition-transform hover:scale-110">
                                 <div>
                                     <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-2">Machine Learning Engineer</h3>
-                                    <p class="text-blue-600 dark:text-blue-400">Centre for Artificial Intelligence & Robotics, DRDO</p>
+                                    <p class="text-blue-600 dark:text-blue-400">Defence Research and Development Organisation (DRDO)</p>
                                     <p class="text-gray-500 dark:text-gray-400">Jan 2023 - Jun 2023 · Research Internship</p>
                                     <p class="text-gray-600 dark:text-gray-300 text-sm">Bengaluru, Karnataka, India · On-site</p>
                                 </div>
@@ -887,11 +927,11 @@
                         <div class="text-gray-600 dark:text-gray-300">
                             <h4 class="text-lg font-semibold text-gray-700 dark:text-gray-200 mb-4">Core Research Contributions</h4>
                             <ul class="space-y-3 mb-4">
-                                <li class="flex items-start transform transition-all hover:translate-x-2">
+                                <li class="flex items-start experience-item">
                                     <i class="fas fa-flask text-purple-600 dark:text-purple-400 mt-1 mr-2"></i>
-                                    <span>Designed and implemented a Temporal Graph Neural Network (TGNN) architecture using PyTorch Geometric (PyG) to model dynamic user interactions over time for semantic-aware behavioral forecasting. This improved prediction accuracy by 2% compared to state-of-the-art baselines.</span>
+                                    <span>Designed and implemented a Temporal Graph Neural Network (TGNN) architecture at the Centre for Artificial Intelligence & Robotics (CAIR) Lab, using PyTorch Geometric (PyG) to model dynamic user interactions over time for semantic-aware behavioral forecasting. This improved prediction accuracy by 2% compared to state-of-the-art baselines.</span>
                                 </li>
-                                <li class="flex items-start transform transition-all hover:translate-x-2">
+                                <li class="flex items-start experience-item">
                                     <i class="fas fa-flask text-purple-600 dark:text-purple-400 mt-1 mr-2"></i>
                                     <span>Developed a streaming NLP pipeline leveraging BERT for learning contextualized word embeddings in an incremental fashion. This addressed semantic drift by dynamically updating token representations without retraining from scratch.</span>
                                 </li>
@@ -904,11 +944,11 @@
                                     <div>
                                         <h5 class="text-md font-semibold text-gray-700 dark:text-gray-200 mb-3">Technical Innovations</h5>
                                         <ul class="space-y-3">
-                                            <li class="flex items-start transform transition-all hover:translate-x-2">
+                                            <li class="flex items-start experience-item">
                                                 <i class="fas fa-flask text-purple-600 dark:text-purple-400 mt-1 mr-2"></i>
                                                 <span>Pioneered the iBERT + Temporal GNN hybrid model, integrating graph temporal reasoning with evolving language representations. This synergy allowed real-time semantic understanding of conversations and reduced model retraining latency by 40%.</span>
                                             </li>
-                                            <li class="flex items-start transform transition-all hover:translate-x-2">
+                                            <li class="flex items-start experience-item">
                                                 <i class="fas fa-flask text-purple-600 dark:text-purple-400 mt-1 mr-2"></i>
                                                 <span>Achieved a language model perplexity of 3.19, surpassing the prior SOTA benchmark of 3.40 on masked language prediction tasks across evolving news article streams.</span>
                                             </li>
@@ -919,11 +959,11 @@
                                     <div>
                                         <h5 class="text-md font-semibold text-gray-700 dark:text-gray-200 mb-3">Research Impact</h5>
                                         <ul class="space-y-3">
-                                            <li class="flex items-start transform transition-all hover:translate-x-2">
+                                            <li class="flex items-start experience-item">
                                                 <i class="fas fa-flask text-purple-600 dark:text-purple-400 mt-1 mr-2"></i>
                                                 <span>Validated model robustness through synthetic and real-time evaluation on Reddit, arXiv, and news datasets, enabling generalizability in streaming environments.</span>
                                             </li>
-                                            <li class="flex items-start transform transition-all hover:translate-x-2">
+                                            <li class="flex items-start experience-item">
                                                 <i class="fas fa-award text-purple-600 dark:text-purple-400 mt-1 mr-2"></i>
                                                 <span>Contributed to the authorship of the accepted paper "Learning Dynamic Representations in Large Language Models for Evolving Data Streams", presented at the International Conference on Pattern Recognition (ICPR 2024) (Springer).</span>
                                             </li>
@@ -983,15 +1023,15 @@
                         <div class="text-gray-600 dark:text-gray-300">
                             <h4 class="text-lg font-semibold text-gray-700 dark:text-gray-200 mb-4">Key Achievements</h4>
                             <ul class="space-y-3 mb-4">
-                                <li class="flex items-start">
+                                <li class="flex items-start experience-item">
                                     <i class="fas fa-chart-line text-green-600 dark:text-green-400 mt-1 mr-2"></i>
                                     <span>Led a team of 4 to develop and deploy predictive models including XGBoost, LightGBM, and LSTM on 10M+ retail records, resulting in a 10% uplift in campaign profitability for Home Depot through advanced revenue optimization techniques.</span>
                                 </li>
-                                <li class="flex items-start">
+                                <li class="flex items-start experience-item">
                                     <i class="fas fa-database text-green-600 dark:text-green-400 mt-1 mr-2"></i>
                                     <span>Engineered scalable ETL workflows using PySpark, SQL, and Snowflake, optimizing 16M+ rows of transactional data with partitioning, caching, and indexing strategies that improved query latency by 40%.</span>
                                 </li>
-                                <li class="flex items-start">
+                                <li class="flex items-start experience-item">
                                     <i class="fas fa-brain text-green-600 dark:text-green-400 mt-1 mr-2"></i>
                                     <span>Integrated LLM-based vector embeddings to cluster product descriptions, enabling personalized product targeting and enhancing recommendation precision across retail segments.</span>
                                 </li>
@@ -1004,15 +1044,15 @@
                                     <div>
                                         <h5 class="text-md font-semibold text-gray-700 dark:text-gray-200 mb-3">Data Engineering & Analytics</h5>
                                         <ul class="space-y-3">
-                                            <li class="flex items-start">
+                                            <li class="flex items-start experience-item">
                                                 <i class="fas fa-cogs text-green-600 dark:text-green-400 mt-1 mr-2"></i>
                                                 <span>Automated batch data pipelines for ingestion, transformation, and validation using PySpark and SQL, reducing manual effort in pricing analytics workflows and increasing system reliability.</span>
                                             </li>
-                                            <li class="flex items-start">
+                                            <li class="flex items-start experience-item">
                                                 <i class="fas fa-chart-bar text-green-600 dark:text-green-400 mt-1 mr-2"></i>
                                                 <span>Designed Power BI and Tableau dashboards for visualizing pricing trends, product segmentation, and real-time sales KPIs, streamlining executive decision-making for 5+ marketing leads.</span>
                                             </li>
-                                            <li class="flex items-start">
+                                            <li class="flex items-start experience-item">
                                                 <i class="fas fa-database text-green-600 dark:text-green-400 mt-1 mr-2"></i>
                                                 <span>Created robust SQL views and stored procedures to support recurring BI reports, reducing reporting turnaround time by over 30%.</span>
                                             </li>
@@ -1023,15 +1063,15 @@
                                     <div>
                                         <h5 class="text-md font-semibold text-gray-700 dark:text-gray-200 mb-3">Business Impact & Recognition</h5>
                                         <ul class="space-y-3">
-                                            <li class="flex items-start">
+                                            <li class="flex items-start experience-item">
                                                 <i class="fas fa-users text-green-600 dark:text-green-400 mt-1 mr-2"></i>
                                                 <span>Collaborated with product engineers and analysts to integrate model outputs into internal APIs and UIs, accelerating time-to-action in pricing strategy and A/B testing feedback loops.</span>
                                             </li>
-                                            <li class="flex items-start">
+                                            <li class="flex items-start experience-item">
                                                 <i class="fas fa-chart-pie text-green-600 dark:text-green-400 mt-1 mr-2"></i>
                                                 <span>Conducted statistical analysis and A/B testing to evaluate campaign performance, uncovering key revenue drivers and optimization opportunities.</span>
                                             </li>
-                                            <li class="flex items-start">
+                                            <li class="flex items-start experience-item">
                                                 <i class="fas fa-award text-green-600 dark:text-green-400 mt-1 mr-2"></i>
                                                 <span>Recognized with the 'Stellar Team Award' for delivering the top-performing project in the internship cohort, celebrated for innovation, measurable impact, and cross-functional execution.</span>
                                             </li>
@@ -1090,11 +1130,11 @@
                             <div class="mb-6">
                                 <h5 class="text-md font-semibold text-indigo-600 dark:text-indigo-400 mb-3">Medical Imaging Analysis</h5>
                                 <ul class="space-y-3">
-                                    <li class="flex items-start">
+                                    <li class="flex items-start experience-item">
                                         <i class="fas fa-microscope text-indigo-600 dark:text-indigo-400 mt-1 mr-2"></i>
                                         <span>Developed a Bone Age Assessment system using medical imaging data of pediatric patients (ages 1–288 months), customizing and benchmarking VGG-16, MobileNet, InceptionV3, and XceptionNet architectures for bone maturity prediction.</span>
                                     </li>
-                                    <li class="flex items-start">
+                                    <li class="flex items-start experience-item">
                                         <i class="fas fa-chart-bar text-indigo-600 dark:text-indigo-400 mt-1 mr-2"></i>
                                         <span>Conducted comparative analysis using mean average error (MAE) metrics, improving interpretability and model selection for clinical applications.</span>
                                     </li>
@@ -1107,7 +1147,7 @@
                                 <div class="mb-6">
                                     <h5 class="text-md font-semibold text-indigo-600 dark:text-indigo-400 mb-3">IoT Network Analysis</h5>
                                     <ul class="space-y-3">
-                                        <li class="flex items-start">
+                                        <li class="flex items-start experience-item">
                                             <i class="fas fa-network-wired text-indigo-600 dark:text-indigo-400 mt-1 mr-2"></i>
                                             <span>Designed and deployed LSTM and Bi-LSTM models for channel link quality prediction in IoT network traces, achieving 99.4% accuracy—a 2.1% improvement over existing benchmarks.</span>
                                         </li>
@@ -1118,11 +1158,11 @@
                                 <div class="mb-6">
                                     <h5 class="text-md font-semibold text-indigo-600 dark:text-indigo-400 mb-3">Technical Infrastructure</h5>
                                     <ul class="space-y-3">
-                                        <li class="flex items-start">
+                                        <li class="flex items-start experience-item">
                                             <i class="fas fa-cogs text-indigo-600 dark:text-indigo-400 mt-1 mr-2"></i>
                                             <span>Streamlined the end-to-end ML pipeline by automating ETL, model training, and REST API deployment using Apache Airflow, AWS SageMaker, ECR, and Flask, reducing manual intervention by 60%.</span>
                                         </li>
-                                        <li class="flex items-start">
+                                        <li class="flex items-start experience-item">
                                             <i class="fas fa-cloud text-indigo-600 dark:text-indigo-400 mt-1 mr-2"></i>
                                             <span>Leveraged AWS S3 for efficient data ingestion and versioning, and used Keras, TensorFlow, and Matplotlib for modeling and visualization of network trace dynamics.</span>
                                         </li>
@@ -1133,7 +1173,7 @@
                                 <div>
                                     <h5 class="text-md font-semibold text-indigo-600 dark:text-indigo-400 mb-3">Project Impact</h5>
                                     <ul class="space-y-3">
-                                        <li class="flex items-start">
+                                        <li class="flex items-start experience-item">
                                             <i class="fas fa-users text-indigo-600 dark:text-indigo-400 mt-1 mr-2"></i>
                                             <span>Collaborated with faculty on technical implementations, contributing to interdisciplinary innovations at the intersection of healthcare, networking, and AI.</span>
                                         </li>
@@ -1340,90 +1380,90 @@
                         <a href="https://github.com/aravinda-1402/Covid-Detection-model-using-Chest-X-ray" class="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 flex items-center">
                             <i class="fab fa-github mr-2"></i> View on GitHub
                         </a>
-                    </div>
                 </div>
+            </div>
 
-                <!-- Store Demand Forecasting -->
+                    <!-- Store Demand Forecasting -->
                 <div class="project-card bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105" 
                      data-aos="fade-up"
                      data-tags="ml,mlops,analytics,fullstack">
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-3">Store Demand Forecasting using Time-Series and Neural Networks</h3>
-                        <p class="text-gray-600 dark:text-gray-300 mb-4">
-                            Built a robust hybrid forecasting model combining CNN and BiLSTM architectures to predict daily item-level sales across 10 stores. Leveraged the Kaggle Store-Item Demand Forecasting dataset (2013–2017) and benchmarked against models like XGBoost, ANN, and ARIMA. The hybrid model achieved the lowest MSE, improving forecasting precision and enabling optimized retail inventory decisions.
-                        </p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 rounded-full text-sm">CNN</span>
-                            <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 rounded-full text-sm">BiLSTM</span>
-                            <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 rounded-full text-sm">Time Series</span>
-                            <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 rounded-full text-sm">XGBoost</span>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-3">Store Demand Forecasting using Time-Series and Neural Networks</h3>
+                            <p class="text-gray-600 dark:text-gray-300 mb-4">
+                                Built a robust hybrid forecasting model combining CNN and BiLSTM architectures to predict daily item-level sales across 10 stores. Leveraged the Kaggle Store-Item Demand Forecasting dataset (2013–2017) and benchmarked against models like XGBoost, ANN, and ARIMA. The hybrid model achieved the lowest MSE, improving forecasting precision and enabling optimized retail inventory decisions.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 rounded-full text-sm">CNN</span>
+                                <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 rounded-full text-sm">BiLSTM</span>
+                                <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 rounded-full text-sm">Time Series</span>
+                                <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 rounded-full text-sm">XGBoost</span>
+                            </div>
+                            <a href="https://github.com/aravinda-1402/Store-Demand-Forecasting-using-Time-Series-and-Neural-Networks" class="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 flex items-center">
+                                <i class="fab fa-github mr-2"></i> View on GitHub
+                            </a>
                         </div>
-                        <a href="https://github.com/aravinda-1402/Store-Demand-Forecasting-using-Time-Series-and-Neural-Networks" class="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 flex items-center">
-                            <i class="fab fa-github mr-2"></i> View on GitHub
-                        </a>
                     </div>
-                </div>
 
-                <!-- Image-to-Image Translation -->
+                    <!-- Image-to-Image Translation -->
                 <div class="project-card bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105" 
                      data-aos="fade-up"
                      data-tags="cv,ml">
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-3">Image-to-Image Translation using CycleGAN</h3>
-                        <p class="text-gray-600 dark:text-gray-300 mb-4">
-                            Implemented CycleGAN to translate images between domains without paired datasets—such as Monet paintings to real photographs and human faces to zombies. Trained on publicly available datasets and deployed the model for real-time translation, showcasing the power of unsupervised generative learning in computer vision tasks.
-                        </p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 rounded-full text-sm">CycleGAN</span>
-                            <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 rounded-full text-sm">Computer Vision</span>
-                            <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 rounded-full text-sm">Deep Learning</span>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-3">Image-to-Image Translation using CycleGAN</h3>
+                            <p class="text-gray-600 dark:text-gray-300 mb-4">
+                                Implemented CycleGAN to translate images between domains without paired datasets—such as Monet paintings to real photographs and human faces to zombies. Trained on publicly available datasets and deployed the model for real-time translation, showcasing the power of unsupervised generative learning in computer vision tasks.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 rounded-full text-sm">CycleGAN</span>
+                                <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 rounded-full text-sm">Computer Vision</span>
+                                <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 rounded-full text-sm">Deep Learning</span>
+                            </div>
+                            <a href="https://github.com/aravinda-1402/CycleGAN-for-Image-Translation" class="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 flex items-center">
+                                <i class="fab fa-github mr-2"></i> View on GitHub
+                            </a>
                         </div>
-                        <a href="https://github.com/aravinda-1402/CycleGAN-for-Image-Translation" class="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 flex items-center">
-                            <i class="fab fa-github mr-2"></i> View on GitHub
-                        </a>
                     </div>
-                </div>
 
-                <!-- Brain Tumor Segmentation -->
+                    <!-- Brain Tumor Segmentation -->
                 <div class="project-card bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105" 
                      data-aos="fade-up"
                      data-tags="cv,ml">
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-3">Brain Tumor Segmentation using MRI Scans</h3>
-                        <p class="text-gray-600 dark:text-gray-300 mb-4">
-                            Used U-Net architecture to perform semantic segmentation on brain MRI images, detecting and outlining tumor regions. The project utilized the LGG MRI Segmentation dataset from Kaggle and focused on pixel-level mask prediction using FLAIR MRI sequences. Achieved high segmentation accuracy and visual interpretability for potential medical diagnostics.
-                        </p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 rounded-full text-sm">U-Net</span>
-                            <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 rounded-full text-sm">Medical Imaging</span>
-                            <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 rounded-full text-sm">Segmentation</span>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-3">Brain Tumor Segmentation using MRI Scans</h3>
+                            <p class="text-gray-600 dark:text-gray-300 mb-4">
+                                Used U-Net architecture to perform semantic segmentation on brain MRI images, detecting and outlining tumor regions. The project utilized the LGG MRI Segmentation dataset from Kaggle and focused on pixel-level mask prediction using FLAIR MRI sequences. Achieved high segmentation accuracy and visual interpretability for potential medical diagnostics.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 rounded-full text-sm">U-Net</span>
+                                <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 rounded-full text-sm">Medical Imaging</span>
+                                <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 rounded-full text-sm">Segmentation</span>
+                            </div>
+                            <a href="https://github.com/aravinda-1402/Brain-MRI-Classification-Segmentation" class="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 flex items-center">
+                                <i class="fab fa-github mr-2"></i> View on GitHub
+                            </a>
                         </div>
-                        <a href="https://github.com/aravinda-1402/Brain-MRI-Classification-Segmentation" class="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 flex items-center">
-                            <i class="fab fa-github mr-2"></i> View on GitHub
-                        </a>
                     </div>
-                </div>
 
-                <!-- Movie Recommendation System -->
+                    <!-- Movie Recommendation System -->
                 <div class="project-card bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105" 
                      data-aos="fade-up"
                      data-tags="nlp,analytics,ml">
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-3">Movie Recommendation System using Collaborative Filtering</h3>
-                        <p class="text-gray-600 dark:text-gray-300 mb-4">
-                            Designed a hybrid recommender system that combines cosine similarity with sentiment analysis to suggest movies tailored to user preferences. Scraped metadata from TMDB and IMDB, offering dynamic updates, cast bios, trailers, and review sentiment. Upgraded from a static recommendation system to an interactive, emotionally aware movie discovery experience.
-                        </p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 rounded-full text-sm">Collaborative Filtering</span>
-                            <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 rounded-full text-sm">NLP</span>
-                            <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 rounded-full text-sm">Sentiment Analysis</span>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-3">Movie Recommendation System using Collaborative Filtering</h3>
+                            <p class="text-gray-600 dark:text-gray-300 mb-4">
+                                Designed a hybrid recommender system that combines cosine similarity with sentiment analysis to suggest movies tailored to user preferences. Scraped metadata from TMDB and IMDB, offering dynamic updates, cast bios, trailers, and review sentiment. Upgraded from a static recommendation system to an interactive, emotionally aware movie discovery experience.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 rounded-full text-sm">Collaborative Filtering</span>
+                                <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 rounded-full text-sm">NLP</span>
+                                <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 rounded-full text-sm">Sentiment Analysis</span>
+                            </div>
+                            <a href="https://github.com/aravinda-1402/Movie-Recommendation-System" class="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 flex items-center">
+                                <i class="fab fa-github mr-2"></i> View on GitHub
+                            </a>
                         </div>
-                        <a href="https://github.com/aravinda-1402/Movie-Recommendation-System" class="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 flex items-center">
-                            <i class="fab fa-github mr-2"></i> View on GitHub
-                        </a>
                     </div>
                 </div>
-            </div>
 
 
 
@@ -1461,7 +1501,7 @@
                             card.style.display = '';
                             card.classList.remove('fade-out');
                             card.classList.add('fade-in');
-                        } else {
+            } else {
                             // Show card if it has the selected tag, hide otherwise
                             if (tags.includes(filter)) {
                                 card.style.display = '';
@@ -1582,7 +1622,24 @@
                     </button>
                             <div class="hidden abstract-content overflow-hidden transition-all duration-300">
                                 <p class="text-gray-600 dark:text-gray-300 text-sm bg-gray-50 dark:bg-gray-700/50 p-4 rounded-lg">
-                                    This research introduces a novel approach to dynamic representation learning in large language models, focusing on the integration of graph-based attention mechanisms. We propose an innovative framework that enhances contextual understanding by modeling relationships between tokens as dynamic graph structures. Our method demonstrates significant improvements in various NLP tasks, particularly in scenarios requiring complex reasoning and long-range dependencies. The results show enhanced performance in maintaining context coherence and capturing semantic relationships across diverse domains.
+                                    In the world of Large Language Modeling, incremental learning plays an important role in evolving data such as streaming text.
+
+We introduce an incremental learning approach for dynamic contextualized word embeddings in the setting of streaming data. We call the
+
+embeddings generated by our model as Incremental Dynamic Contextualized Word Embeddings (iDCWE). Our model introduces the incremental
+
+BERT (iBERT) (BERT stands for Bidirectional Encoder Representations from Transformers) to create a dynamic and incremental model to
+
+perform incremental training. Our model further captures the semantic
+drift of words using dynamic graphs. Our paper is the first in the line of
+research on (incremental) dynamic modeling of streaming text which we
+also refer to as Neural Dynamic Language Modeling. The performance
+
+of our model on the benchmark datasets is on par and even often outperforms the dynamic contextualized word embeddings which was the
+
+first paper to combine contextualization with dynamic word embeddings,
+to the best of our knowledge. Moreover, the compute time efficiency of
+our model is better than that of the aforementioned paper.
                                 </p>
                     </div>
                             <a href="https://link.springer.com/chapter/10.1007/978-3-031-78169-8_16" target="_blank" class="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 flex items-center">
@@ -1612,7 +1669,7 @@
                     </button>
                             <div class="hidden abstract-content overflow-hidden transition-all duration-300">
                                 <p class="text-gray-600 dark:text-gray-300 text-sm bg-gray-50 dark:bg-gray-700/50 p-4 rounded-lg">
-                                    The continuous growth of mobile traffic and limited spectrum resources limits the capacity and data rate. This study explores the benefits of Software-Defined Networking (SDN) based multipath for data offloading schemes in LTE-WiFi integrated networks. We classify future link qualities using deep learning models such as LSTM and Bi-LSTM, achieving a 2.1% improvement over state-of-the-art methods. The implementation demonstrated a 6.29% improvement in average throughput compared to existing approaches.
+                                    The continuous growth of mobile traffic and limited spectrum resources limits the capacity and data rate. Heterogeneous Networks (HetNet) is a solution with multiple radio interfaces in smartphones to realize such demands. Simultaneous data transfer on Long Term Evolution (LTE) and WiFi has gained attention for data offloading in 5G HetNet. Maintaining the average throughput and minimum delay for LTE users is still a challenge in data offloading owing to the mobility and load in the network. This study explores the benefits of Software-Defined Networking (SDN) based multipath for data offloading schemes for LTE-WiFi integrated networks to maintain the user’s average throughput based on channel quality classification. We classify future link qualities using deep learning models such as Long Short-Term Memory Networks (LSTM) and Bidirectional Long Short-Term Memory Networks (BLSTM). The received signal strength indicator (RSSI) and packet data rate (PDR) are parameters used in BLSTM. The results of the prediction were compared with those of state-of-the-art methods. We obtained a 2.1% better prediction than the state-of-the-art methods. The predicted results were used to offload the data using LTE and WiFi. The performance of HetNet was compared with the state-of-the-art method for average throughput, and with the proposed method, a 6.29% improvement was observed.
                                 </p>
                     </div>
                             <a href="https://ieeexplore.ieee.org/abstract/document/10767139" target="_blank" class="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 flex items-center">
@@ -1703,7 +1760,19 @@
                     </button>
                             <div class="hidden abstract-content overflow-hidden transition-all duration-300">
                                 <p class="text-gray-600 dark:text-gray-300 text-sm bg-gray-50 dark:bg-gray-700/50 p-4 rounded-lg">
-                                    We introduce LightGCL, a novel and streamlined graph contrastive learning model for recommendation systems. Unlike existing methods that rely on stochastic perturbations or heuristic approaches, LightGCL utilizes Singular Value Decomposition (SVD) to achieve robust augmentation, facilitating structural refinement and global collaborative relation modeling. Our experiments demonstrate substantial performance improvements over state-of-the-art methods, particularly in handling data sparsity and popularity bias challenges.
+                                    GraphNeural Networks (GNNs)have emerged as apotent framework for graph-structured
+                                    recommendation tasks. Incorporating contrastive learning with GNNs has recently demon
+                                   strated remarkable efficacy in addressing challenges posed by data sparsity, thanks to in
+                                   novative data augmentation strategies. However, many existing methods employ stochastic
+                                    perturbations (e.g., node or edge modifications) or heuristic approaches (e.g., clustering
+                                   based augmentations) to generate contrastive views, which may distort semantic integrity
+                                    or amplify noise. We introduce LightGCL, a novel and streamlined graph contrastive learn
+                                   ing model to address these limitations. LightGCL utilizes Singular Value Decomposition
+                                    (SVD) to achieve robust augmentation, facilitating structural refinement and global collab
+                                   orative relation modeling without manual augmentation strategies. Extensive experiments
+                                    on benchmark datasets showcase its substantial performance enhancements over state-of
+                                   the-art methods. Further analysis highlights the model's resilience to challenges like data
+                                    sparsity and bias related to item popularity.
                                 </p>
                     </div>
                             <a href="https://drive.google.com/file/d/1ND3R-cwxMfOw16Wutt6KToq9feTAH5JE/view?usp=drive_link" target="_blank" class="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 flex items-center">
@@ -1974,7 +2043,33 @@
     <!-- Scripts -->
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script src="assets/js/script.js"></script>
+    <style>
+        /* Hover animation styles */
+        .transform.hover\:translate-x-2:hover {
+            transform: translateX(0.5rem);
+        }
+        .transition-all {
+            transition-property: all;
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+            transition-duration: 300ms;
+        }
+        /* Ensure AOS animations work with hover */
+        [data-aos] {
+            pointer-events: none;
+        }
+        [data-aos].aos-animate {
+            pointer-events: auto;
+        }
+    </style>
     <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100,
+            easing: 'ease-in-out'
+        });
+        
     function toggleAbstract(button) {
         const abstract = button.nextElementSibling;
         const icon = button.querySelector('i');
@@ -1991,123 +2086,123 @@
         }
     }
 
-    // Form validation and handling
-    document.getElementById('contact-form').addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        // Get form elements
-        const nameInput = document.getElementById('name');
-        const emailInput = document.getElementById('email');
-        const messageInput = document.getElementById('message');
-        const submitButton = this.querySelector('button[type="submit"]');
-        
-        // Basic validation
-        if (!nameInput.value.trim()) {
-            showError(nameInput, 'Please enter your name');
-            return;
-        }
-        
-        if (!emailInput.value.trim()) {
-            showError(emailInput, 'Please enter your email');
-            return;
-        }
-        
-        if (!isValidEmail(emailInput.value)) {
-            showError(emailInput, 'Please enter a valid email address');
-            return;
-        }
-        
-        if (!messageInput.value.trim()) {
-            showError(messageInput, 'Please enter your message');
-            return;
-        }
-        
-        // Disable submit button and show loading state
-        submitButton.disabled = true;
-        submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-        
-        // Submit form using Formspree
-        const formData = new FormData(this);
-        fetch(this.action, {
-            method: 'POST',
-            body: formData,
-            headers: {
-                'Accept': 'application/json'
+        // Form validation and handling
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form elements
+            const nameInput = document.getElementById('name');
+            const emailInput = document.getElementById('email');
+            const messageInput = document.getElementById('message');
+            const submitButton = this.querySelector('button[type="submit"]');
+            
+            // Basic validation
+            if (!nameInput.value.trim()) {
+                showError(nameInput, 'Please enter your name');
+                return;
             }
-        })
-        .then(response => response.json())
-        .then(data => {
-            if (data.ok) {
-                // Show success message
-                this.reset();
-                showSuccess('Message sent successfully! I will get back to you soon.');
-            } else {
-                throw new Error('Form submission failed');
+            
+            if (!emailInput.value.trim()) {
+                showError(emailInput, 'Please enter your email');
+                return;
             }
-        })
-        .catch(error => {
-            showError(null, 'Sorry, there was an error sending your message. Please try again.');
-        })
-        .finally(() => {
-            // Re-enable submit button
-            submitButton.disabled = false;
-            submitButton.innerHTML = '<span>Send Message</span><i class="fas fa-paper-plane"></i>';
+            
+            if (!isValidEmail(emailInput.value)) {
+                showError(emailInput, 'Please enter a valid email address');
+                return;
+            }
+            
+            if (!messageInput.value.trim()) {
+                showError(messageInput, 'Please enter your message');
+                return;
+            }
+            
+            // Disable submit button and show loading state
+            submitButton.disabled = true;
+            submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+            
+            // Submit form using Formspree
+            const formData = new FormData(this);
+            fetch(this.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.ok) {
+                    // Show success message
+                    this.reset();
+                    showSuccess('Message sent successfully! I will get back to you soon.');
+                } else {
+                    throw new Error('Form submission failed');
+                }
+            })
+            .catch(error => {
+                showError(null, 'Sorry, there was an error sending your message. Please try again.');
+            })
+            .finally(() => {
+                // Re-enable submit button
+                submitButton.disabled = false;
+                submitButton.innerHTML = '<span>Send Message</span><i class="fas fa-paper-plane"></i>';
+            });
         });
-    });
 
-    function isValidEmail(email) {
-        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-    }
-
-    function showError(element, message) {
-        // Remove any existing error messages
-        const existingError = element?.parentElement.querySelector('.error-message');
-        if (existingError) {
-            existingError.remove();
+        function isValidEmail(email) {
+            return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
         }
-        
-        // Create and show new error message
-        const errorDiv = document.createElement('div');
-        errorDiv.className = 'error-message text-red-500 text-sm mt-1';
-        errorDiv.textContent = message;
-        
-        if (element) {
-            element.parentElement.appendChild(errorDiv);
-            element.classList.add('border-red-500');
+
+        function showError(element, message) {
+            // Remove any existing error messages
+            const existingError = element?.parentElement.querySelector('.error-message');
+            if (existingError) {
+                existingError.remove();
+            }
             
-            // Remove error styling after 5 seconds
-            setTimeout(() => {
-                errorDiv.remove();
-                element.classList.remove('border-red-500');
-            }, 5000);
-        } else {
-            // Show global error message
+            // Create and show new error message
+            const errorDiv = document.createElement('div');
+            errorDiv.className = 'error-message text-red-500 text-sm mt-1';
+            errorDiv.textContent = message;
+            
+            if (element) {
+                element.parentElement.appendChild(errorDiv);
+                element.classList.add('border-red-500');
+                
+                // Remove error styling after 5 seconds
+                setTimeout(() => {
+                    errorDiv.remove();
+                    element.classList.remove('border-red-500');
+                }, 5000);
+            } else {
+                // Show global error message
+                const form = document.getElementById('contact-form');
+                form.insertBefore(errorDiv, form.firstChild);
+                
+                setTimeout(() => {
+                    errorDiv.remove();
+                }, 5000);
+            }
+        }
+
+        function showSuccess(message) {
+            const successDiv = document.createElement('div');
+            successDiv.className = 'success-message bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative mb-4';
+            successDiv.innerHTML = `
+                <span class="block sm:inline">${message}</span>
+                <span class="absolute top-0 bottom-0 right-0 px-4 py-3">
+                    <i class="fas fa-check"></i>
+                </span>
+            `;
+            
             const form = document.getElementById('contact-form');
-            form.insertBefore(errorDiv, form.firstChild);
+            form.insertBefore(successDiv, form.firstChild);
             
             setTimeout(() => {
-                errorDiv.remove();
+                successDiv.remove();
             }, 5000);
         }
-    }
-
-    function showSuccess(message) {
-        const successDiv = document.createElement('div');
-        successDiv.className = 'success-message bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative mb-4';
-        successDiv.innerHTML = `
-            <span class="block sm:inline">${message}</span>
-            <span class="absolute top-0 bottom-0 right-0 px-4 py-3">
-                <i class="fas fa-check"></i>
-            </span>
-        `;
-        
-        const form = document.getElementById('contact-form');
-        form.insertBefore(successDiv, form.firstChild);
-        
-        setTimeout(() => {
-            successDiv.remove();
-        }, 5000);
-    }
     </script>
 </body>
 </html> 
