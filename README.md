@@ -17,7 +17,6 @@ A modern, responsive portfolio website showcasing my work as an AI/ML & Data Sci
 - HTML5
 - TailwindCSS
 - JavaScript (ES6+)
-- AOS (Animate On Scroll)
 - Font Awesome Icons
 
 ## Quick Start
