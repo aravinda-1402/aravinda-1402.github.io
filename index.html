@@ -127,8 +127,24 @@
 
     <!-- Hero Section -->
     <section id="hero" class="pt-32 pb-20 bg-white dark:bg-gray-900 relative overflow-hidden">
+        <!-- Neural Network Background Pattern -->
+        <div class="absolute inset-0 opacity-10 dark:opacity-5">
+            <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <pattern id="neural-net" x="0" y="0" width="50" height="50" patternUnits="userSpaceOnUse">
+                        <circle cx="25" cy="25" r="2" fill="currentColor" class="text-blue-600 dark:text-blue-400"/>
+                        <path d="M25 25L50 25M25 25L25 50M25 25L0 25M25 25L25 0M25 25L40 40M25 25L10 10M25 25L40 10M25 25L10 40" 
+                              stroke="currentColor" 
+                              class="text-blue-400 dark:text-blue-600" 
+                              stroke-width="0.5"/>
+                    </pattern>
+                </defs>
+                <rect width="100%" height="100%" fill="url(#neural-net)"/>
+            </svg>
+        </div>
+        
         <!-- Background Gradient Effect -->
-        <div class="absolute inset-0 bg-gradient-to-r from-blue-50/30 to-indigo-50/30 dark:from-blue-900/20 dark:to-indigo-900/20"></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-blue-50/80 to-indigo-50/80 dark:from-blue-900/40 dark:to-indigo-900/40 backdrop-blur-sm"></div>
         
         <div class="container mx-auto relative">
             <div class="flex flex-col md:flex-row items-center justify-between">
@@ -140,7 +156,7 @@
                         Machine Learning Engineer & Data Scientist
                     </h2>
                     <p class="text-lg text-gray-600 dark:text-gray-400 mb-8 leading-relaxed text-justify">
-                        Currently a Machine Learning Engineer at SmartProtect, building scalable AI solutions for public safety, legal automation, and demand forecasting. <span class="font-semibold text-blue-500 dark:text-blue-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Actively seeking full-time opportunities as an AI/ML Engineer, Data Scientist, Data Analyst, or Data Engineer starting June 2025.</span>
+                        Currently a Machine Learning Engineer at SmartProtect, building scalable AI solutions for public safety, legal automation, and demand forecasting. <span class="font-semibold text-blue-500 dark:text-blue-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"><br>Actively seeking full-time opportunities as an AI/ML Engineer, Data Scientist, Data Analyst, or Data Engineer starting June 2025.</span>
                     </p>
                     <div class="flex space-x-4">
                         <a href="assets/docs/Aravinda_Jatavallabha_Resume - AIML.pdf" class="px-8 py-3 bg-blue-600 dark:bg-blue-500 text-white rounded-full hover:bg-blue-700 dark:hover:bg-blue-600 transition flex items-center">
@@ -1669,7 +1685,7 @@ our model is better than that of the aforementioned paper.
                     </button>
                             <div class="hidden abstract-content overflow-hidden transition-all duration-300">
                                 <p class="text-gray-600 dark:text-gray-300 text-sm bg-gray-50 dark:bg-gray-700/50 p-4 rounded-lg">
-                                    The continuous growth of mobile traffic and limited spectrum resources limits the capacity and data rate. Heterogeneous Networks (HetNet) is a solution with multiple radio interfaces in smartphones to realize such demands. Simultaneous data transfer on Long Term Evolution (LTE) and WiFi has gained attention for data offloading in 5G HetNet. Maintaining the average throughput and minimum delay for LTE users is still a challenge in data offloading owing to the mobility and load in the network. This study explores the benefits of Software-Defined Networking (SDN) based multipath for data offloading schemes for LTE-WiFi integrated networks to maintain the user’s average throughput based on channel quality classification. We classify future link qualities using deep learning models such as Long Short-Term Memory Networks (LSTM) and Bidirectional Long Short-Term Memory Networks (BLSTM). The received signal strength indicator (RSSI) and packet data rate (PDR) are parameters used in BLSTM. The results of the prediction were compared with those of state-of-the-art methods. We obtained a 2.1% better prediction than the state-of-the-art methods. The predicted results were used to offload the data using LTE and WiFi. The performance of HetNet was compared with the state-of-the-art method for average throughput, and with the proposed method, a 6.29% improvement was observed.
+                        The continuous growth of mobile traffic and limited spectrum resources limits the capacity and data rate. Heterogeneous Networks (HetNet) is a solution with multiple radio interfaces in smartphones to realize such demands. Simultaneous data transfer on Long Term Evolution (LTE) and WiFi has gained attention for data offloading in 5G HetNet. Maintaining the average throughput and minimum delay for LTE users is still a challenge in data offloading owing to the mobility and load in the network. This study explores the benefits of Software-Defined Networking (SDN) based multipath for data offloading schemes for LTE-WiFi integrated networks to maintain the user's average throughput based on channel quality classification. We classify future link qualities using deep learning models such as Long Short-Term Memory Networks (LSTM) and Bidirectional Long Short-Term Memory Networks (BLSTM). The received signal strength indicator (RSSI) and packet data rate (PDR) are parameters used in BLSTM. The results of the prediction were compared with those of state-of-the-art methods. We obtained a 2.1% better prediction than the state-of-the-art methods. The predicted results were used to offload the data using LTE and WiFi. The performance of HetNet was compared with the state-of-the-art method for average throughput, and with the proposed method, a 6.29% improvement was observed.
                                 </p>
                     </div>
                             <a href="https://ieeexplore.ieee.org/abstract/document/10767139" target="_blank" class="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 flex items-center">
@@ -1763,16 +1779,16 @@ our model is better than that of the aforementioned paper.
                                     GraphNeural Networks (GNNs)have emerged as apotent framework for graph-structured
                                     recommendation tasks. Incorporating contrastive learning with GNNs has recently demon
                                    strated remarkable efficacy in addressing challenges posed by data sparsity, thanks to in
-                                   novative data augmentation strategies. However, many existing methods employ stochastic
+novative data augmentation strategies. However, many existing methods employ stochastic
                                     perturbations (e.g., node or edge modifications) or heuristic approaches (e.g., clustering
-                                   based augmentations) to generate contrastive views, which may distort semantic integrity
+based augmentations) to generate contrastive views, which may distort semantic integrity
                                     or amplify noise. We introduce LightGCL, a novel and streamlined graph contrastive learn
-                                   ing model to address these limitations. LightGCL utilizes Singular Value Decomposition
+ing model to address these limitations. LightGCL utilizes Singular Value Decomposition
                                     (SVD) to achieve robust augmentation, facilitating structural refinement and global collab
-                                   orative relation modeling without manual augmentation strategies. Extensive experiments
+orative relation modeling without manual augmentation strategies. Extensive experiments
                                     on benchmark datasets showcase its substantial performance enhancements over state-of
-                                   the-art methods. Further analysis highlights the model's resilience to challenges like data
-                                    sparsity and bias related to item popularity.
+the-art methods. Further analysis highlights the model's resilience to challenges like data
+sparsity and bias related to item popularity.
                                 </p>
                     </div>
                             <a href="https://drive.google.com/file/d/1ND3R-cwxMfOw16Wutt6KToq9feTAH5JE/view?usp=drive_link" target="_blank" class="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 flex items-center">
@@ -2064,6 +2080,7 @@ our model is better than that of the aforementioned paper.
     <script>
         // Initialize AOS
         AOS.init({
+            disable: true,  // Disable all animations
             duration: 1000,
             once: true,
             offset: 100,
@@ -2202,7 +2219,7 @@ our model is better than that of the aforementioned paper.
             setTimeout(() => {
                 successDiv.remove();
             }, 5000);
-        }
+    }
     </script>
 </body>
 </html> 

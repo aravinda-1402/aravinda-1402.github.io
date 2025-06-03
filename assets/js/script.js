@@ -1,5 +1,6 @@
 // Initialize AOS
 AOS.init({
+    disable: true,  // Disable all animations
     duration: 800,
     easing: 'ease-out',
     once: true,
