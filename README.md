@@ -48,7 +48,7 @@ The site can be deployed to any static hosting service:
 
 ## Customization
 
-- Update resume: Replace `Aravinda_Jatavallabha_Resume - AIML.pdf` with your latest resume
+- Update resume: Replace my resume with your latest resume
 - Profile image: Update GitHub profile picture or replace image URL in HTML
 - Colors: Modify Tailwind classes in HTML or update custom colors in CSS
 - Content: Edit text and links in HTML to match your information
