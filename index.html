@@ -3,7 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aravinda Raman Jatavallabha - Portfolio</title>
+    
+    <!-- Primary Meta Tags -->
+    <title>Aravinda Raman Jatavallabha | AI Software Engineer & Independent Researcher</title>
+    <meta name="title" content="Aravinda Raman Jatavallabha | AI Software Engineer & Independent Researcher">
+    <meta name="description" content="AI Software Engineer delivering production-grade AI systems. 10+ peer-reviewed research papers, 4.0 GPA Master's in Data Science. Expert in LLMs, RAG, ML pipelines, and full-stack AI systems.">
+    <meta name="keywords" content="AI Engineer, Machine Learning, Data Science, Independent Researcher, LLMs, RAG, Deep Learning, Python, Full-Stack Engineer, O-1, EB1-A">
+    <meta name="author" content="Aravinda Raman Jatavallabha">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
+    <meta name="revisit-after" content="7 days">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://aravindaj.dev/">
+    <meta property="og:title" content="Aravinda Raman Jatavallabha | AI Software Engineer & Independent Researcher">
+    <meta property="og:description" content="AI Software Engineer delivering production-grade AI systems. 10+ peer-reviewed research papers, 4.0 GPA Master's in Data Science.">
+    <meta property="og:image" content="assets/images/AJ_pfp.jpeg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="Aravinda Jatavallabha Portfolio">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://aravindaj.dev/">
+    <meta property="twitter:title" content="Aravinda Raman Jatavallabha | AI Software Engineer & Independent Researcher">
+    <meta property="twitter:description" content="AI Software Engineer delivering production-grade AI systems. 10+ peer-reviewed research papers, 4.0 GPA Master's in Data Science.">
+    <meta property="twitter:image" content="assets/images/AJ_pfp.jpeg">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpeg" href="assets/images/AJ_pfp.jpeg">
+    <link rel="apple-touch-icon" href="assets/images/AJ_pfp.jpeg">
+    
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#f8fafc">
+    <meta name="msapplication-TileColor" content="#f8fafc">
     <link rel="stylesheet" href="assets/css/styles.css">
     
     <!-- Tailwind CSS -->
@@ -13,6 +47,10 @@
             darkMode: 'class',
             theme: {
                 extend: {
+                    colors: {
+                        'brand-bg': '#0c172c',
+                        'brand-surface': '#101f3a',
+                    },
                     container: {
                         center: true,
                         padding: {
@@ -40,7 +78,6 @@
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     
     <!-- Custom Styles -->
-    <link rel="stylesheet" href="styles.css">
     
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -86,105 +123,181 @@
         }
     </style>
     <script>
-        // Always start in light mode unless explicitly set to dark mode before
-        if (localStorage.getItem('darkMode') !== 'true') {
+        // Default to LIGHT mode. Dark mode is enabled only when the user explicitly toggles it on.
+        const saved = localStorage.getItem('darkMode');
+        if (saved === 'true') {
+            document.documentElement.classList.add('dark');
+        } else {
             document.documentElement.classList.remove('dark');
             localStorage.setItem('darkMode', 'false');
-        } else {
-            document.documentElement.classList.add('dark');
         }
     </script>
 </head>
-<body class="bg-white dark:bg-gray-900 transition-colors duration-200">
-    <!-- Navigation -->
-    <nav class="fixed w-full bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm shadow-sm z-50">
+<body class="bg-slate-50 dark:bg-brand-bg transition-colors duration-200">
+    <!-- Enhanced Navigation -->
+    <nav id="navbar" class="fixed w-full bg-white/95 dark:bg-brand-bg/95 backdrop-blur-md shadow-lg z-50 transition-all duration-300">
         <div class="container mx-auto">
             <div class="flex items-center justify-between py-4">
-                <a href="#" class="text-2xl font-bold text-gray-800 dark:text-white">AJ</a>
-                <div class="flex items-center space-x-8">
-                    <button id="darkModeToggle" class="p-2 text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200">
+                <a href="#" class="group flex items-center space-x-2">
+                    <div class="relative">
+                        <div class="absolute inset-0 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-lg blur opacity-75 group-hover:opacity-100 transition-opacity"></div>
+                        <div class="relative bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-4 py-2 rounded-lg font-bold text-xl transform group-hover:scale-105 transition-transform">
+                            AJ
+                        </div>
+                    </div>
+                </a>
+                <div class="flex items-center space-x-6 md:space-x-8">
+                    <button id="darkModeToggle" class="p-2.5 rounded-lg text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-200">
                         <i class="fas fa-moon text-xl"></i>
                         <i class="fas fa-sun text-xl hidden"></i>
                     </button>
-                    <div class="hidden md:flex space-x-8">
-                        <a href="#about" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition">About</a>
-                        <a href="#education" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition">Education</a>
-                        <a href="#experience" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition">Experience</a>
-                        <a href="#all-projects" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition">Projects</a>
-                        <a href="#research-papers" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition">Research Papers</a>
-                        <a href="#contact" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition">Contact</a>
+                    <div class="hidden md:flex space-x-6">
+                        <a href="#about" class="nav-link text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-all font-medium relative group">
+                            <span>About</span>
+                            <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-600 to-indigo-600 group-hover:w-full transition-all duration-300"></span>
+                        </a>
+                        <a href="#recommendations" class="nav-link text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-all font-medium relative group">
+                            <span>Recommendations</span>
+                            <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-600 to-indigo-600 group-hover:w-full transition-all duration-300"></span>
+                        </a>
+                        <a href="#education" class="nav-link text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-all font-medium relative group">
+                            <span>Education</span>
+                            <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-600 to-indigo-600 group-hover:w-full transition-all duration-300"></span>
+                        </a>
+                        <a href="#experience" class="nav-link text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-all font-medium relative group">
+                            <span>Experience</span>
+                            <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-600 to-indigo-600 group-hover:w-full transition-all duration-300"></span>
+                        </a>
+                        <a href="#all-projects" class="nav-link text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-all font-medium relative group">
+                            <span>Projects</span>
+                            <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-600 to-indigo-600 group-hover:w-full transition-all duration-300"></span>
+                        </a>
+                        <a href="#research-papers" class="nav-link text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-all font-medium relative group">
+                            <span>Research</span>
+                            <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-600 to-indigo-600 group-hover:w-full transition-all duration-300"></span>
+                        </a>
+                        <a href="#contact" class="nav-link text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-all font-medium relative group">
+                            <span>Contact</span>
+                            <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-600 to-indigo-600 group-hover:w-full transition-all duration-300"></span>
+                        </a>
                     </div>
                     <div class="hidden md:flex items-center space-x-4">
-
-                        <a href="assets/docs/Aravinda_Jatavallabha_Resume_Latest - AIML.pdf" class="px-6 py-2 bg-blue-600 dark:bg-blue-500 text-white rounded-full hover:bg-blue-700 dark:hover:bg-blue-600 transition">
-                        Resume
-                    </a>
+                        <a href="assets/docs/Aravinda_Jatavallabha_Resume_Latest - AIML.pdf" class="btn-premium px-6 py-2.5 bg-gradient-to-r from-blue-600 to-indigo-600 dark:from-blue-500 dark:to-indigo-500 text-white rounded-full hover:from-blue-700 hover:to-indigo-700 dark:hover:from-blue-600 dark:hover:to-indigo-600 font-semibold transition-all shadow-lg">
+                            <i class="fas fa-download mr-2"></i>Resume
+                        </a>
                     </div>
+                    <!-- Mobile Menu Button -->
+                    <button id="mobileMenuBtn" class="md:hidden p-2 text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
                 </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-white dark:bg-brand-bg border-t border-gray-200 dark:border-gray-700">
+            <div class="container mx-auto py-4 space-y-3">
+                <a href="#about" class="block px-4 py-2 text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition">About</a>
+                <a href="#recommendations" class="block px-4 py-2 text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition">Recommendations</a>
+                <a href="#education" class="block px-4 py-2 text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition">Education</a>
+                <a href="#experience" class="block px-4 py-2 text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition">Experience</a>
+                <a href="#all-projects" class="block px-4 py-2 text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition">Projects</a>
+                <a href="#research-papers" class="block px-4 py-2 text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition">Research</a>
+                <a href="#contact" class="block px-4 py-2 text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition">Contact</a>
+                <a href="assets/docs/Aravinda_Jatavallabha_Resume_Latest - AIML.pdf" class="block px-4 py-2 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-lg text-center font-semibold hover:from-blue-700 hover:to-indigo-700 transition">
+                    <i class="fas fa-download mr-2"></i>Download Resume
+                </a>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section id="hero" class="pt-32 pb-20 bg-white dark:bg-gray-900 relative overflow-hidden">
-        <!-- Neural Network Background Pattern -->
-        <div class="absolute inset-0 opacity-10 dark:opacity-5">
-            <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-                <defs>
-                    <pattern id="neural-net" x="0" y="0" width="50" height="50" patternUnits="userSpaceOnUse">
-                        <circle cx="25" cy="25" r="2" fill="currentColor" class="text-blue-600 dark:text-blue-400"/>
-                        <path d="M25 25L50 25M25 25L25 50M25 25L0 25M25 25L25 0M25 25L40 40M25 25L10 10M25 25L40 10M25 25L10 40" 
-                              stroke="currentColor" 
-                              class="text-blue-400 dark:text-blue-600" 
-                              stroke-width="0.5"/>
-                    </pattern>
-                </defs>
-                <rect width="100%" height="100%" fill="url(#neural-net)"/>
-            </svg>
-        </div>
+    <section id="hero" class="pt-32 pb-24 bg-gradient-to-br from-white via-blue-50/30 to-indigo-50/30 dark:from-brand-bg dark:via-brand-surface/40 dark:to-brand-bg relative overflow-hidden">
+        <!-- Enhanced Background Pattern -->
+        <div class="hero-pattern"></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-blue-50/60 to-indigo-50/60 dark:from-brand-surface/35 dark:to-brand-bg/60 backdrop-blur-sm"></div>
         
-        <!-- Background Gradient Effect -->
-        <div class="absolute inset-0 bg-gradient-to-r from-blue-50/80 to-indigo-50/80 dark:from-blue-900/40 dark:to-indigo-900/40 backdrop-blur-sm"></div>
-        
-        <div class="container mx-auto relative">
-            <div class="flex flex-col md:flex-row items-center justify-between">
+        <div class="container mx-auto relative z-10">
+            <!-- Key Metrics Bar (Top Proof Points) -->
+            <div class="mb-12 grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6" data-aos="fade-down">
+                <div class="metric-card bg-white/80 dark:bg-gray-800/80 backdrop-blur-md rounded-2xl p-4 md:p-6 text-center border border-blue-100 dark:border-gray-700 shadow-premium">
+                    <div class="key-metric text-3xl md:text-4xl mb-2" data-count="10" data-suffix="+">10+</div>
+                    <div class="text-sm md:text-base font-semibold text-gray-700 dark:text-gray-300">Research Papers</div>
+                    <div class="text-xs text-gray-500 dark:text-gray-400 mt-1">Peer-Reviewed</div>
+                </div>
+                <div class="metric-card bg-white/80 dark:bg-gray-800/80 backdrop-blur-md rounded-2xl p-4 md:p-6 text-center border border-blue-100 dark:border-gray-700 shadow-premium">
+                    <div class="key-metric text-3xl md:text-4xl mb-2" data-count="8" data-suffix="">8</div>
+                    <div class="text-sm md:text-base font-semibold text-gray-700 dark:text-gray-300">Research Areas</div>
+                    <div class="text-xs text-gray-500 dark:text-gray-400 mt-1">Across topics</div>
+                </div>
+                <div class="metric-card bg-white/80 dark:bg-gray-800/80 backdrop-blur-md rounded-2xl p-4 md:p-6 text-center border border-blue-100 dark:border-gray-700 shadow-premium">
+                    <div class="key-metric text-3xl md:text-4xl mb-2" data-count="50" data-suffix="%">50%</div>
+                    <div class="text-sm md:text-base font-semibold text-gray-700 dark:text-gray-300">Time Reduction</div>
+                    <div class="text-xs text-gray-500 dark:text-gray-400 mt-1">Clinical Documentation</div>
+                </div>
+                <div class="metric-card bg-white/80 dark:bg-gray-800/80 backdrop-blur-md rounded-2xl p-4 md:p-6 text-center border border-blue-100 dark:border-gray-700 shadow-premium">
+                    <div class="key-metric text-3xl md:text-4xl mb-2" data-count="10" data-suffix="M+">10M+</div>
+                    <div class="text-sm md:text-base font-semibold text-gray-700 dark:text-gray-300">Records Processed</div>
+                    <div class="text-xs text-gray-500 dark:text-gray-400 mt-1">At Scale</div>
+                </div>
+            </div>
+
+            <div class="flex flex-col md:flex-row items-center justify-between gap-12">
                 <div class="md:w-1/2" data-aos="fade-right">
-                    <h1 class="text-4xl md:text-6xl font-bold text-gray-800 dark:text-white mb-4">
-                        Aravinda Raman Jatavallabha
+                    <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold text-gray-900 dark:text-white mb-4 leading-tight">
+                        <span class="gradient-text">Aravinda Raman</span><br>
+                        <span class="text-gray-800 dark:text-gray-100">Jatavallabha</span>
                     </h1>
-                    <h2 class="text-2xl md:text-3xl text-gray-600 dark:text-gray-300 mb-6">
-                        AI Software Engineer & Full-Stack Engineer
+                    <h2 class="text-2xl md:text-3xl font-semibold text-gray-700 dark:text-gray-300 mb-6">
+                        AI Software Engineer & Independent Researcher
                     </h2>
-                    <p class="text-lg text-gray-600 dark:text-gray-400 mb-8 leading-relaxed text-justify">
-                        Currently leading AI software engineering at Long Health in San Jose, where I ship HIPAA-compliant serverless workflows, async RAG pipelines, and LLM-powered physician copilots that cut clinical documentation time in half. <span class="font-semibold text-blue-500 dark:text-blue-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"><br>Open to impactful AI, Data Science, and Engineering roles where full-stack AI systems meet measurable business outcomes.</span>
+                    <p class="text-lg md:text-xl text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
+                        AI Software Engineer building production AI systems—especially <span class="font-semibold">LLM-powered workflows</span>, <span class="font-semibold">RAG</span>, and applied machine learning—where reliability and real-world usability matter.
                     </p>
-                    <div class="flex space-x-4">
-                        <a href="assets/docs/Aravinda_Jatavallabha_Resume_Latest - AIML.pdf" class="px-8 py-3 bg-blue-600 dark:bg-blue-500 text-white rounded-full hover:bg-blue-700 dark:hover:bg-blue-600 transition flex items-center">
+                    <p class="text-base text-gray-600 dark:text-gray-400 mb-5 leading-relaxed">
+                        Currently at <span class="font-semibold text-blue-600 dark:text-blue-400">Long Health</span>, I contribute to AI-driven document and workflow automation across backend services and intelligent pipelines that structure complex, unstructured data.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-7">
+                        <span class="px-3 py-1 rounded-full bg-blue-100/70 dark:bg-blue-900/30 text-blue-700 dark:text-blue-200 text-sm font-semibold">LLM Systems</span>
+                        <span class="px-3 py-1 rounded-full bg-indigo-100/70 dark:bg-indigo-900/30 text-indigo-700 dark:text-indigo-200 text-sm font-semibold">RAG</span>
+                        <span class="px-3 py-1 rounded-full bg-purple-100/70 dark:bg-purple-900/30 text-purple-700 dark:text-purple-200 text-sm font-semibold">ML Pipelines</span>
+                        <span class="px-3 py-1 rounded-full bg-gray-100/80 dark:bg-gray-800 text-gray-700 dark:text-gray-200 text-sm font-semibold">Backend Services</span>
+                        <span class="px-3 py-1 rounded-full bg-gray-100/80 dark:bg-gray-800 text-gray-700 dark:text-gray-200 text-sm font-semibold">Event-Driven Systems</span>
+                    </div>
+                    <p class="text-base text-gray-600 dark:text-gray-400 mb-8 font-medium">
+                        <span class="text-blue-600 dark:text-blue-400">Open to conversations around AI Software Engineering and Applied AI/ML Engineering roles</span> where building dependable AI systems at scale is a core requirement.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="assets/docs/Aravinda_Jatavallabha_Resume_Latest - AIML.pdf" class="btn-premium px-8 py-4 bg-gradient-to-r from-blue-600 to-indigo-600 dark:from-blue-500 dark:to-indigo-500 text-white rounded-full hover:from-blue-700 hover:to-indigo-700 dark:hover:from-blue-600 dark:hover:to-indigo-600 font-semibold flex items-center shadow-premium-lg">
                             <i class="fas fa-download mr-2"></i> Download Resume
                         </a>
-                        <a href="#contact" class="px-8 py-3 border-2 border-blue-600 dark:border-blue-500 text-blue-600 dark:text-blue-400 rounded-full hover:bg-blue-600 dark:hover:bg-blue-500 hover:text-white transition">
+                        <a href="#research-papers" class="px-8 py-4 border-2 border-blue-600 dark:border-blue-500 text-blue-600 dark:text-blue-400 rounded-full hover:bg-blue-600 dark:hover:bg-blue-500 hover:text-white font-semibold transition-all shadow-premium">
+                            View Research
+                        </a>
+                        <a href="#contact" class="px-8 py-4 bg-white dark:bg-gray-800 border-2 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 rounded-full hover:border-blue-600 dark:hover:border-blue-500 hover:text-blue-600 dark:hover:text-blue-400 font-semibold transition-all">
                             Contact Me
                         </a>
                     </div>
                 </div>
-                <div class="md:w-1/2 mt-12 md:mt-0 relative" data-aos="fade-left">
-                    <div class="relative w-72 h-72 mx-auto">
-                        <!-- Decorative Elements -->
-                        <div class="absolute -inset-4 bg-gradient-to-r from-blue-600/20 to-indigo-600/20 rounded-full blur-2xl opacity-50 animate-pulse"></div>
-                        <div class="absolute -inset-4 bg-gradient-to-r from-blue-600/10 to-indigo-600/10 rounded-full rotate-45"></div>
+                <div class="md:w-1/2 mt-8 md:mt-0 relative" data-aos="fade-left">
+                    <div class="relative w-80 h-[26rem] md:w-96 md:h-[30rem] mx-auto">
+                        <!-- Soft glow (no movement) -->
+                        <div class="absolute -inset-10 bg-gradient-to-r from-amber-500/12 via-rose-500/10 to-violet-500/10 rounded-3xl blur-3xl opacity-80"></div>
                         
-                        <!-- Image Container -->
-                        <div class="relative w-full h-full rounded-full overflow-hidden border-4 border-white dark:border-gray-800 shadow-2xl">
-                            <img src="assets/images/AJ_latest_Cropped.JPEG" alt="Aravinda Raman Jatavallabha" 
-                                 class="w-full h-full object-cover object-center transform hover:scale-105 transition-transform duration-500">
+                        <!-- Image Container - borderless, blended into background (rounded-square) -->
+                        <div class="profile-portrait relative w-full h-full rounded-3xl overflow-hidden shadow-premium-lg">
+                            <img src="assets/images/AJ_pfp.jpeg" alt="Aravinda Raman Jatavallabha"
+                                 class="profile-portrait__img relative w-full h-full object-cover">
                         </div>
                         
-                        <!-- Floating Badges -->
-                        <div class="absolute -right-4 top-10 bg-white dark:bg-gray-800 rounded-full p-3 shadow-lg">
-                            <i class="fas fa-brain text-blue-600 dark:text-blue-400 text-xl"></i>
+                        <!-- Enhanced Floating Badges - Brighter for Dark Background -->
+                        <div class="absolute -right-6 top-12 bg-gradient-to-br from-white to-blue-100 dark:from-gray-700 dark:to-gray-600 rounded-full p-4 shadow-premium-lg animate-float ring-2 ring-blue-300/50 dark:ring-blue-400/50">
+                            <i class="fas fa-brain text-blue-600 dark:text-blue-400 text-2xl"></i>
                         </div>
-                        <div class="absolute -left-4 bottom-10 bg-white dark:bg-gray-800 rounded-full p-3 shadow-lg">
-                            <i class="fas fa-code text-indigo-600 dark:text-indigo-400 text-xl"></i>
+                        <div class="absolute -left-6 bottom-12 bg-gradient-to-br from-white to-indigo-100 dark:from-gray-700 dark:to-gray-600 rounded-full p-4 shadow-premium-lg animate-float ring-2 ring-indigo-300/50 dark:ring-indigo-400/50" style="animation-delay: 1s;">
+                            <i class="fas fa-code text-indigo-600 dark:text-indigo-400 text-2xl"></i>
+                        </div>
+                        <div class="absolute top-1/2 -right-12 transform -translate-y-1/2 bg-gradient-to-br from-white to-purple-100 dark:from-gray-700 dark:to-gray-600 rounded-full p-3 shadow-premium-lg animate-float ring-2 ring-purple-300/50 dark:ring-purple-400/50" style="animation-delay: 2s;">
+                            <i class="fas fa-graduation-cap text-purple-600 dark:text-purple-400 text-xl"></i>
                         </div>
                     </div>
                 </div>
@@ -192,85 +305,202 @@
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="py-20 bg-gray-50 dark:bg-gray-800">
+    <!-- Recommendations (Third-Party Validation) -->
+    <section id="recommendations" class="py-20 bg-gray-50 dark:bg-gray-800">
         <div class="container mx-auto">
-            <h2 class="text-3xl font-bold text-center mb-16 text-gray-800 dark:text-white" data-aos="fade-up">About Me</h2>
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 dark:text-white mb-4">Recommendations</h2>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+                <!-- Jason Klink (CEO) -->
+                <div class="premium-card bg-white dark:bg-gray-900 rounded-2xl p-8 shadow-premium border border-amber-200/70 dark:border-amber-400/20" data-aos="fade-up">
+                    <div class="flex items-start justify-between gap-6 mb-6">
+                        <div>
+                            <div class="flex flex-wrap items-center gap-2 mb-1">
+                                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-amber-100 text-amber-800 dark:bg-amber-400/15 dark:text-amber-200">
+                                    CEO / Co-Founder
+                                </span>
+                                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-gray-100 text-gray-700 dark:bg-gray-800 dark:text-gray-200">
+                                    Managed Aravinda directly
+                                </span>
+                            </div>
+                            <div class="text-xl font-bold text-gray-900 dark:text-white leading-tight">
+                                <a href="https://www.linkedin.com/in/jason-klink-50391176/" target="_blank" rel="noopener noreferrer" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                                    Jason Klink
+                                </a>
+                            </div>
+                            <div class="text-gray-600 dark:text-gray-400 text-sm">
+                                CEO · Co-Founder · Public Safety
+                            </div>
+                            <div class="text-gray-500 dark:text-gray-500 text-sm mt-1">
+                                October 30, 2024
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-3 shrink-0">
+                            <a href="https://www.linkedin.com/in/jason-klink-50391176/" target="_blank" rel="noopener noreferrer"
+                               class="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-600 to-indigo-600 flex items-center justify-center text-white hover:opacity-90 transition-opacity"
+                               aria-label="Jason Klink on LinkedIn">
+                                <i class="fab fa-linkedin-in text-xl"></i>
+                            </a>
+                            <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-amber-500 to-orange-600 flex items-center justify-center text-white">
+                                <i class="fas fa-quote-left"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <blockquote class="text-gray-700 dark:text-gray-300 leading-relaxed">
+                        I’ve had the pleasure of working with Aravinda Jatavallabha as part of the SmartProtect Public Safety Solutions team, where he has served as a Data Science Intern over the past six months. Aravinda’s contributions to building out our predictive analytics framework for public safety have been both impactful and highly innovative. His work, especially in structuring and analyzing complex datasets, has significantly advanced our ability to deliver tailored, data-driven solutions to our clients.
+                        <br><br>
+                        Aravinda brings a deep technical expertise to his work, combined with a genuine commitment to understanding and solving client challenges in public safety. His attention to detail, analytical insight, and dedication have made him an invaluable asset to our team, and his contributions will continue to benefit both our company and the customers we serve.
+                    </blockquote>
+                </div>
+
+                <!-- Ricardo Blanco -->
+                <div class="premium-card bg-white dark:bg-gray-900 rounded-2xl p-8 shadow-premium border border-blue-100 dark:border-gray-700" data-aos="fade-up" data-aos-delay="50">
+                    <div class="flex items-start justify-between gap-6 mb-6">
+                        <div>
+                            <div class="flex flex-wrap items-center gap-2 mb-1">
+                                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-gray-100 text-gray-700 dark:bg-gray-800 dark:text-gray-200">
+                                    Managed Aravinda directly
+                                </span>
+                            </div>
+                            <div class="text-xl font-bold text-gray-900 dark:text-white">
+                                <a href="https://www.linkedin.com/in/ricardo-blanco-876a0a16/" target="_blank" rel="noopener noreferrer" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                                    Ricardo Blanco
+                                </a>
+                            </div>
+                            <div class="text-gray-600 dark:text-gray-400 text-sm">
+                                Sales Manager / Revenue Growth / Sales Enablement / Business Development (Public Safety SaaS)
+                            </div>
+                            <div class="text-gray-500 dark:text-gray-500 text-sm mt-1">
+                                June 27, 2025
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-3 shrink-0">
+                            <a href="https://www.linkedin.com/in/ricardo-blanco-876a0a16/" target="_blank" rel="noopener noreferrer"
+                               class="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-600 to-indigo-600 flex items-center justify-center text-white hover:opacity-90 transition-opacity"
+                               aria-label="Ricardo Blanco on LinkedIn">
+                                <i class="fab fa-linkedin-in text-xl"></i>
+                            </a>
+                            <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-amber-500 to-orange-600 flex items-center justify-center text-white">
+                                <i class="fas fa-quote-left"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <blockquote class="text-gray-700 dark:text-gray-300 leading-relaxed">
+                        I had the pleasure of working with Aravinda during his time at SmartProtect, where he made a lasting impact on our AI/ML initiatives. From day one, he brought thoughtfulness and a sharp technical mindset to every challenge. Whether it was building early prototypes or helping us think through how machine learning could meaningfully support public safety operations, Aravinda consistently delivered high-quality work and insightful ideas.
+                        <br><br>
+                        What stood out most was his willingness to dive deep, learn fast, and always look for ways to make the work better—not just from a technical standpoint, but in a way that aligned with the mission of serving first responders. He was a valued team member with great communication skills and someone I trusted to bring both integrity and innovation to the table.
+                        <br><br>
+                        Any team would be lucky to have Aravinda on board, and I’m excited to see where his journey takes him next.
+                    </blockquote>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gradient-to-b from-white to-gray-50 dark:from-gray-900 dark:to-gray-800 relative">
+        <div class="section-divider"></div>
+        <div class="container mx-auto">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white mb-4">
+                    <span class="gradient-text">About Me</span>
+                </h2>
+                <p class="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+                    Combining research and production engineering to deliver reliable AI systems
+                </p>
+            </div>
             <div class="flex flex-col lg:flex-row gap-0 max-w-8xl mx-auto">
                 <!-- Left Column (50%) -->
                 <div class="lg:w-1/2 lg:pr-12" data-aos="fade-right">
                     <!-- About Text -->
                     <div class="space-y-6">
                         <p class="text-gray-600 dark:text-gray-300 leading-relaxed text-justify">
-                            AI Software Engineer delivering production-grade AI systems for Long Health in San Jose. I design HIPAA-safe serverless workflows, orchestrate RAG + LLM pipelines for patient intelligence, and build Angular/NestJS tools that physicians rely on daily. I love roles where I can own the stack end-to-end data, models, MLOps, and product impact.
+                            I am an <strong>AI Software Engineer</strong> focused on building real-world AI applications, with an emphasis on <strong>LLM-powered systems</strong>, <strong>retrieval-augmented generation (RAG)</strong>, and applied machine learning. My work sits at the intersection of software engineering and AI, where system reliability, model quality, and real-world usability are critical.
                         </p>
                         <p class="text-gray-600 dark:text-gray-300 leading-relaxed text-justify">
-                            My experience spans the full ML pipeline, from developing LSTM-based forecasting systems and optimizing ETL workflows using AWS and Snowflake to integrating LLMs for NLP applications and deploying models with FastAPI and SageMaker. I've led impactful projects across public safety, legal automation, and customer intelligence, combining Python, SQL, and cloud technologies to deliver results at scale.
+                            Currently at <strong>Long Health</strong>, I contribute to <strong>AI-driven document and workflow automation</strong>, working on backend services and intelligent pipelines that process and structure complex, unstructured data. My role involves integrating LLMs, data pipelines, and event-driven systems into production software, and I also contribute to frontend interfaces where needed to enable end-to-end delivery of AI features.
                         </p>
                         <p class="text-gray-600 dark:text-gray-300 leading-relaxed text-justify">
-                            Alongside applied work, I've contributed to peer-reviewed research in areas like graph neural networks, language modeling, and fairness in AI, with multiple publications across conferences and journals.
+                            Alongside my industry work, I <strong>independently publish research</strong> in machine learning and AI systems, with peer-reviewed and archival publications (ICPR/Springer, IEEE Access, arXiv) spanning <strong>dynamic language modeling</strong>, <strong>time-series prediction</strong>, and <strong>applied deep learning</strong>. I'm particularly interested in translating research ideas into robust, production-ready systems.
                         </p>
                         <p class="text-gray-600 dark:text-gray-300 leading-relaxed text-justify">
-                        I'm looking to bring this blend of hands-on engineering and deep analytical thinking to a high-impact team. Let's connect.
-                    </p>
+                            I'm open to conversations around <strong>AI Software Engineering</strong> and <strong>Applied AI/ML Engineering roles</strong> where building dependable AI systems at scale is a core requirement.
+                        </p>
                     </div>
 
                     <!-- Where I've Delivered Impact -->
                     <div class="mt-12">
-                        <h3 class="text-2xl font-bold text-gray-800 dark:text-white mb-8">Where I've Delivered Impact</h3>
+                        <h3 class="text-2xl md:text-3xl font-bold text-gray-800 dark:text-white mb-8 flex items-center">
+                            <span class="w-12 h-1 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-full mr-4"></span>
+                            Where I've Delivered Impact
+                        </h3>
                         <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
                             <!-- Healthcare Card -->
-                            <div class="bg-white dark:bg-gray-800/50 rounded-lg p-4 shadow-sm hover:shadow-md transition-all duration-300">
+                            <div class="premium-card bg-white dark:bg-gray-800 rounded-xl p-5 shadow-premium border border-blue-100 dark:border-gray-700">
                                 <div class="flex items-center mb-3">
-                                    <i class="fas fa-hospital text-xl text-blue-500 dark:text-blue-400 mr-3"></i>
+                                    <div class="w-12 h-12 rounded-lg bg-gradient-to-br from-blue-100 to-blue-200 dark:from-blue-900/30 dark:to-blue-800/30 flex items-center justify-center mr-3">
+                                        <i class="fas fa-hospital text-xl text-blue-600 dark:text-blue-400"></i>
+                                    </div>
                                     <h4 class="text-lg font-bold text-gray-800 dark:text-white">Healthcare</h4>
                                 </div>
-                                <p class="text-gray-600 dark:text-gray-300 text-sm">Shipped document AI pipelines and LLM-powered physician assistants.</p>
+                                <p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">Shipped document AI pipelines and LLM-powered physician assistants.</p>
                             </div>
 
                             <!-- Legal Tech Card -->
-                            <div class="bg-white dark:bg-gray-800/50 rounded-lg p-4 shadow-sm hover:shadow-md transition-all duration-300">
+                            <div class="premium-card bg-white dark:bg-gray-800 rounded-xl p-5 shadow-premium border border-blue-100 dark:border-gray-700">
                                 <div class="flex items-center mb-3">
-                                    <i class="fas fa-balance-scale text-xl text-blue-500 dark:text-blue-400 mr-3"></i>
+                                    <div class="w-12 h-12 rounded-lg bg-gradient-to-br from-indigo-100 to-indigo-200 dark:from-indigo-900/30 dark:to-indigo-800/30 flex items-center justify-center mr-3">
+                                        <i class="fas fa-balance-scale text-xl text-indigo-600 dark:text-indigo-400"></i>
+                                    </div>
                                     <h4 class="text-lg font-bold text-gray-800 dark:text-white">Legal Tech</h4>
                                 </div>
-                                <p class="text-gray-600 dark:text-gray-300 text-sm">Built GPT-powered legal assistants with RAG & vector DBs.</p>
+                                <p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">Built GPT-powered legal assistants with RAG & vector DBs.</p>
                             </div>
 
                             <!-- Public Safety Card -->
-                            <div class="bg-white dark:bg-gray-800/50 rounded-lg p-4 shadow-sm hover:shadow-md transition-all duration-300">
+                            <div class="premium-card bg-white dark:bg-gray-800 rounded-xl p-5 shadow-premium border border-blue-100 dark:border-gray-700">
                                 <div class="flex items-center mb-3">
-                                    <i class="fas fa-shield-alt text-xl text-blue-500 dark:text-blue-400 mr-3"></i>
+                                    <div class="w-12 h-12 rounded-lg bg-gradient-to-br from-purple-100 to-purple-200 dark:from-purple-900/30 dark:to-purple-800/30 flex items-center justify-center mr-3">
+                                        <i class="fas fa-shield-alt text-xl text-purple-600 dark:text-purple-400"></i>
+                                    </div>
                                     <h4 class="text-lg font-bold text-gray-800 dark:text-white">Public Safety</h4>
                                 </div>
-                                <p class="text-gray-600 dark:text-gray-300 text-sm">Forecasted 911 call volume and optimized staffing using ML.</p>
+                                <p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">Forecasted 911 call volume and optimized staffing using ML.</p>
                             </div>
 
                             <!-- Retail & Marketing Card -->
-                            <div class="bg-white dark:bg-gray-800/50 rounded-lg p-4 shadow-sm hover:shadow-md transition-all duration-300">
+                            <div class="premium-card bg-white dark:bg-gray-800 rounded-xl p-5 shadow-premium border border-blue-100 dark:border-gray-700">
                                 <div class="flex items-center mb-3">
-                                    <i class="fas fa-shopping-cart text-xl text-blue-500 dark:text-blue-400 mr-3"></i>
+                                    <div class="w-12 h-12 rounded-lg bg-gradient-to-br from-green-100 to-green-200 dark:from-green-900/30 dark:to-green-800/30 flex items-center justify-center mr-3">
+                                        <i class="fas fa-shopping-cart text-xl text-green-600 dark:text-green-400"></i>
+                                    </div>
                                     <h4 class="text-lg font-bold text-gray-800 dark:text-white">Retail & Marketing</h4>
                                 </div>
-                                <p class="text-gray-600 dark:text-gray-300 text-sm">Boosted campaign ROI via LSTM & ETL optimization.</p>
+                                <p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">Boosted campaign ROI via LSTM & ETL optimization.</p>
                             </div>
 
                             <!-- Autonomous Systems Card -->
-                            <div class="bg-white dark:bg-gray-800/50 rounded-lg p-4 shadow-sm hover:shadow-md transition-all duration-300">
+                            <div class="premium-card bg-white dark:bg-gray-800 rounded-xl p-5 shadow-premium border border-blue-100 dark:border-gray-700">
                                 <div class="flex items-center mb-3">
-                                    <i class="fas fa-car text-xl text-blue-500 dark:text-blue-400 mr-3"></i>
+                                    <div class="w-12 h-12 rounded-lg bg-gradient-to-br from-red-100 to-red-200 dark:from-red-900/30 dark:to-red-800/30 flex items-center justify-center mr-3">
+                                        <i class="fas fa-car text-xl text-red-600 dark:text-red-400"></i>
+                                    </div>
                                     <h4 class="text-lg font-bold text-gray-800 dark:text-white">Autonomous Systems</h4>
                                 </div>
-                                <p class="text-gray-600 dark:text-gray-300 text-sm">Built lane detection and GNN-based driver behavior forecasting.</p>
+                                <p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">Built lane detection and GNN-based driver behavior forecasting.</p>
                             </div>
 
                             <!-- IoT & Networks Card -->
-                            <div class="bg-white dark:bg-gray-800/50 rounded-lg p-4 shadow-sm hover:shadow-md transition-all duration-300">
+                            <div class="premium-card bg-white dark:bg-gray-800 rounded-xl p-5 shadow-premium border border-blue-100 dark:border-gray-700">
                                 <div class="flex items-center mb-3">
-                                    <i class="fas fa-network-wired text-xl text-blue-500 dark:text-blue-400 mr-3"></i>
+                                    <div class="w-12 h-12 rounded-lg bg-gradient-to-br from-cyan-100 to-cyan-200 dark:from-cyan-900/30 dark:to-cyan-800/30 flex items-center justify-center mr-3">
+                                        <i class="fas fa-network-wired text-xl text-cyan-600 dark:text-cyan-400"></i>
+                                    </div>
                                     <h4 class="text-lg font-bold text-gray-800 dark:text-white">IoT & Networks</h4>
                                 </div>
-                                <p class="text-gray-600 dark:text-gray-300 text-sm">Built LSTM models for IoT network health prediction at scale.</p>
+                                <p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">Built LSTM models for IoT network health prediction at scale.</p>
                             </div>
                         </div>
                     </div>
@@ -503,7 +733,7 @@
             <h2 class="text-3xl font-bold text-center mb-16 text-gray-800 dark:text-white" data-aos="fade-up">Education</h2>
             <div class="space-y-8">
                 <!-- NC State -->
-                <div class="bg-white dark:bg-gray-800 rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300" data-aos="fade-up">
+                <div class="premium-card bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-premium border border-blue-100 dark:border-gray-700" data-aos="fade-up">
                     <div class="flex flex-col md:flex-row justify-between items-start mb-6">
                         <div class="flex-1">
                             <div class="flex items-center mb-4" data-aos="fade-right" data-aos-duration="1000">
@@ -689,7 +919,7 @@
             <h2 class="text-3xl font-bold text-center mb-16 text-gray-800 dark:text-white" data-aos="fade-up">Work Experience</h2>
             <div class="space-y-8">
                 <!-- Long Health -->
-                <div class="bg-white dark:bg-gray-800 rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-300" data-aos="fade-up" data-aos-duration="1000">
+                <div class="experience-card premium-card bg-white dark:bg-gray-800 rounded-2xl p-8 md:p-10 shadow-premium border border-blue-100 dark:border-gray-700" data-aos="fade-up" data-aos-duration="1000">
                     <div class="flex flex-col md:flex-row justify-between mb-6">
                         <div>
                             <div class="flex items-center mb-4" data-aos="fade-right" data-aos-duration="1000">
@@ -788,7 +1018,7 @@
                                     <ul class="space-y-3">
                                         <li class="flex items-start experience-item">
                                             <i class="fas fa-user-shield text-blue-600 dark:text-blue-400 mt-1 mr-2"></i>
-                                            <span>Partnered with clinical and compliance teams to ship HIPAA- and PHI/PII-safe workflows, sustaining 100% audit compliance and accelerating physician adoption.</span>
+                                            <span>Partnered with clinical and compliance teams to ship HIPAA- and PHI/PII-safe workflows, supporting compliance requirements and accelerating physician adoption.</span>
                                         </li>
                                         <li class="flex items-start experience-item">
                                             <i class="fas fa-chart-line text-blue-600 dark:text-blue-400 mt-1 mr-2"></i>
@@ -807,15 +1037,15 @@
                 </div>
 
                 <!-- SmartProtect -->
-                <div class="bg-white dark:bg-gray-800 rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-300" data-aos="fade-up" data-aos-duration="1000">
+                <div class="experience-card premium-card bg-white dark:bg-gray-800 rounded-2xl p-8 md:p-10 shadow-premium border border-blue-100 dark:border-gray-700" data-aos="fade-up" data-aos-duration="1000">
                     <div class="flex flex-col md:flex-row justify-between mb-6">
                         <div>
                             <div class="flex items-center mb-4" data-aos="fade-right" data-aos-duration="1000">
                                 <img src="assets/images/smartprotect.png" alt="SmartProtect Logo" class="w-24 h-24 object-contain mr-4 dark:brightness-110 transform transition-transform hover:scale-110">
                                 <div>
-                                    <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-2">Data Scientist - ML, Analytics & Full-Stack Systems </h3>
+                                    <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-2">Data Science Intern / Co-op - ML & Predictive Analytics</h3>
                                     <p class="text-blue-600 dark:text-blue-400">SmartProtect Public Safety Solutions</p>
-                                    <p class="text-gray-500 dark:text-gray-400">May 2024 - Present · Part-time</p>
+                                    <p class="text-gray-500 dark:text-gray-400">May 2024 - Jun 2025 · Internship (Part-time)</p>
                                     <p class="text-gray-600 dark:text-gray-300 text-sm">Wilmington, Delaware, United States · Remote</p>
                                 </div>
                             </div>
@@ -920,7 +1150,7 @@
                 </div>
 
                 <!-- NC State Teaching -->
-                <div class="bg-white dark:bg-gray-800 rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-300" data-aos="fade-up" data-aos-duration="800">
+                <div class="experience-card premium-card bg-white dark:bg-gray-800 rounded-2xl p-8 md:p-10 shadow-premium border border-blue-100 dark:border-gray-700" data-aos="fade-up" data-aos-duration="800">
                     <div class="flex flex-col md:flex-row justify-between mb-6">
                         <div>
                             <div class="flex items-center mb-4" data-aos="fade-right" data-aos-duration="800" data-aos-delay="100">
@@ -1030,7 +1260,7 @@
                             <div class="flex items-center mb-4" data-aos="fade-right" data-aos-duration="1000">
                                 <img src="assets/images/DRDO.png" alt="DRDO Logo" class="w-24 h-24 object-contain mr-4 transform transition-transform hover:scale-110">
                                 <div>
-                                    <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-2">Machine Learning Engineer</h3>
+                                    <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-2">Machine Learning Researcher</h3>
                                     <p class="text-blue-600 dark:text-blue-400">Defence Research and Development Organisation (DRDO)</p>
                                     <p class="text-gray-500 dark:text-gray-400">Jan 2023 - Jun 2023 · Research Internship</p>
                                     <p class="text-gray-600 dark:text-gray-300 text-sm">Bengaluru, Karnataka, India · On-site</p>
@@ -1330,9 +1560,17 @@
     </section>
 
     <!-- Featured Projects Section -->
-    <section id="all-projects" class="py-20 bg-white dark:bg-gray-900">
+    <section id="all-projects" class="py-20 bg-gradient-to-b from-white to-gray-50 dark:from-gray-900 dark:to-gray-800 relative">
+        <div class="section-divider"></div>
         <div class="container mx-auto">
-            <h2 class="text-3xl font-bold text-center mb-16 text-gray-800 dark:text-white" data-aos="fade-up">Projects</h2>
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white mb-4">
+                    <span class="gradient-text">Featured Projects</span>
+                </h2>
+                <p class="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+                    Building innovative solutions across AI, Machine Learning, and Full-Stack Development
+                </p>
+            </div>
             
             <!-- Filter Bar -->
             <div class="relative mb-8 overflow-hidden" data-aos="fade-up">
@@ -1396,7 +1634,7 @@
 
                 <div class="grid md:grid-cols-2 gap-8">
                     <!-- CoveredAI -->
-                    <div class="project-card bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105" 
+                    <div class="project-card premium-card bg-white dark:bg-gray-800 rounded-2xl shadow-premium overflow-hidden border border-blue-100 dark:border-gray-700" 
                         data-aos="fade-up"
                         data-tags="fullstack,ai,llm,rag,genai,nlp">
                         <div class="p-6">
@@ -1421,7 +1659,7 @@
 
 
                 <!-- Wolf Parking Management System -->
-                <div class="project-card bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105" 
+                <div class="project-card premium-card bg-white dark:bg-gray-800 rounded-2xl shadow-premium overflow-hidden border border-blue-100 dark:border-gray-700" 
                      data-aos="fade-up"
                      data-tags="fullstack,analytics">
                     <div class="p-6">
@@ -1442,7 +1680,7 @@
                 </div>
 
                 <!-- Cold Email Generator -->
-                <div class="project-card bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105" 
+                <div class="project-card premium-card bg-white dark:bg-gray-800 rounded-2xl shadow-premium overflow-hidden border border-blue-100 dark:border-gray-700" 
                      data-aos="fade-up"
                      data-tags="nlp,llm,mlops,fullstack,genai">
                     <div class="p-6">
@@ -1464,7 +1702,7 @@
                 </div>
 
                 <!-- Legal Query Assistant -->
-                <div class="project-card bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105" 
+                <div class="project-card premium-card bg-white dark:bg-gray-800 rounded-2xl shadow-premium overflow-hidden border border-blue-100 dark:border-gray-700" 
                      data-aos="fade-up"
                      data-tags="nlp,llm,mlops,fullstack,genai">
                     <div class="p-6">
@@ -1485,7 +1723,7 @@
                 </div>
 
                 <!-- Customer Churn Prediction -->
-                <div class="project-card bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105" 
+                <div class="project-card premium-card bg-white dark:bg-gray-800 rounded-2xl shadow-premium overflow-hidden border border-blue-100 dark:border-gray-700" 
                      data-aos="fade-up"
                      data-tags="ml,mlops,analytics,fullstack">
                     <div class="p-6">
@@ -1506,7 +1744,7 @@
                 </div>
 
                 <!-- Lane Detection -->
-                <div class="project-card bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105" 
+                <div class="project-card premium-card bg-white dark:bg-gray-800 rounded-2xl shadow-premium overflow-hidden border border-blue-100 dark:border-gray-700" 
                      data-aos="fade-up"
                      data-tags="cv,ml">
                     <div class="p-6">
@@ -1527,7 +1765,7 @@
                 </div>
 
                 <!-- COVID Detection -->
-                <div class="project-card bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105" 
+                <div class="project-card premium-card bg-white dark:bg-gray-800 rounded-2xl shadow-premium overflow-hidden border border-blue-100 dark:border-gray-700" 
                      data-aos="fade-up"
                      data-tags="cv,ml">
                     <div class="p-6">
@@ -1547,7 +1785,7 @@
             </div>
 
                     <!-- Store Demand Forecasting -->
-                <div class="project-card bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105" 
+                <div class="project-card premium-card bg-white dark:bg-gray-800 rounded-2xl shadow-premium overflow-hidden border border-blue-100 dark:border-gray-700" 
                      data-aos="fade-up"
                      data-tags="ml,mlops,analytics,fullstack">
                         <div class="p-6">
@@ -1568,7 +1806,7 @@
                     </div>
 
                     <!-- Image-to-Image Translation -->
-                <div class="project-card bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105" 
+                <div class="project-card premium-card bg-white dark:bg-gray-800 rounded-2xl shadow-premium overflow-hidden border border-blue-100 dark:border-gray-700" 
                      data-aos="fade-up"
                      data-tags="cv,ml">
                         <div class="p-6">
@@ -1588,7 +1826,7 @@
                     </div>
 
                     <!-- Brain Tumor Segmentation -->
-                <div class="project-card bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105" 
+                <div class="project-card premium-card bg-white dark:bg-gray-800 rounded-2xl shadow-premium overflow-hidden border border-blue-100 dark:border-gray-700" 
                      data-aos="fade-up"
                      data-tags="cv,ml">
                         <div class="p-6">
@@ -1608,7 +1846,7 @@
                     </div>
 
                     <!-- Movie Recommendation System -->
-                <div class="project-card bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105" 
+                <div class="project-card premium-card bg-white dark:bg-gray-800 rounded-2xl shadow-premium overflow-hidden border border-blue-100 dark:border-gray-700" 
                      data-aos="fade-up"
                      data-tags="nlp,analytics,ml">
                         <div class="p-6">
@@ -1693,55 +1931,72 @@
     </script>
 
     <!-- Research Papers Section -->
-    <section id="research-papers" class="py-20 bg-gray-50 dark:bg-gray-800">
+    <section id="research-papers" class="py-20 bg-gradient-to-b from-gray-50 to-white dark:from-gray-800 dark:to-gray-900 relative">
+        <div class="section-divider"></div>
         <div class="container mx-auto">
-            <h2 class="text-3xl font-bold text-center mb-16 text-gray-800 dark:text-white" data-aos="fade-up">Research Papers</h2>
+            <!-- Enhanced Header with Stats -->
+            <div class="text-center mb-12" data-aos="fade-up">
+                <h2 class="text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white mb-4">
+                    <span class="gradient-text">Research Publications</span>
+                </h2>
+                <p class="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto mb-8">
+                    Research papers in AI and Machine Learning
+                </p>
+            </div>
             
-            <!-- Filter Bar -->
-            <div class="relative mb-8 overflow-hidden" data-aos="fade-up">
-                <div class="flex flex-wrap justify-center items-center gap-4 pb-4 sticky top-0 bg-gray-50 dark:bg-gray-800 z-10 filter-bar-papers">
-                    <button class="filter-paper-btn active whitespace-nowrap px-4 py-2 rounded-full bg-blue-600 text-white hover:bg-blue-700 transition-all" data-filter="all">
-                        Show All
+            <!-- Enhanced Filter Bar -->
+            <div class="relative mb-12 overflow-hidden" data-aos="fade-up">
+                <div class="flex flex-wrap justify-center items-center gap-3 pb-4 sticky top-0 bg-gradient-to-b from-gray-50/95 to-transparent dark:from-gray-800/95 backdrop-blur-sm z-10 filter-bar-papers">
+                    <button class="filter-paper-btn active whitespace-nowrap px-5 py-2.5 rounded-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white hover:from-blue-700 hover:to-indigo-700 font-semibold shadow-premium transition-all transform hover:scale-105" data-filter="all">
+                        <i class="fas fa-th mr-2"></i>Show All
                     </button>
-                    <button class="filter-paper-btn whitespace-nowrap px-4 py-2 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 transition-all" data-filter="llms-nlp">
-                        LLMs & NLP
+                    <button class="filter-paper-btn whitespace-nowrap px-5 py-2.5 rounded-full bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gradient-to-r hover:from-blue-600 hover:to-indigo-600 hover:text-white dark:hover:from-blue-600 dark:hover:to-indigo-600 border border-gray-200 dark:border-gray-600 font-medium transition-all transform hover:scale-105 shadow-sm" data-filter="llms-nlp">
+                        <i class="fas fa-brain mr-2"></i>LLMs & NLP
                     </button>
-                    <button class="filter-paper-btn whitespace-nowrap px-4 py-2 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 transition-all" data-filter="ai-ethics">
-                        AI Ethics & Policy
+                    <button class="filter-paper-btn whitespace-nowrap px-5 py-2.5 rounded-full bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gradient-to-r hover:from-blue-600 hover:to-indigo-600 hover:text-white dark:hover:from-blue-600 dark:hover:to-indigo-600 border border-gray-200 dark:border-gray-600 font-medium transition-all transform hover:scale-105 shadow-sm" data-filter="ai-ethics">
+                        <i class="fas fa-balance-scale mr-2"></i>AI Ethics
                     </button>
-                    <button class="filter-paper-btn whitespace-nowrap px-4 py-2 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 transition-all" data-filter="computer-vision">
-                        Computer Vision
+                    <button class="filter-paper-btn whitespace-nowrap px-5 py-2.5 rounded-full bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gradient-to-r hover:from-blue-600 hover:to-indigo-600 hover:text-white dark:hover:from-blue-600 dark:hover:to-indigo-600 border border-gray-200 dark:border-gray-600 font-medium transition-all transform hover:scale-105 shadow-sm" data-filter="computer-vision">
+                        <i class="fas fa-eye mr-2"></i>Computer Vision
                     </button>
-                    <button class="filter-paper-btn whitespace-nowrap px-4 py-2 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 transition-all" data-filter="recommender-systems">
-                        Recommender Systems
+                    <button class="filter-paper-btn whitespace-nowrap px-5 py-2.5 rounded-full bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gradient-to-r hover:from-blue-600 hover:to-indigo-600 hover:text-white dark:hover:from-blue-600 dark:hover:to-indigo-600 border border-gray-200 dark:border-gray-600 font-medium transition-all transform hover:scale-105 shadow-sm" data-filter="recommender-systems">
+                        <i class="fas fa-project-diagram mr-2"></i>Recommender Systems
                     </button>
-                    <button class="filter-paper-btn whitespace-nowrap px-4 py-2 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 transition-all" data-filter="healthcare-ai">
-                        Healthcare AI
+                    <button class="filter-paper-btn whitespace-nowrap px-5 py-2.5 rounded-full bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gradient-to-r hover:from-blue-600 hover:to-indigo-600 hover:text-white dark:hover:from-blue-600 dark:hover:to-indigo-600 border border-gray-200 dark:border-gray-600 font-medium transition-all transform hover:scale-105 shadow-sm" data-filter="healthcare-ai">
+                        <i class="fas fa-heartbeat mr-2"></i>Healthcare AI
                     </button>
-                    <button class="filter-paper-btn whitespace-nowrap px-4 py-2 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 transition-all" data-filter="graph-learning">
-                        Graph Learning
+                    <button class="filter-paper-btn whitespace-nowrap px-5 py-2.5 rounded-full bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gradient-to-r hover:from-blue-600 hover:to-indigo-600 hover:text-white dark:hover:from-blue-600 dark:hover:to-indigo-600 border border-gray-200 dark:border-gray-600 font-medium transition-all transform hover:scale-105 shadow-sm" data-filter="graph-learning">
+                        <i class="fas fa-project-diagram mr-2"></i>Graph Learning
                     </button>
-                    <button class="filter-paper-btn whitespace-nowrap px-4 py-2 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 transition-all" data-filter="time-series">
-                        Time Series & Forecasting
+                    <button class="filter-paper-btn whitespace-nowrap px-5 py-2.5 rounded-full bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gradient-to-r hover:from-blue-600 hover:to-indigo-600 hover:text-white dark:hover:from-blue-600 dark:hover:to-indigo-600 border border-gray-200 dark:border-gray-600 font-medium transition-all transform hover:scale-105 shadow-sm" data-filter="time-series">
+                        <i class="fas fa-chart-line mr-2"></i>Time Series
                     </button>
-                    <button class="filter-paper-btn whitespace-nowrap px-4 py-2 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 transition-all" data-filter="privacy-fairness">
-                        Privacy & Fairness
+                    <button class="filter-paper-btn whitespace-nowrap px-5 py-2.5 rounded-full bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gradient-to-r hover:from-blue-600 hover:to-indigo-600 hover:text-white dark:hover:from-blue-600 dark:hover:to-indigo-600 border border-gray-200 dark:border-gray-600 font-medium transition-all transform hover:scale-105 shadow-sm" data-filter="privacy-fairness">
+                        <i class="fas fa-shield-alt mr-2"></i>Privacy & Fairness
                     </button>
-                        </div>
+                </div>
                 <!-- Gradient fade for horizontal scroll -->
                 <div class="absolute right-0 top-0 h-full w-24 bg-gradient-to-l from-gray-50 dark:from-gray-800 to-transparent pointer-events-none"></div>
-                    </div>
+            </div>
+
+            <!-- Loading Indicator -->
+            <div id="papers-loader" class="hidden flex justify-center items-center py-12">
+                <div class="inline-block animate-spin rounded-full h-12 w-12 border-4 border-solid border-blue-600 border-r-transparent dark:border-blue-400"></div>
+                <span class="ml-4 text-gray-600 dark:text-gray-400 font-medium">Loading papers...</span>
+            </div>
 
             <!-- Papers Grid -->
-            <div class="grid md:grid-cols-2 gap-8">
+            <div id="papers-grid" class="grid md:grid-cols-2 gap-8">
                 <!-- Enhancing Privacy in LLMs -->
-                <div class="paper-card bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105" 
+                <div class="paper-card premium-card bg-white dark:bg-gray-800 rounded-2xl shadow-premium overflow-hidden" 
                      data-aos="fade-up"
                      data-tags="llms-nlp,privacy-fairness,healthcare-ai">
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-3">Enhancing Privacy in Large Language Models: A Comparative Study on Input Retention and Sanitization Techniques</h3>
+                    <div class="p-6 md:p-8">
+                        <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-3">
+                            Privacy Awareness in Large Language Models: Input Regurgitation and Prompt-Induced Sanitization for HIPAA and GDPR Compliance <i>(Under Review)</i>
+                        </h3>
                     <p class="text-gray-600 dark:text-gray-300 mb-4">
-                            Novel approach to privacy-preserving language models in healthcare settings using prompt-induced sanitization techniques to reduce PII/PHI leakage while maintaining contextual utility.
+                            Study of input regurgitation risk and prompt-induced sanitization strategies for privacy-sensitive LLM deployments under HIPAA and GDPR.
                     </p>
                     <div class="flex flex-wrap gap-2 mb-4">
                             <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 rounded-full text-sm">LLMs & NLP</span>
@@ -1755,18 +2010,16 @@
                     </button>
                             <div class="hidden abstract-content overflow-hidden transition-all duration-300">
                                 <p class="text-gray-600 dark:text-gray-300 text-sm bg-gray-50 dark:bg-gray-700/50 p-4 rounded-lg">
-                                    Large Language Models (LLMs) have shown remarkable capabilities in privacy-sensitive domains like healthcare and hiring. However, concerns around regurgitating Personally Identifiable Information (PII) and Protected Health Information (PHI) persist. This study evaluates GPT-3.5, GPT-4, and GPT-4 Turbo, examining their propensity to leak sensitive data and the effectiveness of prompt-induced sanitization techniques. Using synthetic datasets reflecting HIPAA and GDPR compliance requirements, the models were benchmarked across privacy leakage, anonymization accuracy, and contextual utility. Our results show that GPT-4 and GPT-4 Turbo significantly reduce sensitive data leakage while preserving output utility, providing actionable insights for deploying LLMs in regulated environments.
+                                    Large Language Models (LLMs) are indispensable in privacy-sensitive fields like healthcare and hiring because of their remarkable natural language processing capabilities. However, the potential for input regurgitation and sensitive information in outputs raises serious privacy concerns, especially when it comes to regulations like GDPR and HIPAA. This study examines these privacy concerns by contrasting seven innovative models - GPT-3.5, GPT-4, GPT-4 Turbo, GPT-5.1, GPT-5.2, Gemini-2.5-pro, and Gemini-2.5-flash - and their propensity to retain and regurgitate PHI and personally identifiable information. We test these models on a combination of prompt-induced sanitization techniques and synthetic datasets to determine their ability to generate privacy-compliant outcomes. Our findings reveal that newer models, particularly GPT-5.2 and Gemini-2.5-pro, demonstrate enhanced privacy-preserving capabilities, with GPT-5.2 achieving near-zero leakage (0.0%) even with minimal prompt adjustments, while maintaining utility. Surprisingly, we discover that some of the advanced models have built-in privacy consciousness, in that sensitive information is sanitised even without instructions. This paper contains some useful recommendations and tips on increasing privacy compliance in LLM applications.
                                 </p>
                     </div>
-                            <a href="https://drive.google.com/file/d/1YKIRY_XNosfDjVPmS23e_V74kEHvxJ3h/view?usp=drive_link" target="_blank" class="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 flex items-center">
-                                <i class="fas fa-external-link-alt mr-2"></i> View Paper
-                            </a>
+                            
                 </div>
                         </div>
                     </div>
 
                 <!-- Learning Dynamic Representations in LLMs -->
-                <div class="paper-card bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105" 
+                <div class="paper-card premium-card bg-white dark:bg-gray-800 rounded-2xl shadow-premium overflow-hidden" 
                      data-aos="fade-up"
                      data-tags="llms-nlp,graph-learning">
                     <div class="p-6">
@@ -1852,16 +2105,14 @@ including temporal data, graph structure, and node attributes. The model suggest
 that has been shown to perform better than baseline methods when tested on benchmark datasets.
                 </p>
             </div>
-            <!-- <a href="https://drive.google.com/file/d/158F9V9XCoOoz8T-kh5VBvL4I0_ZgaJ4a/view" class="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 flex items-center">
-                <i class="fas fa-external-link-alt mr-2"></i> View Paper
-            </a> -->
+            
         </div>
     </div>
 </div>
 
 
                 <!-- SDN-Based Multipath Offloading -->
-                <div class="paper-card bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105" 
+                <div class="paper-card premium-card bg-white dark:bg-gray-800 rounded-2xl shadow-premium overflow-hidden" 
                      data-aos="fade-up"
                      data-tags="time-series">
                     <div class="p-6">
@@ -1891,7 +2142,7 @@ that has been shown to perform better than baseline methods when tested on bench
                     </div>
 
                 <!-- Improving Fairness in Visual Recognition -->
-                <div class="paper-card bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105" 
+                <div class="paper-card premium-card bg-white dark:bg-gray-800 rounded-2xl shadow-premium overflow-hidden" 
                      data-aos="fade-up"
                      data-tags="computer-vision,privacy-fairness">
                     <div class="p-6">
@@ -1921,7 +2172,7 @@ that has been shown to perform better than baseline methods when tested on bench
                     </div>
 
                 <!-- Multimodal Conversation Derailment Detection -->
-                <div class="paper-card bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105" 
+                <div class="paper-card premium-card bg-white dark:bg-gray-800 rounded-2xl shadow-premium overflow-hidden" 
                      data-aos="fade-up"
                      data-tags="computer-vision,llms-nlp">
                     <div class="p-6">
@@ -1952,7 +2203,7 @@ that has been shown to perform better than baseline methods when tested on bench
                     </div>
 
                 <!-- Graph Contrastive Learning -->
-                <div class="paper-card bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105" 
+                <div class="paper-card premium-card bg-white dark:bg-gray-800 rounded-2xl shadow-premium overflow-hidden" 
                      data-aos="fade-up"
                      data-tags="recommender-systems,graph-learning">
                     <div class="p-6">
@@ -1994,7 +2245,7 @@ sparsity and bias related to item popularity.
                     </div>
 
                 <!-- Tesla's Autopilot Ethics -->
-                <div class="paper-card bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105" 
+                <div class="paper-card premium-card bg-white dark:bg-gray-800 rounded-2xl shadow-premium overflow-hidden" 
                      data-aos="fade-up"
                      data-tags="ai-ethics">
                     <div class="p-6">
@@ -2024,7 +2275,7 @@ sparsity and bias related to item popularity.
                     </div>
 
                 <!-- Flight Delay Prediction -->
-                <div class="paper-card bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105" 
+                <div class="paper-card premium-card bg-white dark:bg-gray-800 rounded-2xl shadow-premium overflow-hidden" 
                      data-aos="fade-up"
                      data-tags="time-series">
                     <div class="p-6">
@@ -2054,7 +2305,7 @@ sparsity and bias related to item popularity.
                     </div>
 
                 <!-- Diabetes Prognosis -->
-                <div class="paper-card bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105" 
+                <div class="paper-card premium-card bg-white dark:bg-gray-800 rounded-2xl shadow-premium overflow-hidden" 
                      data-aos="fade-up"
                      data-tags="healthcare-ai">
                     <div class="p-6">
@@ -2084,7 +2335,7 @@ sparsity and bias related to item popularity.
                     </div>
 
                 <!-- Pediatric Bone Age Estimation -->
-                <div class="paper-card bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105" 
+                <div class="paper-card premium-card bg-white dark:bg-gray-800 rounded-2xl shadow-premium overflow-hidden" 
                      data-aos="fade-up"
                      data-tags="computer-vision,healthcare-ai">
                     <div class="p-6">
@@ -2143,9 +2394,15 @@ sparsity and bias related to item popularity.
             document.addEventListener('DOMContentLoaded', function() {
                 const filterButtons = document.querySelectorAll('.filter-paper-btn');
                 const papers = document.querySelectorAll('.paper-card');
+                const papersLoader = document.getElementById('papers-loader');
+                const papersGrid = document.getElementById('papers-grid');
 
                 filterButtons.forEach(button => {
                     button.addEventListener('click', () => {
+                        // Show loader
+                        papersLoader.classList.remove('hidden');
+                        papersGrid.classList.add('opacity-50');
+                        
                         // Remove active class from all buttons
                         filterButtons.forEach(btn => btn.classList.remove('active', 'bg-blue-600', 'text-white'));
                         filterButtons.forEach(btn => btn.classList.add('bg-gray-200', 'dark:bg-gray-700', 'text-gray-700', 'dark:text-gray-300'));
@@ -2156,20 +2413,29 @@ sparsity and bias related to item popularity.
                         
                         const filter = button.getAttribute('data-filter');
                         
-                        papers.forEach(paper => {
-                            const tags = paper.getAttribute('data-tags').split(',');
+                        // Use requestAnimationFrame for smoother performance
+                        requestAnimationFrame(() => {
+                            papers.forEach(paper => {
+                                const tags = paper.getAttribute('data-tags').split(',');
+                                
+                                if (filter === 'all' || tags.includes(filter)) {
+                                    paper.style.display = 'block';
+                                    paper.classList.remove('fade-out');
+                                    paper.classList.add('fade-in');
+                                } else {
+                                    paper.classList.add('fade-out');
+                                    paper.classList.remove('fade-in');
+                                    setTimeout(() => {
+                                        paper.style.display = 'none';
+                                    }, 150);
+                                }
+                            });
                             
-                            if (filter === 'all' || tags.includes(filter)) {
-                                paper.style.display = 'block';
-                                paper.classList.remove('fade-out');
-                                paper.classList.add('fade-in');
-                            } else {
-                                paper.classList.add('fade-out');
-                                paper.classList.remove('fade-in');
-                                setTimeout(() => {
-                                    paper.style.display = 'none';
-                                }, 300);
-                            }
+                            // Hide loader after a short delay
+                            setTimeout(() => {
+                                papersLoader.classList.add('hidden');
+                                papersGrid.classList.remove('opacity-50');
+                            }, 200);
                         });
                     });
                 });
@@ -2186,7 +2452,7 @@ sparsity and bias related to item popularity.
                 <!-- Contact Information -->
                 <div class="space-y-8" data-aos="fade-right">
                     <p class="text-gray-600 dark:text-gray-300 text-justify">
-                        Actively seeking full-time opportunities as an AI/ML Engineer, Data Scientist, Data Analyst, or Data Engineer. Whether you're building innovative systems or solving real-world problems with data, I'd love to be a part of it. Let's chat about how I can help your team move faster with intelligent, scalable solutions.
+                        I'm open to conversations around <strong>AI Software Engineering</strong> and <strong>Applied AI/ML Engineering roles</strong> where building dependable AI systems at scale is a core requirement. Whether you're building innovative systems or solving real-world problems with data, I'd love to be a part of it. Let's chat about how I can help your team move faster with intelligent, scalable solutions.
                     </p>
                     
                     <div class="space-y-4">
@@ -2210,7 +2476,7 @@ sparsity and bias related to item popularity.
                 </div>
 
                 <!-- Contact Form -->
-                <div class="bg-white dark:bg-gray-800 rounded-xl p-8 shadow-lg" data-aos="fade-left">
+                <div class="premium-card bg-white dark:bg-gray-800 rounded-2xl p-8 md:p-10 shadow-premium border border-blue-100 dark:border-gray-700" data-aos="fade-left">
                     <form action="https://formspree.io/f/mjkrvyej" method="POST" class="space-y-6" id="contact-form">
                         <div>
                             <label for="name" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Full Name</label>
@@ -2234,7 +2500,7 @@ sparsity and bias related to item popularity.
                         </div>
                         
                         <button type="submit" 
-                                class="w-full bg-blue-600 text-white py-3 px-6 rounded-lg hover:bg-blue-700 transition-colors duration-300 flex items-center justify-center space-x-2">
+                                class="btn-premium w-full bg-gradient-to-r from-blue-600 to-indigo-600 dark:from-blue-500 dark:to-indigo-500 text-white py-3 px-6 rounded-xl hover:from-blue-700 hover:to-indigo-700 dark:hover:from-blue-600 dark:hover:to-indigo-600 font-semibold transition-all duration-300 flex items-center justify-center space-x-2 shadow-premium-lg hover:shadow-xl">
                             <span>Send Message</span>
                             <i class="fas fa-paper-plane"></i>
                         </button>
@@ -2244,10 +2510,59 @@ sparsity and bias related to item popularity.
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="bg-gray-900 dark:bg-black text-white py-8">
-        <div class="container mx-auto text-center">
-            <p>© 2024 Aravinda Raman Jatavallabha. All rights reserved.</p>
+    <!-- Enhanced Footer -->
+    <footer class="bg-gradient-to-br from-gray-900 via-gray-800 to-black dark:from-black dark:via-gray-900 dark:to-black text-white py-12 border-t border-gray-800">
+        <div class="container mx-auto">
+            <div class="grid md:grid-cols-3 gap-8 mb-8">
+                <!-- Brand Section -->
+                <div class="text-center md:text-left">
+                    <div class="inline-flex items-center space-x-2 mb-4">
+                        <div class="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-4 py-2 rounded-lg font-bold text-xl">
+                            AJ
+                        </div>
+                    </div>
+                    <p class="text-gray-400 mb-4">AI Software Engineer & Independent Researcher</p>
+                    <p class="text-gray-500 text-sm">Building production AI systems and publishing research.</p>
+                </div>
+                
+                <!-- Quick Links -->
+                <div class="text-center md:text-left">
+                    <h3 class="text-lg font-semibold mb-4 text-white">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#about" class="text-gray-400 hover:text-blue-400 transition-colors">About</a></li>
+                        <li><a href="#experience" class="text-gray-400 hover:text-blue-400 transition-colors">Experience</a></li>
+                        <li><a href="#all-projects" class="text-gray-400 hover:text-blue-400 transition-colors">Projects</a></li>
+                        <li><a href="#research-papers" class="text-gray-400 hover:text-blue-400 transition-colors">Research</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-blue-400 transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Social Links -->
+                <div class="text-center md:text-left">
+                    <h3 class="text-lg font-semibold mb-4 text-white">Connect With Me</h3>
+                    <div class="flex justify-center md:justify-start space-x-4">
+                        <a href="https://linkedin.com/in/aravinda-jatavallabha" target="_blank" class="w-12 h-12 bg-gray-800 hover:bg-blue-600 rounded-full flex items-center justify-center transition-all transform hover:scale-110 hover:shadow-lg">
+                            <i class="fab fa-linkedin text-xl"></i>
+                        </a>
+                        <a href="https://github.com/aravinda-1402" target="_blank" class="w-12 h-12 bg-gray-800 hover:bg-gray-700 rounded-full flex items-center justify-center transition-all transform hover:scale-110 hover:shadow-lg">
+                            <i class="fab fa-github text-xl"></i>
+                        </a>
+                        <a href="mailto:aravindaraman14@gmail.com" class="w-12 h-12 bg-gray-800 hover:bg-red-600 rounded-full flex items-center justify-center transition-all transform hover:scale-110 hover:shadow-lg">
+                            <i class="fas fa-envelope text-xl"></i>
+                        </a>
+                    </div>
+                    <div class="mt-4">
+                        <a href="assets/docs/Aravinda_Jatavallabha_Resume_Latest - AIML.pdf" class="inline-flex items-center px-4 py-2 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 rounded-lg font-semibold transition-all transform hover:scale-105">
+                            <i class="fas fa-download mr-2"></i>Download Resume
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8 text-center">
+                <p class="text-gray-500 text-sm">© <span id="currentYear"></span> Aravinda Raman Jatavallabha. All rights reserved.</p>
+                <p class="text-gray-600 text-xs mt-2">Built with passion for AI and excellence</p>
+            </div>
         </div>
     </footer>
 
@@ -2273,13 +2588,13 @@ sparsity and bias related to item popularity.
         }
     </style>
     <script>
-        // Initialize AOS
+        // Initialize AOS - animations enabled for premium experience
         AOS.init({
-            disable: true,  // Disable all animations
+            disable: false,  // Enable animations for engaging UX
             duration: 1000,
             once: true,
             offset: 100,
-            easing: 'ease-in-out'
+            easing: 'ease-out-cubic'
         });
         
     function toggleAbstract(button) {
