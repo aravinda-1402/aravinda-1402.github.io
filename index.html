@@ -2286,7 +2286,7 @@
                      data-tags="llms-nlp,ai-ethics,privacy-fairness">
                     <div class="p-6 md:p-8">
                         <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-3">
-                            TrustBench: Benchmarking Trustworthy Large Language Models with Cost and Stability Metrics <span class="text-green-600 dark:text-green-400 text-sm font-semibold">(Accepted - IEEE SoutheastCon 2026)</span>
+                            TrustBench: Benchmarking Trustworthy Large Language Models with Cost and Stability Metrics
                         </h3>
                         <p class="text-gray-600 dark:text-gray-300 mb-4">
                             A reproducible benchmark for deployment trust in LLM systems, measuring desired behavior rate, run stability, confidence dispersion, and cost-effectiveness across leading proprietary models.
@@ -2306,6 +2306,9 @@
                                     Deployment trust in large language model (LLM) systems is shaped by behaviors that do not show up in single run accuracy numbers. In production, teams routinely need models to request missing information instead of guessing, behave consistently across repeated calls, refuse unsafe requests when required, and remain economical at scale. We present TrustBench, a reproducible benchmark designed around these practical requirements. For each model and prompt pair, TrustBench executes Nr = 5 trials under fixed settings and reports: desired behavior rate (DBR) from a per item majority vote, run stability as agreement with that majority label, confidence dispersion across reruns, and cost effectiveness from token based pricing. We evaluate five proprietary models: OpenAI GPT-4.1, GPT-4o, GPT-5; Claude Sonnet 4.5; and xAI Grok 4.1 (Fast Reasoning). On the evaluated ambiguity set, requesting clarification is rarely the dominant outcome, and some models never reach a majority clarify label. Safety behavior is highly stable across reruns, yet pricing differences are large enough to change value rankings even when behavioral rates are close. For the multi step set, the main tables report repeatability and confidence dispersion rather than verified correctness. Code, prompts, and per run logs are released to support reproducibility.
                                 </p>
                             </div>
+                            <a href="https://doi.org/10.1109/SoutheastCon63549.2026.11476117" target="_blank" class="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 flex items-center">
+                                <i class="fas fa-external-link-alt mr-2"></i> View Paper
+                            </a>
                         </div>
                     </div>
                 </div>
