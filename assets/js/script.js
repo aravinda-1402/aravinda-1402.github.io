@@ -1,325 +1,150 @@
-// Initialize AOS with smooth animations
-AOS.init({
-  disable: false, // Enable animations for better UX
-  duration: 800,
-  easing: "ease-out-cubic",
-  once: true,
-  mirror: false,
-  offset: 100,
-  delay: 50,
-  anchorPlacement: "top-bottom",
-});
+(() => {
+  'use strict';
+  document.documentElement.classList.remove('no-js');
 
-// Dark mode toggle
-document.addEventListener("DOMContentLoaded", () => {
-  const darkModeToggle = document.getElementById("darkModeToggle");
-  const moonIcon = darkModeToggle.querySelector(".fa-moon");
-  const sunIcon = darkModeToggle.querySelector(".fa-sun");
-
-  // Function to update icons
-  const updateIcons = (isDark) => {
-    moonIcon.classList.toggle("hidden", isDark);
-    sunIcon.classList.toggle("hidden", !isDark);
+  const nav = document.getElementById('navigation');
+  const menu = document.getElementById('menu-toggle');
+  const setMenu = (open) => {
+    nav.classList.toggle('is-open', open);
+    menu.setAttribute('aria-expanded', String(open));
+    menu.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation');
+    menu.firstElementChild.src = `assets/icons/${open ? 'x' : 'menu'}.svg`;
   };
+  menu.addEventListener('click', () => setMenu(menu.getAttribute('aria-expanded') !== 'true'));
+  nav.addEventListener('click', (event) => { if (event.target.closest('a')) setMenu(false); });
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && menu.getAttribute('aria-expanded') === 'true') {
+      setMenu(false);
+      menu.focus();
+    }
+  });
+  document.addEventListener('click', (event) => {
+    if (!event.target.closest('.site-header')) setMenu(false);
+  });
+  window.matchMedia('(min-width: 681px)').addEventListener('change', (event) => {
+    if (event.matches) setMenu(false);
+  });
 
-  // Function to toggle dark mode
-  const toggleDarkMode = () => {
-    const isDark = document.documentElement.classList.toggle("dark");
-    localStorage.setItem("darkMode", isDark);
-    updateIcons(isDark);
+  const themeButton = document.getElementById('theme-toggle');
+  const systemTheme = window.matchMedia('(prefers-color-scheme: dark)');
+  let explicitTheme = null;
+  try { explicitTheme = localStorage.getItem('portfolio-theme'); } catch (_) { /* Storage can be disabled. */ }
+  const applyTheme = (theme) => {
+    document.body.dataset.theme = theme;
+    const label = theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme';
+    themeButton.setAttribute('aria-label', label);
+    themeButton.title = label;
+    themeButton.firstElementChild.src = `assets/icons/${theme === 'dark' ? 'sun' : 'moon'}.svg`;
+    themeButton.setAttribute('aria-pressed', String(theme === 'dark'));
   };
+  applyTheme(explicitTheme === 'dark' || explicitTheme === 'light' ? explicitTheme : (systemTheme.matches ? 'dark' : 'light'));
+  themeButton.addEventListener('click', () => {
+    explicitTheme = document.body.dataset.theme === 'dark' ? 'light' : 'dark';
+    applyTheme(explicitTheme);
+    try { localStorage.setItem('portfolio-theme', explicitTheme); } catch (_) { /* The theme still works without persistence. */ }
+  });
+  systemTheme.addEventListener('change', (event) => { if (!explicitTheme) applyTheme(event.matches ? 'dark' : 'light'); });
 
-  // Initialize dark mode based on saved preference
-  const savedDarkMode = localStorage.getItem("darkMode") === "true";
-  document.documentElement.classList.toggle("dark", savedDarkMode);
-  updateIcons(savedDarkMode);
+  const papers = [...document.querySelectorAll('.publication')];
+  const statusButtons = [...document.querySelectorAll('[data-status].filter')];
+  const search = document.getElementById('research-search');
+  let selectedStatus = 'published';
+  const updateResearch = () => {
+    const query = search.value.trim().toLocaleLowerCase();
+    let visible = 0;
+    papers.forEach((paper) => {
+      const matches = (selectedStatus === 'all' || paper.dataset.status === selectedStatus) && paper.textContent.toLocaleLowerCase().includes(query);
+      paper.hidden = !matches;
+      if (matches) visible++;
+    });
+    document.getElementById('research-count').textContent = `${visible} of ${papers.length} research works`;
+    document.getElementById('research-empty').hidden = visible !== 0;
+    statusButtons.forEach((button) => {
+      const active = button.dataset.status === selectedStatus;
+      button.classList.toggle('active', active);
+      button.setAttribute('aria-pressed', String(active));
+    });
+  };
+  statusButtons.forEach((button) => button.addEventListener('click', () => {
+    selectedStatus = button.dataset.status;
+    updateResearch();
+  }));
+  search.addEventListener('input', updateResearch);
+  document.getElementById('reset-research').addEventListener('click', () => {
+    selectedStatus = 'all';
+    search.value = '';
+    updateResearch();
+    search.focus();
+  });
+  updateResearch();
 
-  // Add click event listener
-  darkModeToggle.addEventListener("click", toggleDarkMode);
+  const projects = [...document.querySelectorAll('.project')];
+  const projectButtons = [...document.querySelectorAll('.project-filter')];
+  projectButtons.forEach((button) => button.addEventListener('click', () => {
+    let visible = 0;
+    projects.forEach((project) => {
+      project.hidden = button.dataset.category !== 'all' && project.dataset.category !== button.dataset.category;
+      if (!project.hidden) visible++;
+    });
+    projectButtons.forEach((item) => {
+      item.classList.toggle('active', item === button);
+      item.setAttribute('aria-pressed', String(item === button));
+    });
+    document.getElementById('project-count').textContent = `${visible} of ${projects.length} projects`;
+  }));
 
-  // Smooth scrolling for anchor links
-  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-    anchor.addEventListener("click", function (e) {
-      e.preventDefault();
-      const targetId = this.getAttribute("href");
-      if (targetId === "#") return;
-
-      const target = document.querySelector(targetId);
-      if (target) {
-        target.scrollIntoView({
-          behavior: "smooth",
-          block: "start",
+  // Preserve incoming links to the previous portfolio's section IDs.
+  const aliases = { 'all-projects': 'projects', 'research-papers': 'research', 'experience': 'about', 'education': 'about', 'impact': 'work' };
+  const resolveLegacyAnchor = () => {
+    const target = aliases[location.hash.slice(1)];
+    if (!target) return;
+    history.replaceState(null, '', `#${target}`);
+    document.getElementById(target).scrollIntoView();
+  };
+  resolveLegacyAnchor();
+  window.addEventListener('hashchange', resolveLegacyAnchor);
+  if ('IntersectionObserver' in window) {
+    const links = [...nav.querySelectorAll('a')];
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        links.forEach((link) => {
+          if (link.hash === `#${entry.target.id}`) link.setAttribute('aria-current', 'location');
+          else link.removeAttribute('aria-current');
         });
-
-        // Close mobile menu if open
-        if (mobileMenu && !mobileMenu.classList.contains("hidden")) {
-          mobileMenu.classList.add("hidden");
-        }
-      }
-    });
-  });
-
-  // Enhanced scroll to top button
-  const scrollToTopBtn = document.createElement("button");
-  scrollToTopBtn.innerHTML = '<i class="fas fa-arrow-up"></i>';
-  scrollToTopBtn.className =
-    "fixed bottom-8 right-8 z-50 bg-gradient-to-r from-blue-600 to-indigo-600 dark:from-blue-500 dark:to-indigo-500 text-white p-4 rounded-full shadow-premium-lg transition-all duration-300 opacity-0 transform translate-y-10 hover:from-blue-700 hover:to-indigo-700 dark:hover:from-blue-600 dark:hover:to-indigo-600 hover:scale-110 hover:shadow-xl";
-  scrollToTopBtn.style.display = "none";
-  scrollToTopBtn.setAttribute("aria-label", "Scroll to top");
-  document.body.appendChild(scrollToTopBtn);
-
-  scrollToTopBtn.addEventListener("click", () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  });
-
-  // Navbar scroll effect and active section highlighting
-  const navbar = document.getElementById("navbar");
-  const navLinks = document.querySelectorAll(".nav-link");
-  const sections = document.querySelectorAll("section[id]");
-
-  window.addEventListener("scroll", () => {
-    // Navbar shadow on scroll
-    if (window.scrollY > 50) {
-      navbar.classList.add("shadow-xl");
-    } else {
-      navbar.classList.remove("shadow-xl");
-    }
-
-    // Scroll to top button
-    if (window.scrollY > 500) {
-      scrollToTopBtn.style.display = "block";
-      setTimeout(() => {
-        scrollToTopBtn.style.opacity = "1";
-        scrollToTopBtn.style.transform = "translateY(0)";
-      }, 50);
-    } else {
-      scrollToTopBtn.style.opacity = "0";
-      scrollToTopBtn.style.transform = "translateY(10px)";
-      setTimeout(() => (scrollToTopBtn.style.display = "none"), 300);
-    }
-
-    // Active section highlighting
-    let current = "";
-    sections.forEach((section) => {
-      const sectionTop = section.offsetTop - 100;
-      const sectionHeight = section.clientHeight;
-      if (
-        window.scrollY >= sectionTop &&
-        window.scrollY < sectionTop + sectionHeight
-      ) {
-        current = section.getAttribute("id");
-      }
-    });
-
-    navLinks.forEach((link) => {
-      link.classList.remove("text-blue-600", "dark:text-blue-400");
-      const underline = link.querySelector("span:last-child");
-      if (link.getAttribute("href") === `#${current}`) {
-        link.classList.add("text-blue-600", "dark:text-blue-400");
-        if (underline) underline.style.width = "100%";
-      } else {
-        if (underline) underline.style.width = "0";
-      }
-    });
-  });
-
-  // Mobile menu toggle
-  const mobileMenuBtn = document.getElementById("mobileMenuBtn");
-  const mobileMenu = document.getElementById("mobileMenu");
-  if (mobileMenuBtn && mobileMenu) {
-    mobileMenuBtn.addEventListener("click", () => {
-      mobileMenu.classList.toggle("hidden");
-      const icon = mobileMenuBtn.querySelector("i");
-      if (mobileMenu.classList.contains("hidden")) {
-        icon.classList.remove("fa-times");
-        icon.classList.add("fa-bars");
-      } else {
-        icon.classList.remove("fa-bars");
-        icon.classList.add("fa-times");
-      }
-    });
-
-    // Close mobile menu when clicking on a link
-    mobileMenu.querySelectorAll("a").forEach((link) => {
-      link.addEventListener("click", () => {
-        mobileMenu.classList.add("hidden");
-        const icon = mobileMenuBtn.querySelector("i");
-        icon.classList.remove("fa-times");
-        icon.classList.add("fa-bars");
       });
-    });
+    }, { rootMargin: '-15% 0px -60% 0px', threshold: 0 });
+    links.forEach((link) => { const section = document.querySelector(link.hash); if (section) observer.observe(section); });
   }
 
-  // Set current year in footer
-  const yearElement = document.getElementById("currentYear");
-  if (yearElement) {
-    yearElement.textContent = new Date().getFullYear();
-  }
-
-  // Animated counter for metrics
-  const animateCounter = (element, target, suffix = "") => {
-    const duration = 2000; // 2 seconds
-    const steps = 60; // 60 steps for smooth animation
-    const increment = target / steps;
-    let current = 0;
-    let step = 0;
-
-    const updateCounter = () => {
-      step++;
-      current += increment;
-      if (step < steps) {
-        if (target % 1 === 0) {
-          element.textContent = Math.min(Math.floor(current), target) + suffix;
-        } else {
-          element.textContent =
-            Math.min(current.toFixed(1), target.toFixed(1)) + suffix;
-        }
-        requestAnimationFrame(updateCounter);
-      } else {
-        element.textContent = target + suffix;
-      }
-    };
-
-    updateCounter();
-  };
-
-  // Intersection Observer for counter animation
-  const observerOptions = {
-    threshold: 0.3,
-    rootMargin: "0px",
-  };
-
-  const counterObserver = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting && !entry.target.classList.contains("counted")) {
-        entry.target.classList.add("counted");
-        const metricValue = entry.target.querySelector(".key-metric");
-        if (metricValue) {
-          const countAttr = metricValue.getAttribute("data-count");
-          const suffixAttr = metricValue.getAttribute("data-suffix") || "";
-
-          if (countAttr) {
-            const target = parseFloat(countAttr);
-            if (!isNaN(target)) {
-              metricValue.textContent = "0" + suffixAttr;
-              setTimeout(() => {
-                animateCounter(metricValue, target, suffixAttr);
-              }, 300);
-            }
-          }
-        }
-      }
-    });
-  }, observerOptions);
-
-  // Observe metric cards in hero section
-  document.querySelectorAll("#hero .metric-card").forEach((card) => {
-    counterObserver.observe(card);
-  });
-});
-
-// Smooth scroll for anchor links
-document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-  anchor.addEventListener("click", function (e) {
-    e.preventDefault();
-    const target = document.querySelector(this.getAttribute("href"));
-    if (target) {
-      target.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
+  const form = document.getElementById('contact-form');
+  const formStatus = document.getElementById('form-status');
+  form.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    if (!form.reportValidity()) return;
+    if (![...form.querySelectorAll('input, textarea')].every((input) => input.value.trim())) {
+      formStatus.textContent = 'Please complete each field before sending.';
+      return;
+    }
+    const button = form.querySelector('button[type="submit"]');
+    if (button.disabled) return;
+    button.disabled = true;
+    formStatus.textContent = 'Sending your message...';
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 15000);
+    try {
+      const response = await fetch(form.action, { method: 'POST', body: new FormData(form), headers: { Accept: 'application/json' }, signal: controller.signal });
+      if (!response.ok) throw new Error('Message submission failed');
+      form.reset();
+      formStatus.textContent = 'Your message was sent. Thank you for getting in touch.';
+    } catch (error) {
+      formStatus.textContent = error.name === 'AbortError'
+        ? 'The request timed out; delivery could not be confirmed. You can email aravindaraman14@gmail.com directly.'
+        : 'Your message could not be sent. Please try again or email aravindaraman14@gmail.com directly.';
+    } finally {
+      clearTimeout(timeout);
+      button.disabled = false;
     }
   });
-});
-
-// Add floating animation to profile image
-const profileImage = document.querySelector("#hero img");
-if (profileImage) {
-  profileImage.classList.add("animate-float");
-}
-
-// Add project card hover effects
-document.querySelectorAll(".project-card").forEach((card) => {
-  card.addEventListener("mouseenter", () => {
-    card.style.transform = "translateY(-5px)";
-    card.style.boxShadow = "0 10px 20px rgba(0, 0, 0, 0.1)";
-  });
-
-  card.addEventListener("mouseleave", () => {
-    card.style.transform = "translateY(0)";
-    card.style.boxShadow = "";
-  });
-});
-
-// Add skill badge hover effects
-document.querySelectorAll(".skill-badge").forEach((badge) => {
-  badge.addEventListener("mouseenter", () => {
-    badge.style.transform = "scale(1.1)";
-  });
-
-  badge.addEventListener("mouseleave", () => {
-    badge.style.transform = "scale(1)";
-  });
-});
-
-// Navbar scroll effect
-let lastScroll = 0;
-const navbar = document.querySelector("nav");
-
-window.addEventListener("scroll", () => {
-  const currentScroll = window.pageYOffset;
-
-  if (currentScroll <= 0) {
-    navbar.classList.remove("shadow-lg");
-    return;
-  }
-
-  if (currentScroll > lastScroll) {
-    // Scrolling down
-    navbar.classList.add("shadow-lg");
-  } else {
-    // Scrolling up
-    navbar.classList.remove("shadow-lg");
-  }
-
-  lastScroll = currentScroll;
-});
-
-// Add loading animation for images
-document.querySelectorAll("img").forEach((img) => {
-  img.addEventListener("load", function () {
-    this.classList.add("loaded");
-  });
-});
-
-// Add year to copyright
-const yearSpan = document.querySelector("footer p");
-if (yearSpan) {
-  yearSpan.textContent = yearSpan.textContent.replace(
-    "2024",
-    new Date().getFullYear()
-  );
-}
-
-// Handle View More/Less toggles
-document.addEventListener("DOMContentLoaded", () => {
-  const toggleButtons = document.querySelectorAll(".toggle-content");
-
-  toggleButtons.forEach((button) => {
-    button.addEventListener("click", () => {
-      const content = button.previousElementSibling;
-      content.classList.toggle("hidden");
-
-      // Update button text and icon
-      const icon = button.querySelector("i");
-      if (content.classList.contains("hidden")) {
-        button.innerHTML = '<i class="fas fa-plus-circle mr-2"></i> View More';
-      } else {
-        button.innerHTML = '<i class="fas fa-minus-circle mr-2"></i> View Less';
-      }
-    });
-  });
-});
+  document.getElementById('year').textContent = new Date().getFullYear();
+})();

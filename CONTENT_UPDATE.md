@@ -1,55 +1,25 @@
-# Content Update Instructions
+# Maintaining accurate content
 
-Since I cannot directly read the PDF content, please follow these steps to update the website content:
+## Publications
 
-1. Open your resume PDF file
-2. Copy the relevant sections and paste them into the corresponding website sections:
+Use the exact title and author order from the primary record; put descriptive language in the summary. Distinguish conference year from citation year when necessary.
 
-## Hero Section
-- Update your pitch/tagline if needed
-- Verify contact information is correct
+Use `data-status="published"` for a publication with a supporting record; `accepted` for accepted work; `preprint` for archival preprints; `manuscript` for author-hosted or under-review work. Update the badge, venue, and link together. JavaScript derives filtered counts from the rows. An arXiv listing does not establish peer review; acceptance does not mean publication.
 
-## About Section
-- Copy your professional summary/bio
-- Update the skills list with your current technical skills
-- Add any additional relevant skills
+The privacy-awareness paper is now listed as published with its IEEE Xplore record supplied by the author. The remaining accepted and under-review statuses follow the supplied CV. Confirm current status and supporting records before changing them. Author lists, citations, review counts, and individual credit must come from evidence.
 
-## Projects Section
-For each project:
-- Project name
-- Brief description
-- Technologies used
-- Link to GitHub/demo
-- Any metrics or results
+## Contributions
 
-## Publications Section
-For each paper:
-- Full title
-- Publication venue (ICPR, Springer, IEEE)
-- Brief description
-- Link to paper
+Retain each metric's source, baseline, dates, sample, method, and your contribution versus the team's. Existing selected metrics are attributed to the resume, not independently verified.
 
-## Contact Section
-Verify these are correct:
-- Email: aravindaraman14@gmail.com
-- LinkedIn: https://linkedin.com/in/aravinda-jatavallabha
-- GitHub: https://github.com/aravinda-1402
+Do not describe a prototype as production adoption, an internal award as international recognition, an invitation as completed reviewing, an organization's membership as endorsement, or a privacy experiment as regulatory certification.
 
-## Additional Notes
-1. The dark mode functionality has been added:
-   - Toggle in the navigation bar
-   - Persists across page reloads
-   - Respects system preferences
+## Credentials
 
-2. All sections are now dark mode compatible with:
-   - Appropriate contrast
-   - Readable text
-   - Smooth transitions
-   - Accessible focus states
+The resume PDF was not regenerated and may need reconciliation. The LaTeX CV received the user-confirmed product-name correction to EvalPath. The degree is Master of Computer Science with a Data Science specialization. Verify Drive links unauthenticated; do not expose confidential records or identifiers.
 
-3. The site is fully responsive and works on:
-   - Desktop
-   - Tablet
-   - Mobile devices
+## UI and deployment
 
-Please update the content in index.html with your resume information while keeping the existing structure and styling. 
+Keep content in HTML for search engines and JavaScript-disabled readers. Preserve descriptive links, keyboard focus, and status attributes.
+
+Check 320px, 390px, 768px, and desktop widths, dark mode, 200% zoom, reduced motion, local assets, and form states before publishing. Deploy only `index.html` and `assets/`; keep `EVIDENCE_ROADMAP.md` private.
