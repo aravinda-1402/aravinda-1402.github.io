@@ -82,3 +82,17 @@ USCIS Policy Manual pages returned HTTP 403. Search-indexed USCIS material and a
 - [Original LightGCL paper](https://arxiv.org/abs/2302.08191) and [authors' implementation](https://github.com/HKUDS/LightGCL): existing method that must not be claimed as your invention.
 
 IEEE records, private Drive documents, LinkedIn recommendation records, live repository behavior, acceptance letters, citations, compensation, organizational standing, and employer metrics were not independently authenticated. The website presents the provided record; it is not an external verification service.
+
+## September 18, 2026 redesign addendum
+
+The new public presentation adds CausEval, detailed engineering contributions, complete career history, and a printable `record.html`. Public copy remains a professional record, with immigration preparation kept here.
+
+New evidence leads:
+
+- **CausEval:** creator credit and methodology are currently present in its GitHub README. Preserve dated releases, authorship history, independent implementations, substantive external reviews, and attributable adoption. Its demo's 100% pass rate, 75% trace coverage, and 42% causal coverage are fixture data, not proof of real-world impact.
+- **JMIR Publications:** the author directly confirmed an invited-reviewer role beginning August 2026, reviewing AI research with a focus on medicine. Collect the original invitation and any completed-review acknowledgment before describing completed judging activity. This role is not yet represented in the supplied LaTeX CV.
+- **Professional record:** `record.html` organizes the public materials and source links; `output/evidence-register.csv` tracks missing corroboration privately. Neither is an eligibility assessment.
+
+A self-authored portfolio can make underlying records easier to inspect. Counsel should assess the actual documentation separately for EB-1A and O-1A. Current USCIS policy manual pages for both categories again returned HTTP 403 during this revision, so no current-policy interpretation or eligibility conclusion is asserted. The older roadmap remains a preparation aid, not current legal advice.
+
+Prioritize employer-confirmed contributions and measurement methods, completed reviews, exact publication metadata, and independent use of original work. Do not replace these with unverified counts or promotional language.

@@ -21,7 +21,7 @@
   document.addEventListener('click', (event) => {
     if (!event.target.closest('.site-header')) setMenu(false);
   });
-  window.matchMedia('(min-width: 681px)').addEventListener('change', (event) => {
+  window.matchMedia('(min-width: 851px)').addEventListener('change', (event) => {
     if (event.matches) setMenu(false);
   });
 
@@ -48,7 +48,7 @@
   const papers = [...document.querySelectorAll('.publication')];
   const statusButtons = [...document.querySelectorAll('[data-status].filter')];
   const search = document.getElementById('research-search');
-  let selectedStatus = 'published';
+  let selectedStatus = 'all';
   const updateResearch = () => {
     const query = search.value.trim().toLocaleLowerCase();
     let visible = 0;
@@ -94,7 +94,7 @@
   }));
 
   // Preserve incoming links to the previous portfolio's section IDs.
-  const aliases = { 'all-projects': 'projects', 'research-papers': 'research', 'experience': 'about', 'education': 'about', 'impact': 'work' };
+  const aliases = { 'all-projects': 'projects', 'research-papers': 'research', 'experience': 'about', 'impact': 'work' };
   const resolveLegacyAnchor = () => {
     const target = aliases[location.hash.slice(1)];
     if (!target) return;

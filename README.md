@@ -1,25 +1,37 @@
-# Aravinda Raman Jatavallabha - Portfolio
+﻿# Aravinda Raman Jatavallabha — portfolio
 
-A static portfolio for AI engineering, research, and professional service. Open `index.html` directly in a browser. No build process, runtime framework, CDN, API key, or dependency installation is required. Fonts and Lucide interface icons are self-hosted; their licenses are included with the assets.
+A static, self-contained portfolio for AI engineering, machine learning, research, and professional service. Open `index.html` directly. No framework, build system, API key, or dependency installation is needed. Fonts are self-hosted and original asset licenses are retained.
 
-## Files
+## Public pages
 
-- `index.html`: public content, metadata, sources, publications, and projects. Content is readable without JavaScript.
-- `assets/css/styles.css`: responsive layouts, themes, reduced-motion and print styles.
-- `assets/js/script.js`: navigation, persistent theme, research search/status filters, project filters, contact form.
-- `assets/docs/Aravinda_Jatavallabha_Resume_Latest_2026.pdf`: existing resume, preserved unchanged.
-- `AJ_CV/Aravinda_Jatavallabha_CV.tex`: existing CV source, with the product name corrected to EvalPath.
-- `CONTENT_UPDATE.md`: maintenance checklist.
-- `EVIDENCE_ROADMAP.md`: private preparation notes; exclude from public deployment.
+- `index.html`: recruiter overview; EvalPath, CausEval, SmartProtect, and DRDO case studies; six experience roles; education; all 14 research entries; 11 additional projects; technical capabilities; professional service; recommendations; contact.
+- `record.html`: complete, directly addressable professional record with original source links and a browser Print / save PDF action. The print action opens the browser's native print dialog; it is not a pre-generated PDF.
+- `assets/`: responsive styles, JavaScript, original portrait and logos, self-hosted fonts, and the supplied resume PDF.
 
-## Deploy
+Both pages render their content without JavaScript. JavaScript enables theme selection, navigation, research search/status filters, project filters, and contact handling on the homepage. All research entries are visible initially; publication status remains explicit.
 
-Deploy only `index.html` and `assets/` to the existing static host. Do not upload the entire repository or the private roadmap. Preserve your existing domain configuration. The canonical URL is inherited from the previous site: https://aravindaj.dev/.
+## Deployment
 
-The contact form retains the existing Formspree endpoint and requires an active configuration and internet access. Validation, success, failure, timeout, and duplicate-submission handling are implemented. Intercept requests during browser checks; do not send test messages without approval. Direct email links remain available.
+Use `output/portfolio-website.zip`, or upload only `index.html`, `record.html`, and `assets/` to the existing static host. Preserve the existing domain, `https://aravindaj.dev/`. No new hosting account or alternate public domain is required.
 
-## Verify
+Rebuild the ZIP with `node output/build-package.cjs` after any content or asset change; it re-reads the allowlist from disk, so a stale archive is never shipped. Build it with that script rather than PowerShell `Compress-Archive`, which writes backslash entry names that several static hosts extract as literal file names instead of directories.
 
-Run `node --check assets/js/script.js`. Check desktop/mobile layouts, themes, keyboard navigation, filters, expandable details, downloads, and contact states before publishing. External availability is separate from local link correctness.
+Do not publish this whole checkout. `EVIDENCE_ROADMAP.md`, `CONTENT_AUDIT.md`, `output/evidence-register.csv`, and working output are private preparation material. The deployment ZIP contains an explicit public allowlist.
 
-The September 2026 revision was checked in Chromium at 320, 390, 768, 1440, and 1920 CSS pixels. Checks covered local images/fonts, anchor targets, mobile navigation, theme persistence, research/project filtering, empty states, expandable details, legacy anchors, and intercepted contact success/failure. A separate JavaScript-disabled check confirmed all 14 research entries, 11 projects, and mobile navigation remained available. No actual contact message was sent. The resume PDF was not regenerated; the CV source received only the EvalPath name correction.
+The redesign has not been pushed or deployed. The public website can therefore differ from the local files.
+
+## Content and evidence
+
+See `CONTENT_UPDATE.md` for maintenance rules and `CONTENT_AUDIT.md` for the September 18 content reconciliation. Publication status, personal contribution, employer outcomes, invited-reviewer status, and team awards are kept distinct. CausEval's visual metrics describe its bundled fixture, not independent adoption or a live-model benchmark.
+
+The original resume PDF and LaTeX CV are preserved. The printable professional record reflects this redesign; the resume PDF has not been regenerated or independently text-audited during this revision.
+
+## Validation
+
+The September 18 revision passed structural HTML checks, unique-ID and anchor checks, local file-reference checks, research/project inventory and source-link preservation, structured metadata parsing, and JavaScript syntax checks. Current machine-readable results are in `output/verification/`.
+
+Browser checks for this redesign are recorded in `output/playwright/VERIFICATION.md`: 74 automated checks across five viewport widths on both pages, covering overflow, local assets, anchors, inventory, navigation, filtering, theme persistence, intercepted contact states, legacy anchors, keyboard entry, and a JavaScript-disabled pass — all 74 passed, with no uncaught errors. Every rendered text node was measured for contrast in both themes on both pages, with nothing below WCAG AA.
+
+Printed PDF rendering is still unverified: `page.pdf()` hangs in this environment, so no PDF was generated or inspected. Print layout was checked through print-media emulation only, which found no horizontal overflow at A4 width or at A4 less the 16mm page margins; real page breaks and pagination remain unconfirmed. Validate the printed output before distributing a PDF.
+
+The existing Formspree endpoint is preserved. It requires its account configuration and internet access. Direct email is available throughout. No live test message was sent.

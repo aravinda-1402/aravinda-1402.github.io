@@ -23,3 +23,11 @@ The resume PDF was not regenerated and may need reconciliation. The LaTeX CV rec
 Keep content in HTML for search engines and JavaScript-disabled readers. Preserve descriptive links, keyboard focus, and status attributes.
 
 Check 320px, 390px, 768px, and desktop widths, dark mode, 200% zoom, reduced motion, local assets, and form states before publishing. Deploy only `index.html` and `assets/`; keep `EVIDENCE_ROADMAP.md` private.
+
+## September 18 design and content structure
+
+The homepage now displays all research entries by default. Update the explicit counts in the hero and research summary if the bibliography changes, in both `index.html` and `record.html`. Keep the two pages synchronized when changing a role, paper, project, credential, or recommendation.
+
+Include `record.html` in the public deployment allowlist. Keep `CONTENT_AUDIT.md`, `EVIDENCE_ROADMAP.md`, and the evidence register private. The professional record offers a native browser print action; validate the printed layout before distributing a PDF.
+
+CausEval's coverage figures are fixture data. Keep that label beside the visualization. Use its repository for current methodology and attribution, and never infer adoption or field significance from the demo numbers.
